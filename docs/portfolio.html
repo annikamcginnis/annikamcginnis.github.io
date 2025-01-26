@@ -28,28 +28,7 @@
             border-bottom: 1px solid #ddd;
         }
         .card-title, .card-description, .card-buttons {
-            margin: 5px; /* Add margin to card elements */
-        }
-        .columns {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            margin-bottom: 5px; /* Add space underneath each line of 3 cards */
-        }
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 5px;
-            color: #7586ff; /* Same color as buttons */
-            margin-top: 5px; /* Reduce space above the tags */
-            padding-left: 5px; /* Add padding to indent the tags */
-            padding-right: 5px; /* Add padding to indent the tags */
-            margin-bottom: 20px;
-        }
-        .tag {
-            font-family: 'Inter', sans-serif;
-            font-size: 0.65em; /* Make the tags text smaller */
-            font-style: italic; /* Make the tags text italic */
+            margin: 15px; /* Add margin to card elements */
         }
         .card-title {
             font-size: 1.2em; /* Reduce font size for card titles */
@@ -75,6 +54,11 @@
         .card-buttons a:last-child {
             margin-right: 0; /* Remove margin-right for the last button */
         }
+        .columns {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
         .column {
             flex: 1;
             max-width: 32%;
@@ -96,32 +80,20 @@
             margin: 0 auto;
         }
         .navbar {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #7586ff; /* Same color as buttons "map" and "code" */
-            padding: 10px; /* Original vertical width */
+            background-color: #7586ff; /* Use button color for navbar */
+            padding: 10px;
+            text-align: center; /* Center the navbar */
         }
         .navbar a {
-            color: white;
+            margin: 0 10px;
+            color: white; /* Change text color to white */
             text-decoration: none;
-            margin: 0 15px;
-            font-family: 'Courier Prime', monospace;
+            text-transform: uppercase; /* Use all capitals font */
+            font-family: Georgia, serif; /* Use Georgia font */
+            font-size: 0.9em; /* Make the text smaller */
         }
-        .navbar .brand {
-            font-family: 'Courier Prime', monospace;
-            font-size: 24px;
-            color: white;
-            position: absolute;
-            left: 10px;
-            padding-left: 10px; /* Add space before the text */
-        }
-        .project-info {
-            display: flex;
-            flex-direction: column;
-        }
-        .card-description {
-            margin-bottom: 5px; /* Reduce space below the description */
+        .navbar a:hover {
+            text-decoration: underline;
         }
         .hero {
             padding: 20px;
@@ -134,7 +106,7 @@
         }
         .project-info a {
             display: block;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
             color: black; /* Change color to black */
             text-decoration: none;
             font-family: Georgia, serif; /* Apply Georgia font to hyperlinked text */
@@ -165,27 +137,10 @@
         #about-me {
             margin-bottom: 60px; /* Add more space below the about me section */
         }
-        .menu-box {
-            display: flex;
-            align-items: center;
-            background-color: #333; /* Example background color */
-            padding: 10px;
-        }
-        .header {
-            font-family: 'Courier Prime', monospace;
-            font-size: 24px;
-            color: white;
-            text-align: center;
-            position: absolute;
-            top: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
     </style>
 </head>
 <body>
     <nav class="navbar">
-        <div class="brand">ANNIKA MCGINNIS</div>
         <a href="#about-me">About Me</a>
         <a href="#projects">Coding Projects</a>
         <a href="#stories">Stories</a>
@@ -212,7 +167,7 @@
 
                 <p class="about-me-text">Among my other loves: maps, Latin dance, Afrobeats, spicy food, mountain climbing.</p>
                     
-                <p class="about-me-text">I build, report and teach. Contact me: annika.mcginnis at gmail</p>
+                <p class="about-me-text">I build, report and teach. Contact me: annika.mcginnis at gmail.com</p>
             </div>
         </section>
         <section id="projects">
@@ -260,453 +215,8 @@
             </div>
         </section>
         <section id="stories">
-            <h2 class="title">Selected Stories</h2>
+            <h2 class="title">Stories</h2>
             <!-- Add your content here -->
-            <div class="columns">
-                <div class="column">
-                    <div class="card">
-                        <img src="fishing_drc_1.png" alt="Caught in Crisis">
-                    </div>
-                    <div class="project-info">
-                        <a href="https://infonile.org/en/caught-in-crisis/" target="_blank" class="card-title">Caught in Crisis: East Africa's Battle Against Illegal Fishing</a>
-                        <p class="card-description">Led yearlong Pulitzer Center-supported project on illegal fishing working with 7 journalists from 5 countries.</p>
-                        <div class="tags">
-                            <span class="tag">Reporting</span>
-                            <span class="tag">•</span>
-                            <span class="tag">Writing</span>
-                            <span class="tag">•</span>
-                            <span class="tag">Project Coordination</span>
-                            <span class="tag">•</span>
-                            <span class="tag">Editing</span>
-                            <span class="tag">•</span>
-                            <span class="tag">Data Analysis</span>
-                            <span class="tag">•</span>
-                            <span class="tag">Data Visualization</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="column">
-                    <div class="card">
-                        <img src="water_sampling_locations.png" alt="Water Sampling Locations">
-                    </div>
-                    <div class="project-info">
-                        <a href="https://infonile.org/en/polluted-by-the-guardians/" target="_blank" class="card-title">Polluted by the Guardians</a>
-                        <p class="card-description">Led water sampling investigation in partnership with journalists and scientists in Uganda, Kenya and Tanzania that unveils increasing contamination in Lake Victoria.</p>
-                        <div class="tags">
-                            <span class="tag">Project Coordination</span>
-                            <span class="tag">•</span>
-                            <span class="tag">Editing</span>
-                            <span class="tag">•</span>
-                            <span class="tag">Data Analysis</span>
-                            <span class="tag">•</span>
-                            <span class="tag">Data Visualization</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="column">
-                    <div class="card">
-                        <img src="lake_albert.jpg" alt="Project headline">
-                    </div>
-                    <div class="project-info">
-                        <a href="https://infonile.org/en/shrinking-lakes/" target="_blank" class="card-title">Shrinking Lakes: Can East Africa Avoid Water Resources Apocalypse?</a>
-                        <p class="card-description">Led project with 12 journalists in 4 countries on threats to lakes in East Africa, including Uganda's first oil and fisheries in Rwanda.</p>
-                        <div class="tags">
-                            <span class="tag">Project Coordination</span>
-                            <span class="tag">•</span>
-                            <span class="tag">Reporting</span>
-                            <span class="tag">•</span>
-                            <span class="tag">Writing</span>
-                            <span class="tag">•</span>
-                            <span class="tag">Editing</span>
-                            <span class="tag">•</span>
-                            <span class="tag">Data Analysis</span>
-                            <span class="tag">•</span>
-                            <span class="tag">Data Visualization</span>
-                            <span class="tag">•</span>
-                            <span class="tag">Design</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="column">
-                    <div class="card">
-                        <img src="monthly_wildlife_seizures.png" alt="Pandemic Poachers">
-                    </div>
-                    <div class="project-info">
-                        <a href="https://infonile.org/en/wildlife-conservation/" target="_blank" class="card-title">The Pandemic Poachers</a>
-                        <p class="card-description">Led data-based investigation in Uganda, Kenya, Tanzania and South Sudan on the impact of Covid-19 on poaching and wildlife trafficking.</p>
-                        <div class="tags">
-                            <span class="tag">Project Coordination</span>
-                            <span class="tag">•</span>
-                            <span class="tag">Writing</span>
-                            <span class="tag">•</span>
-                            <span class="tag">Editing</span>
-                            <span class="tag">•</span>
-                            <span class="tag">Data Analysis</span>
-                            <span class="tag">•</span>
-                            <span class="tag">Data Visualization</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="column">
-                    <div class="card">
-                        <img src="land_deals.png" alt="Land Deals Map">
-                    </div>
-                    <div class="project-info">
-                        <a href="https://www.infonile.org/sucked-dry/" target="_blank" class="card-title">Sucked Dry: Foreign investors in Africa's Nile River Basin export profits, displace communities</a>
-                        <p class="card-description">Led data-based investigation supported by the Pulitzer Center with journalists in 7 countries on foreign land deals. </p>
-                        <div class="tags">
-                            <span class="tag">Reporting</span>
-                            <span class="tag">•</span>
-                            <span class="tag">Project Coordination</span>
-                            <span class="tag">•</span>
-                            <span class="tag">Writing</span>
-                            <span class="tag">•</span>
-                            <span class="tag">Editing</span>
-                            <span class="tag">•</span>
-                            <span class="tag">Data Analysis</span>
-                            <span class="tag">•</span>
-                            <span class="tag">Data Visualization</span>
-                            <span class="tag">•</span>
-                            <span class="tag">Photography</span>
-                            <span class="tag">•</span>
-                            <span class="tag">Videography</span>
-                            <span class="tag">•</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="column">
-                    <div class="card">
-                        <img src="walumbe-fisherman-holding-up-a-net-2560x1702.jpg" alt="Trapped in the Buffer Zone">
-                    </div>
-                    <div class="project-info">
-                        <a href="https://infonile.org/trapped-the-buffer-zone/" target="_blank" class="card-title">Trapped in the Buffer Zone</a>
-                        <p class="card-description">Reported multimedia story on how Uganda forest communities are cast aside in the fight against climate change.</p>
-                        <div class="tags">
-                            <span class="tag">Reporting</span>
-                            <span class="tag">•</span>
-                            <span class="tag">Writing</span>
-                            <span class="tag">•</span>
-                            <span class="tag">Data Analysis</span>
-                            <span class="tag">•</span>
-                            <span class="tag">Data Visualization</span>
-                            <span class="tag">•</span>
-                            <span class="tag">Photography</span>
-                            <span class="tag">•</span>
-                            <span class="tag">Videography</span>
-                            <span class="tag">•</span>
-                            <span class="tag">Graphics</span>
-                    </div>
-                </div>
-            </div>
-            <div class="column">
-                <div class="card">
-                    <img src="farmer in field.JPG" alt="Swamp City">
-                </div>
-                <div class="project-info">
-                    <a href="https://infonile.org/trapped-the-buffer-zone/" target="_blank" class="card-title">Swamp City: How urbanization destroyed a critical Kampala wetland and why it matters</a>
-                    <p class="card-description">Reported multimedia story on the destruction of a Kampala city wetland critical to the country's drinking water supply.</p>
-                    <div class="tags">
-                        <span class="tag">Reporting</span>
-                        <span class="tag">•</span>
-                        <span class="tag">Writing</span>
-                        <span class="tag">•</span>
-                        <span class="tag">Data Analysis</span>
-                        <span class="tag">•</span>
-                        <span class="tag">Data Visualization</span>
-                        <span class="tag">•</span>
-                        <span class="tag">Photography</span>
-                        <span class="tag">•</span>
-                        <span class="tag">Videography</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="column">
-            <div class="card">
-                <img src="wetland.jpg" alt="bushenyi wetland">
-            </div>
-            <div class="project-info">
-                <a href="https://www.newvision.co.ug/news/1520908/restored-wetland-bushenyi-support-agriculture-fish-farming#google_vignette" target="_blank" class="card-title">Restored wetland in Bushenyi to support agriculture, fish farming</a>
-                <p class="card-description">Reported multimedia story for the New Vision Newspaper on the restoration of a wetland in southwestern Uganda.</p>
-                <div class="tags">
-                    <span class="tag">Reporting</span>
-                    <span class="tag">•</span>
-                    <span class="tag">Writing</span>
-                    <span class="tag">•</span>
-                    <span class="tag">Photography</span>
-                    <span class="tag">•</span>
-                    <span class="tag">Videography</span>
-            </div>
-        </div>
-    </div>
-
-        <div class="column">
-            <div class="card">
-                <img src="africa_map.png" alt="Integrated Water Resources Management in Africa">
-            </div>
-            <div class="project-info">
-                <a href="https://infonile.org/en/2022/11/at-cop27-cross-sector-integration-urged-to-supply-food-and-water-to-all/" target="_blank" class="card-title">At COP27, cross-sector integration urged to supply food and water to all who share the Nile River during climate upheaval</a>
-                <p class="card-description">Reported on water-related negotiations at COP27.</p>
-                <div class="tags">
-                    <span class="tag">Reporting</span>
-                    <span class="tag">•</span>
-                    <span class="tag">Writing</span>
-                    <span class="tag">•</span>
-                    <span class="tag">Data Analysis</span>
-                    <span class="tag">•</span>
-                    <span class="tag">Data Visualization</span>
-                    <span class="tag">•</span>
-                    <span class="tag">Photography</span>
-            </div>
-        </div>
-    </div>
-
-    <div class="column">
-        <div class="card">
-            <img src="water_action.jpg" alt="UN Water Conference 2023">
-        </div>
-        <div class="project-info">
-            <a href="https://infonile.org/en/2023/04/un-leaders-push-for-innovative-financing-for-water/" target="_blank" class="card-title">UN leaders push for innovative financing for water as world grapples with water-related disasters</a>
-            <p class="card-description">Reported on water financing schemes presented at the 2023 UN Water conference.</p>
-            <div class="tags">
-                <span class="tag">Reporting</span>
-                <span class="tag">•</span>
-                <span class="tag">Writing</span>
-                <span class="tag">•</span>
-                <span class="tag">Data Analysis</span>
-                <span class="tag">•</span>
-                <span class="tag">Data Visualization</span>
-                <span class="tag">•</span>
-                <span class="tag">Photography</span>
-        </div>
-    </div>
-    </div>
-
-    <div class="column">
-        <div class="card">
-            <img src="inwood_floodsviz.png" alt="CB12 Flood-Related Requests">
-        </div>
-        <div class="project-info">
-            <a href="https://theuptowner.org/hurricane-season-arrives-inwood-flood-risks-persist/" target="_blank" class="card-title">Hurricane Season Arrives, Inwood Flood Risks Persist</a>
-            <p class="card-description">Reported on repeated NYC Community Board 12 requests for sewer repairs and green infrastructure that have brought scant change.</p>
-            <div class="tags">
-                <span class="tag">Reporting</span>
-                <span class="tag">•</span>
-                <span class="tag">Writing</span>
-                <span class="tag">•</span>
-                <span class="tag">Data Analysis</span>
-                <span class="tag">•</span>
-                <span class="tag">Data Visualization</span>
-                <span class="tag">•</span>
-                <span class="tag">Photography</span>
-        </div>
-    </div>
-</div>
-
-<div class="column">
-    <div class="card">
-        <img src="gucman.jpg" alt="UN Water Conference 2023">
-    </div>
-    <div class="project-info">
-        <a href="https://theuptowner.org/community-groups-push-for-green-solutions-to-combat-floods-uptown/" target="_blank" class="card-title">Community Groups Push for Green Solutions to Combat Floods Uptown</a>
-        <p class="card-description">Reported on uptown Manhattan groups restoring wetlands, encouraging composting and planting trees to help reduce floods, but which need more government investment..</p>
-        <div class="tags">
-            <span class="tag">Reporting</span>
-            <span class="tag">•</span>
-            <span class="tag">Writing</span>
-            <span class="tag">•</span>
-            <span class="tag">Photography</span>
-    </div>
-</div>
-</div>
-
-<div class="column">
-    <div class="card">
-        <img src="harlem_school.png.jpeg" alt="PS 76 School Renovation">
-    </div>
-    <div class="project-info">
-        <a href="https://theuptowner.org/harlem-parents-oppose-plan-to-turn-ps-76-school-into-a-middle-and-high-school/" target="_blank" class="card-title">
-            Harlem Parents Oppose Plan to Turn PS 76 School Into a Middle and High School</a>
-        <p class="card-description">Reported breaking news piece on opposition to a school renovation in uptown Manhattan, NYC.</p>
-        <div class="tags">
-            <span class="tag">Reporting</span>
-            <span class="tag">•</span>
-            <span class="tag">Writing</span>
-            <span class="tag">•</span>
-            <span class="tag">Photography</span>
-    </div>
-</div>
-</div>
-
-<div class="column">
-    <div class="card">
-        <img src="wic copy.jpeg" alt="UN Water Conference 2023">
-    </div>
-    <div class="project-info">
-        <a href="https://www.reuters.com/article/business/healthcare-pharmaceuticals/us-nutrition-program-for-mothers-infants-sees-falling-demand-idUSKBN0HE1AD/" target="_blank" class="card-title">
-            U.S. nutrition program for mothers, infants sees falling demand</a>
-        <p class="card-description">Reported data-based story for Reuters on declining membership in WIC program for pregnant mothers and small children.</p>
-        <div class="tags">
-            <span class="tag">Reporting</span>
-            <span class="tag">•</span>
-            <span class="tag">Writing</span>
-            <span class="tag">•</span>
-            <span class="tag">Data Analysis</span>
-    </div>
-</div>
-</div>
-
-<div class="column">
-    <div class="card">
-        <img src="unaccompanied_minors.jpg" alt="unaccompanied minors">
-    </div>
-    <div class="project-info">
-        <a href="https://cnsmaryland.org/2015/02/26/maryland-school-systems-grapple-with-influx-of-central-american-minors/" target="_blank" class="card-title">
-            Maryland School Systems Grapple with Influx of Central American Minors</a>
-        <p class="card-description">Reported multimedia story on influx of unaccompanied minors in Maryland schools.</p>
-        <div class="tags">
-            <span class="tag">Reporting</span>
-            <span class="tag">•</span>
-            <span class="tag">Writing</span>
-            <span class="tag">•</span>
-            <span class="tag">Data Analysis</span>
-            <span class="tag">•</span>
-            <span class="tag">Data Visualization</span>
-            <span class="tag">•</span>
-            <span class="tag">Photography</span>
-    </div>
-</div>
-</div>
-
-<div class="column">
-    <div class="card">
-        <img src="unclaimed_funds.jpg" alt="unclaimed funds">
-    </div>
-    <div class="project-info">
-        <a href="https://cnsmaryland.org/2015/03/02/marylanders-unclaimed-funds-on-the-rise-as-state-revenue-source/" target="_blank" class="card-title">
-            Marylanders’ Unclaimed Funds on the Rise as State Revenue Source</a>
-        <p class="card-description">Reported data-based story on how Maryland is using residents' unclaimed funds.</p>
-        <div class="tags">
-            <span class="tag">Reporting</span>
-            <span class="tag">•</span>
-            <span class="tag">Writing</span>
-            <span class="tag">•</span>
-            <span class="tag">Data Analysis</span>
-            <span class="tag">•</span>
-            <span class="tag">Photography</span>
-    </div>
-</div>
-</div>
-
-<div class="column">
-    <div class="card">
-        <img src="ayaloma.jpg" alt="Ayaloma, Ecuador">
-    </div>
-    <div class="project-info">
-        <a href="https://www.mcclatchydc.com/news/nation-world/national/article24732961.html" target="_blank" class="card-title">
-            For Ecuadorian village, a struggle to adapt to changing climate</a>
-        <p class="card-description">Reported enterprise story for McClatchy Newspapers on impacts of climate change in Latin America.</p>
-        <div class="tags">
-            <span class="tag">Reporting</span>
-            <span class="tag">•</span>
-            <span class="tag">Writing</span>
-            <span class="tag">•</span>
-            <span class="tag">Photography</span>
-    </div>
-</div>
-</div>
-
-
-<div class="column">
-    <div class="card">
-        <img src="cadigan.webp" alt="Cadigan">
-    </div>
-    <div class="project-info">
-        <a href="https://www.usatoday.com/story/money/business/2013/12/11/shop-small-business-health-options-program/3892963/" target="_blank" class="card-title">
-            SHOP for health care is help for small business</a>
-        <p class="card-description">Reported for USA TODAY on roll-out of new marketplace for small business health insurance as part of the Affordable Care Act.</p>
-        <div class="tags">
-            <span class="tag">Reporting</span>
-            <span class="tag">•</span>
-            <span class="tag">Writing</span>
-            <span class="tag">•</span>
-            <span class="tag">Data Analysis</span>
-    </div>
-</div>
-</div>
-
-<div class="column">
-    <div class="card">
-        <img src="health care.webp" alt="health care">
-    </div>
-    <div class="project-info">
-        <a href="https://www.usatoday.com/story/news/nation/2013/09/29/obamacare-exchanges-open-what-to-do/2861571/" target="_blank" class="card-title">
-            Exchanges open Tuesday: Here's what to do</a>
-        <p class="card-description">Reported for USA TODAY on roll-out of Affordable Care Act.</p>
-        <div class="tags">
-            <span class="tag">Reporting</span>
-            <span class="tag">•</span>
-            <span class="tag">Writing</span>
-    </div>
-</div>
-</div>
-
-<div class="column">
-    <div class="card">
-        <img src="horseshoe.jpg" alt="Horseshoe Casino">
-    </div>
-    <div class="project-info">
-        <a href="https://cnsmaryland.org/2015/02/11/poor-communities-surrounding-baltimore-casino-getting-less-revenue-than-anticipated/" target="_blank" class="card-title">
-            Poor Communities Surrounding Baltimore Casino Getting Less Revenue Than Anticipated</a>
-        <p class="card-description">Reported data-based story on impacts of new casinos in low-income Baltimore communities.</p>
-        <div class="tags">
-            <span class="tag">Reporting</span>
-            <span class="tag">•</span>
-            <span class="tag">Writing</span>
-            <span class="tag">•</span>
-            <span class="tag">Data Analysis</span>
-            <span class="tag">•</span>
-            <span class="tag">Data Visualization</span>
-    </div>
-</div>
-</div>
-
-<div class="column">
-    <div class="card">
-        <img src="bailey_lamson.jpg" alt="Bailey Lamson">
-    </div>
-    <div class="project-info">
-        <a href="https://dbknews.com/2016/08/12/article_b790bf80-69d4-11e2-9a96-0019bb30f31a-html/" target="_blank" class="card-title">
-            Survivor of years of assault uses story to help others</a>
-        <p class="card-description">Reported feature on a sexual assault survivor's efforts to stop the crime.</p>
-        <div class="tags">
-            <span class="tag">Reporting</span>
-            <span class="tag">•</span>
-            <span class="tag">Writing</span>
-
-    </div>
-</div>
-</div>
-
-<div class="column">
-    <div class="card">
-        <img src="college park.avif" alt="College Park">
-    </div>
-    <div class="project-info">
-        <a href="https://dbknews.com/0999/12/31/arc-t2kgpiapfrcvpinvpshrqteaei/" target="_blank" class="card-title">
-            College Park’s age demographics trend toward age 20, affecting life for all</a>
-        <p class="card-description">Reported data-based story on relations between increasingly young College Park residents and long-term residents.</p>
-        <div class="tags">
-            <span class="tag">Reporting</span>
-            <span class="tag">•</span>
-            <span class="tag">Writing</span>
-            <span class="tag">•</span>
-            <span class="tag">Data Analysis</span>  
-
-    </div>
-</div>
-</div>
-
         </section>
         <section id="media-innovation">
             <h2 class="title">Media Innovation</h2>
@@ -721,7 +231,7 @@
             <!-- Add your content here -->
         </section>
         <section id="articles-about-me">
-            <h2 class="title">Articles About My Work</h2>
+            <h2 class="title">Articles About Me</h2>
             <!-- Add your content here -->
         </section>
     </main>
