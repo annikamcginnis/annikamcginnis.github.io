@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg id="g-cop_attendees_graphic-full-Interactions-img" xmlns="http://www.w3.org/2000/svg" baseProfile="tiny" version="1.2" viewBox="0 0 700 477.5">
   <!-- Generator: Adobe Illustrator 29.3.1, SVG Export Plug-In . SVG Version: 2.1.0 Build 151)  -->
-  <path id="path-1" d="M111.592,342.225v48" fill="none" stroke="#181818"/>
-  <path id="path-2" d="M334.592,228.897v74.328" fill="none" stroke="#181818"/>
-  <path id="path-3" d="M448.592,294.225v26" fill="none" stroke="#181818"/>
-  <path id="path-4" d="M599.592,104.225v16" fill="none" stroke="#181818"/>
+  <path id="Global_North" style="opacity:0.5;" d="M24,421h613.385v-48.066h-10.614v-27.281h-21.117v45.867h-21.117v-5.396h-31.731v14.49h-31.731v-.7h-21.117v2.698h-21.117v.899h-21.117v-13.091h-21.117v19.086h-21.117v-2.698h-21.117v2.498h-21.117v-3.098h-21.117v-1.299h-21.117v-33.176h-21.117v28.38h-21.117v3.797h-21.117v8.694h-21.117v-14.39h-21.117v13.89h-21.117v-3.797h-21.117v7.495h-21.117v-12.491h-21.117v2.698h-21.117v5.796h-21.117v2.698h-21.117v-11.991h-21.117v14.69h-21.117v-.999h-10.614v4.697l-.782.1Z" fill="#f9c542" isolation="isolate"/>
+  <path id="Global_South" style="opacity:0.5;" d="M24,416.303h10.614v.999h21.117v-14.69h21.117v11.991h21.117v-2.698h21.117v-5.796h21.117v-2.698h21.117v12.491h21.117v-7.495h21.117v3.797h21.117v-13.89h21.117v14.39h21.117v-8.694h21.117v-3.797h21.117v-28.38h21.117v33.176h21.117v1.299h21.117v3.098h21.117v-2.498h21.117v2.698h21.117v-19.086h21.117v13.091h21.117v-.899h21.117v-2.698h21.117v.7h31.731v-14.49h31.731v5.396h21.117v-45.867h21.117v27.281h10.614v-141.799h-10.614v-108.923h-21.117v185.269h-21.117v16.288h-31.731v28.979h-31.731v12.891h-21.117v-2.099h-21.117v-14.39h-21.117v-23.184h-21.117v55.561h-21.117v3.298h-21.117v-2.798h-21.117v-13.69h-21.117v2.998h-21.117v-63.255h-21.117v73.348h-21.117v-3.797h-21.117v18.587h-21.117v-15.889h-21.117v15.489h-21.117v3.398h-21.117v7.994h-21.117v-18.787h-21.117v4.397h-21.117v11.492h-21.117v-2.298h-21.117v-6.395h-21.117v17.588h-21.117v-1.799h-10.614v4.797h0Z" fill="#1db47f" isolation="isolate"/>
+  <path id="path-1" d="M69.808,342.056v47.966" fill="none" stroke="#181818"/>
+  <path id="path-2" d="M318.961,228.808v74.275" fill="none" stroke="#181818"/>
+  <path id="path-3" d="M446.331,294.09v25.982" fill="none" stroke="#181818"/>
+  <path id="path-4" d="M615.04,104.225v15.989" fill="none" stroke="#181818"/>
 <style>
 #g-cop_attendees_graphic-full-Interactions-img rect, #g-cop_attendees_graphic-full-Interactions-img circle, #g-cop_attendees_graphic-full-Interactions-img path, #g-cop_attendees_graphic-full-Interactions-img line, #g-cop_attendees_graphic-full-Interactions-img polyline, #g-cop_attendees_graphic-full-Interactions-img polygon { vector-effect: non-scaling-stroke; }
 </style>
