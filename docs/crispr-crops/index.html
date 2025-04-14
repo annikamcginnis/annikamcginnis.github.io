@@ -1,0 +1,3511 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Evolution of CRISPR Crops</title>
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-size: 20px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            text-rendering: optimizeLegibility;
+        }
+
+        .content {
+            max-width: 680px;
+            margin: auto;
+        }
+
+        .header {
+            padding: 3em 0;
+        }
+
+        a {
+            color: #6B8E23;
+        }
+
+        .footer {
+            background: #f0f3e9;
+            text-align: center;
+            font-size: 0.8em;
+            margin-top: 4em;
+            padding: 4em 0;
+        }
+
+		h2 {
+			font-family: 'Roboto Mono', monospace;
+			color: #6B8E23
+		}
+
+        figure {
+            margin: 0;
+			padding-top: 1.2em;
+            padding-bottom: 1.6em;
+        }
+
+        figcaption {
+            font-size: 0.7em;
+            text-align: center;
+            margin-top: 0.5em;
+            color: #666;
+			font-family: 'Roboto Mono', monospace;
+        }
+
+        h1 {
+            font-family: 'Roboto Mono', monospace;
+            font-weight: bold;
+            font-size: 1em;
+            line-height: 1.7;
+			color: #ffba3f;
+        }
+
+        .subhead {
+            font-family: 'Helvetica', sans-serif;
+			font-style: bold;
+			font-size: 1.6em;
+			line-height: 1.3em;
+        }
+
+		.byline {
+			font-family: 'Roboto Mono', monospace;
+			font-size: 0.8em;
+			color: #666;
+		}
+
+		.byline a {
+			color: #6B8E23;
+		}
+
+		.byline p {
+			margin: 0;
+		}
+
+		.byline p + p {
+			margin-top: 0.5em;
+		}
+
+		.byline a:hover {
+			text-decoration: underline;
+		}
+
+		@media (max-width: 640px) {
+			body {
+				font-size: 18px;
+			}
+			.hero-text {
+				font-size: 20px;
+				bottom: 20px;
+				left: 20px;
+			}
+		}
+		
+
+        iframe,
+        img,
+        video {
+            max-width: 100%;
+        }
+
+        p {
+            line-height: 1.6;
+            margin: 0;
+            padding-bottom: 1.2em;
+        }
+
+        .full-width figure {
+            text-align: left;
+        }
+
+        ul {
+            margin: 0;
+            padding-bottom: 1em;
+            line-height: 1.6;
+        }
+
+        iframe {
+            padding-bottom: 1.2em;
+        }
+
+        code {
+            font-family: 'Courier New', monospace;
+            background: #fff880;
+        }
+
+
+        .ai2html-graphic {
+            display: none;
+        }
+
+        .ai2html-graphic.active {
+            display: block;
+        }
+
+        .scrolly-overlay {
+            width: 100%;
+            max-width: 640px;
+            margin: auto;
+        }
+
+        .step {
+            margin: 0 auto 50vh;
+            padding: 1em;
+            background: rgba(255, 255, 255, 0.9);
+			line-height: 1.3;
+        }
+
+		.stretch-outside-container {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200%;
+  max-width: none;
+}
+
+.hero-header {
+  position: relative;
+  width: 100%;
+  height: 90vh; /* Reduce the height of the hero section */
+  overflow: hidden;
+}
+
+.hero-header img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content {
+  position: relative;
+
+  padding-top: 2em; /* Adjust this as needed to give spacing from the image */
+}
+
+.hero-text {
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  max-width: 700px;
+  color: white;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+.title-text {
+  font-size: 3em;
+  font-weight: bold;
+  margin: 0;
+}
+
+
+.step {
+  position: relative;
+  z-index: 10;
+  background: #fffcf7;
+  padding: 1em;
+  margin: 0 auto 50vh;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+
+.sticky-thing {
+  position: sticky;
+  top: 0;
+  z-index: 1; /* lower than .step */
+}
+
+
+        /* margin on mobile */
+        @media (max-width: 640px) {
+            body {
+                font-size: 18px;
+            }
+  .hero-text {
+    font-size: 20px;
+    bottom: 20px;
+    left: 20px;
+  }
+}
+
+            .content {
+                padding-left: 0.5em;
+                padding-right: 0.5em;
+            }
+        
+    </style>
+    <link href="scrolly-styles.css" rel="stylesheet">
+    <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollama/3.2.0/scrollama.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.3.0/d3.min.js"></script>
+</head>
+
+<body>
+
+	<div class="hero-header">
+		<img src="crops.png" alt="Header image">
+		<div class="hero-text">
+		  <h1 class="title-text">Seeds of Control</h1>
+		  <p class="subhead">China has acquired hundreds of patents to edit the genes of food staples. But in the U.S., American agribusiness is globalizing its inventions.</p>
+		</div>
+	  </div>
+
+
+    <div class="content">
+        <div class="byline">
+            <p>By <a href="https://annikamcginnis.github.io/">Annika McGinnis</a></p>
+			<p>April 13, 2025</p>
+        </div>
+        <p>Scientists around the world are racing to develop and patent new varieties of food crops using a novel gene editing technology.</p>
+        <p>The ‘CRISPR’ method, invented in 2012, allows scientists to “cut and paste” DNA of living organisms. Derived from a bacterial immune system, CRISPR revolutionized the world of genetic engineering, freeing inventors from having to introduce foreign DNA to make major changes in the genome of plants, animals, and even humans.</p>
+        <p>Since its invention, public institutions and agribusiness companies in China and the U.S. have led the race to create new types of crops deemed “safer” than traditional genetically modified organisms (GMOs) by many regulatory bodies. Top crops include rice, corn/maize and tomatoes, but applications have been filed for almost 100 different crops. 
+        </p>
+        <p>Here’s how the invention has progressed, according to patent applications filed in the World Intellectual Patent Organization (WIPO). It's a non-exhaustive list, since some inventions may not file in this international database, but still provides a good assessment of the world’s attempts to genetically engineer our food supplies.</p>
+    </div>
+
+    <section id="scrolly-ai2html" class="scrolly-container">
+        <div class="sticky-thing">
+			
+          <!-- ai2html graphics -->
+          <div class="ai2html-graphic" id="graphic-1">
+
+
+
+<!-- Generated by ai2html v0.121.1 - 2025-04-12 20:38 -->
+<!-- ai file: patents_2.ai -->
+<style media="screen,print">
+	#g-patents_2-box ,
+	#g-patents_2-box .g-artboard {
+		margin:0 auto;
+	}
+	#g-patents_2-box p {
+		margin:0;
+	}
+	#g-patents_2-box .g-aiAbs {
+		position:absolute;
+	}
+	#g-patents_2-box .g-aiImg {
+		position:absolute;
+		top:0;
+		display:block;
+		width:100% !important;
+	}
+	#g-patents_2-box .g-aiSymbol {
+		position: absolute;
+		box-sizing: border-box;
+	}
+	#g-patents_2-box .g-aiPointText p { white-space: nowrap; }
+	#g-patents_2-full {
+		position:relative;
+		overflow:hidden;
+	}
+	#g-patents_2-full p {
+		font-family:arial,helvetica,sans-serif;
+		line-height:14px;
+		height:auto;
+		opacity:1;
+		letter-spacing:0em;
+		font-size:12px;
+		text-align:left;
+		color:rgb(94,94,92);
+		text-transform:none;
+		padding-bottom:0;
+		padding-top:0;
+		mix-blend-mode:normal;
+		font-style:normal;
+		font-weight:regular;
+		position:static;
+	}
+	#g-patents_2-full .g-pstyle0 {
+		height:14px;
+	}
+	#g-patents_2-full .g-pstyle1 {
+		font-weight:bold;
+		line-height:17px;
+		height:17px;
+		font-size:14px;
+		color:rgb(255,186,63);
+	}
+	#g-patents_2-full .g-pstyle2 {
+		font-weight:bold;
+		line-height:17px;
+		height:17px;
+		font-size:14px;
+		color:rgb(107,142,35);
+	}
+	#g-patents_2-full .g-pstyle3 {
+		font-weight:bold;
+		line-height:17px;
+		height:17px;
+		font-size:14px;
+		color:rgb(226,194,144);
+	}
+	#g-patents_2-mobile {
+		position:relative;
+		overflow:hidden;
+	}
+	#g-patents_2-mobile p {
+		font-family:arial,helvetica,sans-serif;
+		line-height:15px;
+		height:auto;
+		opacity:1;
+		letter-spacing:0em;
+		font-size:13px;
+		text-align:left;
+		color:rgb(154,154,152);
+		text-transform:none;
+		padding-bottom:0;
+		padding-top:0;
+		mix-blend-mode:normal;
+		font-style:normal;
+		font-weight:regular;
+		position:static;
+	}
+	#g-patents_2-mobile .g-pstyle0 {
+		height:15px;
+	}
+	#g-patents_2-mobile .g-pstyle1 {
+		font-weight:bold;
+		line-height:14px;
+		height:14px;
+		font-size:12px;
+		color:rgb(255,186,63);
+	}
+	#g-patents_2-mobile .g-pstyle2 {
+		font-weight:500;
+		line-height:12px;
+		height:12px;
+		font-size:10px;
+		color:rgb(94,94,92);
+	}
+	#g-patents_2-mobile .g-pstyle3 {
+		font-weight:bold;
+		line-height:14px;
+		height:14px;
+		font-size:11px;
+		color:rgb(107,142,35);
+	}
+	#g-patents_2-mobile .g-pstyle4 {
+		font-weight:bold;
+		line-height:14px;
+		height:14px;
+		font-size:12px;
+		color:rgb(226,194,144);
+	}
+
+</style>
+
+<div id="g-patents_2-box" class="ai2html ai2html-responsive">
+
+	<!-- Artboard: full -->
+	<div id="g-patents_2-full" class="g-artboard" style="width:1140px; height:815px;" data-aspect-ratio="1.399" data-min-width="1140">
+<div style=""></div>
+		<img id="g-patents_2-full-img" class="g-patents_2-full-img g-aiImg" alt="" src="patents_2-full.png"/>
+		<div id="g-ai0-1" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:6.3923%;margin-top:-8.1px;left:63.1337%;width:49px;">
+			<p class="g-pstyle0">2021</p>
+		</div>
+		<div id="g-ai0-2" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:6.515%;margin-top:-8.1px;left:36.3771%;width:49px;">
+			<p class="g-pstyle0">2017</p>
+		</div>
+		<div id="g-ai0-3" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:6.515%;margin-top:-8.1px;left:9.7434%;width:49px;">
+			<p class="g-pstyle0">2013</p>
+		</div>
+		<div id="g-ai0-4" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:6.515%;margin-top:-8.1px;left:90.136%;width:49px;">
+			<p class="g-pstyle0">2025</p>
+		</div>
+		<div id="g-ai0-5" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:13.2688%;margin-top:-10.1px;left:4.5236%;width:61px;">
+			<p class="g-pstyle1">China</p>
+		</div>
+		<div id="g-ai0-6" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:15.8455%;margin-top:-10.1px;left:4.4271%;width:111px;">
+			<p class="g-pstyle2">United States</p>
+		</div>
+		<div id="g-ai0-7" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:18.1767%;margin-top:-10.1px;left:4.4271%;width:129px;">
+			<p class="g-pstyle3">Other Countries</p>
+		</div>
+	</div>
+
+	<!-- Artboard: mobile -->
+	<div id="g-patents_2-mobile" class="g-artboard" style="max-width: 375px;max-height: 546px" data-aspect-ratio="0.687" data-min-width="0" data-max-width="1139">
+<div style="padding: 0 0 145.5467% 0;"></div>
+		<img id="g-patents_2-mobile-img" class="g-patents_2-mobile-img g-aiImg" alt="" src="patents_2-mobile.png"/>
+		<div id="g-ai1-1" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:5.2218%;margin-top:-8.5px;left:40.9299%;width:91px;">
+			<p class="g-pstyle0">Applications</p>
+		</div>
+		<div id="g-ai1-2" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:5.2216%;margin-top:-8.5px;left:23.919%;width:68px;">
+			<p class="g-pstyle0">Granted</p>
+		</div>
+		<div id="g-ai1-3" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:10.3346%;margin-top:-8.4px;left:70.1294%;width:56px;">
+			<p class="g-pstyle1">China</p>
+		</div>
+		<div id="g-ai1-4" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:10.3399%;margin-top:-6.4px;left:4.9083%;width:41px;">
+			<p class="g-pstyle2">2013</p>
+		</div>
+		<div id="g-ai1-5" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:13.277%;margin-top:-8.5px;left:70.2461%;width:92px;">
+			<p class="g-pstyle3">United States</p>
+		</div>
+		<div id="g-ai1-6" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:16.1976%;margin-top:-8.4px;left:70.269%;width:105px;">
+			<p class="g-pstyle4">Other Countries</p>
+		</div>
+		<div id="g-ai1-7" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:38.0057%;margin-top:-6.4px;left:4.6531%;width:41px;">
+			<p class="g-pstyle2">2017</p>
+		</div>
+		<div id="g-ai1-8" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:65.4883%;margin-top:-6.4px;left:4.7445%;width:41px;">
+			<p class="g-pstyle2">2021</p>
+		</div>
+		<div id="g-ai1-9" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:93.3373%;margin-top:-6.4px;left:4.8672%;width:41px;">
+			<p class="g-pstyle2">2025</p>
+		</div>
+	</div>
+
+</div>
+
+<script type="text/javascript">
+	(function (containerId, opts) {
+		var nameSpace = opts.namespace || '';
+		var containers = findContainers(containerId);
+		containers.forEach(resize);
+
+		function resize(container) {
+			var onResize = throttle(update, 200);
+			var waiting = !!window.IntersectionObserver;
+			var observer;
+			update();
+
+			document.addEventListener('DOMContentLoaded', update);
+			window.addEventListener('resize', onResize);
+
+			// NYT Scoop-specific code
+			if (opts.setup) {
+				opts.setup(container).on('cleanup', cleanup);
+			}
+
+			function cleanup() {
+				document.removeEventListener('DOMContentLoaded', update);
+				window.removeEventListener('resize', onResize);
+				if (observer) observer.disconnect();
+			}
+
+			function update() {
+				var artboards = selectChildren('.' + nameSpace + 'artboard[data-min-width]', container),
+						width = Math.round(container.getBoundingClientRect().width);
+
+				// Set artboard visibility based on container width
+				artboards.forEach(function(el) {
+					var minwidth = el.getAttribute('data-min-width'),
+							maxwidth = el.getAttribute('data-max-width');
+					if (+minwidth <= width && (+maxwidth >= width || maxwidth === null)) {
+						if (!waiting) {
+							selectChildren('.' + nameSpace + 'aiImg', el).forEach(updateImgSrc);
+							selectChildren('video', el).forEach(updateVideoSrc);
+						}
+						el.style.display = 'block';
+					} else {
+						el.style.display = 'none';
+					}
+				});
+
+				// Initialize lazy loading on first call
+				if (waiting && !observer) {
+					if (elementInView(container)) {
+						waiting = false;
+						update();
+					} else {
+						observer = new IntersectionObserver(onIntersectionChange, {rootMargin: "800px"});
+						observer.observe(container);
+					}
+				}
+			}
+
+			function onIntersectionChange(entries) {
+				// There may be multiple entries relating to the same container
+				// (captured at different times)
+				var isIntersecting = entries.reduce(function(memo, entry) {
+					return memo || entry.isIntersecting;
+				}, false);
+				if (isIntersecting) {
+					waiting = false;
+					// update: don't remove -- we need the observer to trigger an update
+					// when a hidden map becomes visible after user interaction
+					// (e.g. when an accordion menu or tab opens)
+					// observer.disconnect();
+					// observer = null;
+					update();
+				}
+			}
+		}
+
+		function findContainers(id) {
+			// support duplicate ids on the page
+			return selectChildren('.ai2html-responsive', document).filter(function(el) {
+				if (el.getAttribute('id') != id) return false;
+				if (el.classList.contains('ai2html-resizer')) return false;
+				el.classList.add('ai2html-resizer');
+				return true;
+			});
+		}
+
+		// Replace blank placeholder image with actual image
+		function updateImgSrc(img) {
+			var src = img.getAttribute('data-src');
+			if (src && img.getAttribute('src') != src) {
+				img.setAttribute('src', src);
+			}
+		}
+
+		function updateVideoSrc(el) {
+			var src = el.getAttribute('data-src');
+			if (src && !el.hasAttribute('src')) {
+				el.setAttribute('src', src);
+			}
+		}
+
+		function elementInView(el) {
+			var bounds = el.getBoundingClientRect();
+			return bounds.top < window.innerHeight && bounds.bottom > 0;
+		}
+
+		function selectChildren(selector, parent) {
+			return parent ? Array.prototype.slice.call(parent.querySelectorAll(selector)) : [];
+		}
+
+		// based on underscore.js
+		function throttle(func, wait) {
+			var timeout = null, previous = 0;
+			function run() {
+					previous = Date.now();
+					timeout = null;
+					func();
+			}
+			return function() {
+				var remaining = wait - (Date.now() - previous);
+				if (remaining <= 0 || remaining > wait) {
+					clearTimeout(timeout);
+					run();
+				} else if (!timeout) {
+					timeout = setTimeout(run, remaining);
+				}
+			};
+		}
+	})("g-patents_2-box", {namespace: "g-", setup: window.setupInteractive || window.getComponent});
+</script>
+<!-- End ai2html - 2025-04-12 20:38 -->
+
+
+
+
+          </div>
+          <div class="ai2html-graphic" id="graphic-2">
+            
+            
+
+<!-- Generated by ai2html v0.121.1 - 2025-04-12 20:47 -->
+<!-- ai file: patents_3.ai -->
+<style media="screen,print">
+	#g-patents_3-box ,
+	#g-patents_3-box .g-artboard {
+		margin:0 auto;
+	}
+	#g-patents_3-box p {
+		margin:0;
+	}
+	#g-patents_3-box .g-aiAbs {
+		position:absolute;
+	}
+	#g-patents_3-box .g-aiImg {
+		position:absolute;
+		top:0;
+		display:block;
+		width:100% !important;
+	}
+	#g-patents_3-box .g-aiSymbol {
+		position: absolute;
+		box-sizing: border-box;
+	}
+	#g-patents_3-box .g-aiPointText p { white-space: nowrap; }
+	#g-patents_3-full {
+		position:relative;
+		overflow:hidden;
+	}
+	#g-patents_3-full p {
+		font-family:arial,helvetica,sans-serif;
+		line-height:15px;
+		height:auto;
+		opacity:1;
+		letter-spacing:0em;
+		font-size:12px;
+		text-align:left;
+		color:rgb(94,94,92);
+		text-transform:none;
+		padding-bottom:0;
+		padding-top:0;
+		mix-blend-mode:normal;
+		font-style:normal;
+		font-weight:regular;
+		position:static;
+	}
+	#g-patents_3-full .g-pstyle0 {
+		height:15px;
+	}
+	#g-patents_3-full .g-pstyle1 {
+		font-weight:bold;
+		line-height:17px;
+		height:17px;
+		font-size:14px;
+		color:rgb(255,186,63);
+	}
+	#g-patents_3-full .g-pstyle2 {
+		font-weight:bold;
+		line-height:17px;
+		height:17px;
+		font-size:14px;
+		color:rgb(107,142,35);
+	}
+	#g-patents_3-full .g-pstyle3 {
+		font-weight:bold;
+		line-height:17px;
+		height:17px;
+		font-size:14px;
+		color:rgb(226,194,144);
+	}
+	#g-patents_3-mobile {
+		position:relative;
+		overflow:hidden;
+	}
+	#g-patents_3-mobile p {
+		font-family:arial,helvetica,sans-serif;
+		line-height:15px;
+		height:auto;
+		opacity:1;
+		letter-spacing:0em;
+		font-size:13px;
+		text-align:left;
+		color:rgb(154,154,152);
+		text-transform:none;
+		padding-bottom:0;
+		padding-top:0;
+		mix-blend-mode:normal;
+		font-style:normal;
+		font-weight:regular;
+		position:static;
+	}
+	#g-patents_3-mobile .g-pstyle0 {
+		height:15px;
+	}
+	#g-patents_3-mobile .g-pstyle1 {
+		font-weight:bold;
+		line-height:14px;
+		height:14px;
+		font-size:12px;
+		color:rgb(255,186,63);
+	}
+	#g-patents_3-mobile .g-pstyle2 {
+		font-weight:500;
+		line-height:12px;
+		height:12px;
+		font-size:10px;
+		color:rgb(94,94,92);
+	}
+	#g-patents_3-mobile .g-pstyle3 {
+		font-weight:bold;
+		line-height:14px;
+		height:14px;
+		font-size:11px;
+		color:rgb(107,142,35);
+	}
+	#g-patents_3-mobile .g-pstyle4 {
+		font-weight:bold;
+		line-height:14px;
+		height:14px;
+		font-size:12px;
+		color:rgb(226,194,144);
+	}
+
+</style>
+
+<div id="g-patents_3-box" class="ai2html ai2html-responsive">
+
+	<!-- Artboard: full -->
+	<div id="g-patents_3-full" class="g-artboard" style="width:1140px; height:815px;" data-aspect-ratio="1.399" data-min-width="1140">
+<div style=""></div>
+		<img id="g-patents_3-full-img" class="g-patents_3-full-img g-aiImg" alt="" src="patents_3-full.png"/>
+		<div id="g-ai0-1" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:6.7104%;margin-top:-8.7px;left:63.1337%;width:49px;">
+			<p class="g-pstyle0">2021</p>
+		</div>
+		<div id="g-ai0-2" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:6.7104%;margin-top:-8.7px;left:36.3771%;width:49px;">
+			<p class="g-pstyle0">2017</p>
+		</div>
+		<div id="g-ai0-3" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:6.7104%;margin-top:-8.7px;left:9.7434%;width:49px;">
+			<p class="g-pstyle0">2013</p>
+		</div>
+		<div id="g-ai0-4" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:6.8331%;margin-top:-8.7px;left:90.1359%;width:49px;">
+			<p class="g-pstyle0">2025</p>
+		</div>
+		<div id="g-ai0-5" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:13.6508%;margin-top:-10.3px;left:4.5236%;width:61px;">
+			<p class="g-pstyle1">China</p>
+		</div>
+		<div id="g-ai0-6" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:16.2275%;margin-top:-10.3px;left:4.4272%;width:111px;">
+			<p class="g-pstyle2">United States</p>
+		</div>
+		<div id="g-ai0-7" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:18.6815%;margin-top:-10.3px;left:4.4272%;width:129px;">
+			<p class="g-pstyle3">Other Countries</p>
+		</div>
+	</div>
+
+	<!-- Artboard: mobile -->
+	<div id="g-patents_3-mobile" class="g-artboard" style="max-width: 375px;max-height: 546px" data-aspect-ratio="0.687" data-min-width="0" data-max-width="1139">
+<div style="padding: 0 0 145.5467% 0;"></div>
+		<img id="g-patents_3-mobile-img" class="g-patents_3-mobile-img g-aiImg" alt="" src="patents_3-mobile.png"/>
+		<div id="g-ai1-1" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:5.405%;margin-top:-8.5px;left:40.925%;width:90px;">
+			<p class="g-pstyle0">Applications</p>
+		</div>
+		<div id="g-ai1-2" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:5.4048%;margin-top:-8.5px;left:24.1339%;width:68px;">
+			<p class="g-pstyle0">Granted</p>
+		</div>
+		<div id="g-ai1-3" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:10.5178%;margin-top:-8.4px;left:69.7471%;width:55px;">
+			<p class="g-pstyle1">China</p>
+		</div>
+		<div id="g-ai1-4" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:10.5231%;margin-top:-6.4px;left:5.369%;width:41px;">
+			<p class="g-pstyle2">2013</p>
+		</div>
+		<div id="g-ai1-5" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:13.4602%;margin-top:-8.5px;left:69.8622%;width:91px;">
+			<p class="g-pstyle3">United States</p>
+		</div>
+		<div id="g-ai1-6" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:16.3808%;margin-top:-8.4px;left:69.8849%;width:104px;">
+			<p class="g-pstyle4">Other Countries</p>
+		</div>
+		<div id="g-ai1-7" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:38.1889%;margin-top:-6.4px;left:5.1172%;width:41px;">
+			<p class="g-pstyle2">2017</p>
+		</div>
+		<div id="g-ai1-8" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:65.6715%;margin-top:-6.4px;left:5.2073%;width:41px;">
+			<p class="g-pstyle2">2021</p>
+		</div>
+		<div id="g-ai1-9" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:93.7037%;margin-top:-6.4px;left:5.3284%;width:41px;">
+			<p class="g-pstyle2">2025</p>
+		</div>
+	</div>
+
+</div>
+
+<script type="text/javascript">
+	(function (containerId, opts) {
+		var nameSpace = opts.namespace || '';
+		var containers = findContainers(containerId);
+		containers.forEach(resize);
+
+		function resize(container) {
+			var onResize = throttle(update, 200);
+			var waiting = !!window.IntersectionObserver;
+			var observer;
+			update();
+
+			document.addEventListener('DOMContentLoaded', update);
+			window.addEventListener('resize', onResize);
+
+			// NYT Scoop-specific code
+			if (opts.setup) {
+				opts.setup(container).on('cleanup', cleanup);
+			}
+
+			function cleanup() {
+				document.removeEventListener('DOMContentLoaded', update);
+				window.removeEventListener('resize', onResize);
+				if (observer) observer.disconnect();
+			}
+
+			function update() {
+				var artboards = selectChildren('.' + nameSpace + 'artboard[data-min-width]', container),
+						width = Math.round(container.getBoundingClientRect().width);
+
+				// Set artboard visibility based on container width
+				artboards.forEach(function(el) {
+					var minwidth = el.getAttribute('data-min-width'),
+							maxwidth = el.getAttribute('data-max-width');
+					if (+minwidth <= width && (+maxwidth >= width || maxwidth === null)) {
+						if (!waiting) {
+							selectChildren('.' + nameSpace + 'aiImg', el).forEach(updateImgSrc);
+							selectChildren('video', el).forEach(updateVideoSrc);
+						}
+						el.style.display = 'block';
+					} else {
+						el.style.display = 'none';
+					}
+				});
+
+				// Initialize lazy loading on first call
+				if (waiting && !observer) {
+					if (elementInView(container)) {
+						waiting = false;
+						update();
+					} else {
+						observer = new IntersectionObserver(onIntersectionChange, {rootMargin: "800px"});
+						observer.observe(container);
+					}
+				}
+			}
+
+			function onIntersectionChange(entries) {
+				// There may be multiple entries relating to the same container
+				// (captured at different times)
+				var isIntersecting = entries.reduce(function(memo, entry) {
+					return memo || entry.isIntersecting;
+				}, false);
+				if (isIntersecting) {
+					waiting = false;
+					// update: don't remove -- we need the observer to trigger an update
+					// when a hidden map becomes visible after user interaction
+					// (e.g. when an accordion menu or tab opens)
+					// observer.disconnect();
+					// observer = null;
+					update();
+				}
+			}
+		}
+
+		function findContainers(id) {
+			// support duplicate ids on the page
+			return selectChildren('.ai2html-responsive', document).filter(function(el) {
+				if (el.getAttribute('id') != id) return false;
+				if (el.classList.contains('ai2html-resizer')) return false;
+				el.classList.add('ai2html-resizer');
+				return true;
+			});
+		}
+
+		// Replace blank placeholder image with actual image
+		function updateImgSrc(img) {
+			var src = img.getAttribute('data-src');
+			if (src && img.getAttribute('src') != src) {
+				img.setAttribute('src', src);
+			}
+		}
+
+		function updateVideoSrc(el) {
+			var src = el.getAttribute('data-src');
+			if (src && !el.hasAttribute('src')) {
+				el.setAttribute('src', src);
+			}
+		}
+
+		function elementInView(el) {
+			var bounds = el.getBoundingClientRect();
+			return bounds.top < window.innerHeight && bounds.bottom > 0;
+		}
+
+		function selectChildren(selector, parent) {
+			return parent ? Array.prototype.slice.call(parent.querySelectorAll(selector)) : [];
+		}
+
+		// based on underscore.js
+		function throttle(func, wait) {
+			var timeout = null, previous = 0;
+			function run() {
+					previous = Date.now();
+					timeout = null;
+					func();
+			}
+			return function() {
+				var remaining = wait - (Date.now() - previous);
+				if (remaining <= 0 || remaining > wait) {
+					clearTimeout(timeout);
+					run();
+				} else if (!timeout) {
+					timeout = setTimeout(run, remaining);
+				}
+			};
+		}
+	})("g-patents_3-box", {namespace: "g-", setup: window.setupInteractive || window.getComponent});
+</script>
+<!-- End ai2html - 2025-04-12 20:47 -->
+
+
+            
+            
+            
+            
+            
+            
+            </div>
+          <div class="ai2html-graphic" id="graphic-3">
+
+
+
+
+<!-- Generated by ai2html v0.121.1 - 2025-04-13 00:48 -->
+<!-- ai file: patents_4.ai -->
+<style media="screen,print">
+	#g-patents_4-box ,
+	#g-patents_4-box .g-artboard {
+		margin:0 auto;
+	}
+	#g-patents_4-box p {
+		margin:0;
+	}
+	#g-patents_4-box .g-aiAbs {
+		position:absolute;
+	}
+	#g-patents_4-box .g-aiImg {
+		position:absolute;
+		top:0;
+		display:block;
+		width:100% !important;
+	}
+	#g-patents_4-box .g-aiSymbol {
+		position: absolute;
+		box-sizing: border-box;
+	}
+	#g-patents_4-box .g-aiPointText p { white-space: nowrap; }
+	#g-patents_4-full {
+		position:relative;
+		overflow:hidden;
+	}
+	#g-patents_4-full p {
+		font-family:arial,helvetica,sans-serif;
+		line-height:17px;
+		height:auto;
+		opacity:1;
+		letter-spacing:0em;
+		font-size:14px;
+		text-align:left;
+		color:rgb(0,0,0);
+		text-transform:none;
+		padding-bottom:0;
+		padding-top:0;
+		mix-blend-mode:normal;
+		font-style:normal;
+		font-weight:regular;
+		position:static;
+	}
+	#g-patents_4-full .g-pstyle0 {
+		line-height:14px;
+		height:14px;
+		font-size:12px;
+		color:rgb(94,94,92);
+	}
+	#g-patents_4-full .g-pstyle1 {
+		height:17px;
+		color:rgb(154,154,152);
+	}
+	#g-patents_4-full .g-pstyle2 {
+		height:17px;
+	}
+	#g-patents_4-full .g-cstyle0 {
+		font-size:12px;
+	}
+	#g-patents_4-mobile {
+		position:relative;
+		overflow:hidden;
+	}
+	#g-patents_4-mobile p {
+		font-family:arial,helvetica,sans-serif;
+		line-height:12px;
+		height:auto;
+		opacity:1;
+		letter-spacing:0em;
+		font-size:10px;
+		text-align:left;
+		color:rgb(0,0,0);
+		text-transform:none;
+		padding-bottom:0;
+		padding-top:0;
+		mix-blend-mode:normal;
+		font-style:normal;
+		font-weight:regular;
+		position:static;
+	}
+	#g-patents_4-mobile .g-pstyle0 {
+		line-height:15px;
+		height:15px;
+		font-size:13px;
+		color:rgb(154,154,152);
+	}
+	#g-patents_4-mobile .g-pstyle1 {
+		height:12px;
+	}
+	#g-patents_4-mobile .g-pstyle2 {
+		font-weight:500;
+		height:12px;
+		color:rgb(94,94,92);
+	}
+	#g-patents_4-mobile .g-pstyle3 {
+		font-weight:bold;
+		line-height:14px;
+		height:14px;
+		font-size:12px;
+		color:rgb(255,186,63);
+	}
+	#g-patents_4-mobile .g-pstyle4 {
+		font-weight:bold;
+		line-height:14px;
+		height:14px;
+		font-size:11px;
+		color:rgb(107,142,35);
+	}
+	#g-patents_4-mobile .g-pstyle5 {
+		font-weight:bold;
+		line-height:14px;
+		height:14px;
+		font-size:12px;
+		color:rgb(226,194,144);
+	}
+
+</style>
+
+<div id="g-patents_4-box" class="ai2html ai2html-responsive">
+
+	<!-- Artboard: full -->
+	<div id="g-patents_4-full" class="g-artboard" style="width:1140px; height:815px;" data-aspect-ratio="1.399" data-min-width="1140">
+<div style=""></div>
+		<img id="g-patents_4-full-img" class="g-patents_4-full-img g-aiImg" alt="" src="patents_4-full.png"/>
+		<div id="g-ai0-1" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:6.3923%;margin-top:-8.1px;left:63.1337%;width:49px;">
+			<p class="g-pstyle0">2021</p>
+		</div>
+		<div id="g-ai0-2" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:6.515%;margin-top:-8.1px;left:36.3771%;width:49px;">
+			<p class="g-pstyle0">2017</p>
+		</div>
+		<div id="g-ai0-3" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:6.515%;margin-top:-8.1px;left:9.7434%;width:49px;">
+			<p class="g-pstyle0">2013</p>
+		</div>
+		<div id="g-ai0-4" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:6.515%;margin-top:-8.1px;left:90.136%;width:49px;">
+			<p class="g-pstyle0">2025</p>
+		</div>
+		<div id="g-ai0-5" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:29.5436%;margin-top:-9.8px;left:8.3466%;width:98px;">
+			<p class="g-pstyle1">Applications</p>
+		</div>
+		<div id="g-ai0-6" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:40.3901%;margin-top:-18.2px;left:14.9242%;width:229px;">
+			<p class="g-pstyle2">Dow Agrosciences applies for the</p>
+			<p class="g-pstyle2">first CRISPR crop patent<span class="g-cstyle0">  </span></p>
+		</div>
+		<div id="g-ai0-7" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:76.6601%;margin-top:-9.8px;left:8.4136%;width:73px;">
+			<p class="g-pstyle1">Granted</p>
+		</div>
+		<div id="g-ai0-8" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:78.0589%;margin-top:-18.2px;left:22.8202%;width:209px;">
+			<p class="g-pstyle2">China grants the first patents, </p>
+			<p class="g-pstyle2">for modifying rice</p>
+		</div>
+	</div>
+
+	<!-- Artboard: mobile -->
+	<div id="g-patents_4-mobile" class="g-artboard" style="max-width: 375px;max-height: 546px" data-aspect-ratio="0.687" data-min-width="0" data-max-width="1139">
+<div style="padding: 0 0 145.5467% 0;"></div>
+		<img id="g-patents_4-mobile-img" class="g-patents_4-mobile-img g-aiImg" alt="" src="patents_4-mobile.png"/>
+		<div id="g-ai1-1" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:5.2218%;margin-top:-8.5px;left:40.9297%;width:91px;">
+			<p class="g-pstyle0">Applications</p>
+		</div>
+		<div id="g-ai1-2" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:5.2216%;margin-top:-8.5px;left:23.9188%;width:68px;">
+			<p class="g-pstyle0">Granted</p>
+		</div>
+		<div id="g-ai1-3" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:10.4277%;margin-top:-12.9px;left:50.7659%;width:170px;">
+			<p class="g-pstyle1">Dow Agrosciences applies for the</p>
+			<p class="g-pstyle1">first CRISPR crop patent  </p>
+		</div>
+		<div id="g-ai1-4" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:10.3399%;margin-top:-6.4px;left:4.9081%;width:41px;">
+			<p class="g-pstyle2">2013</p>
+		</div>
+		<div id="g-ai1-5" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:19.3122%;margin-top:-8.4px;left:70.1292%;width:56px;">
+			<p class="g-pstyle3">China</p>
+		</div>
+		<div id="g-ai1-6" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:22.2546%;margin-top:-8.5px;left:70.2458%;width:92px;">
+			<p class="g-pstyle4">United States</p>
+		</div>
+		<div id="g-ai1-7" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:23.9858%;margin-top:-12.9px;left:8.4805%;width:98px;">
+			<p class="g-pstyle1">China grants the </p>
+			<p class="g-pstyle1">first crop patent</p>
+		</div>
+		<div id="g-ai1-8" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:25.1752%;margin-top:-8.4px;left:70.2688%;width:105px;">
+			<p class="g-pstyle5">Other Countries</p>
+		</div>
+		<div id="g-ai1-9" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:38.0057%;margin-top:-6.4px;left:4.6531%;width:41px;">
+			<p class="g-pstyle2">2017</p>
+		</div>
+		<div id="g-ai1-10" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:65.4883%;margin-top:-6.4px;left:4.7443%;width:41px;">
+			<p class="g-pstyle2">2021</p>
+		</div>
+		<div id="g-ai1-11" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:93.3373%;margin-top:-6.4px;left:4.8669%;width:41px;">
+			<p class="g-pstyle2">2025</p>
+		</div>
+	</div>
+
+</div>
+
+<script type="text/javascript">
+	(function (containerId, opts) {
+		var nameSpace = opts.namespace || '';
+		var containers = findContainers(containerId);
+		containers.forEach(resize);
+
+		function resize(container) {
+			var onResize = throttle(update, 200);
+			var waiting = !!window.IntersectionObserver;
+			var observer;
+			update();
+
+			document.addEventListener('DOMContentLoaded', update);
+			window.addEventListener('resize', onResize);
+
+			// NYT Scoop-specific code
+			if (opts.setup) {
+				opts.setup(container).on('cleanup', cleanup);
+			}
+
+			function cleanup() {
+				document.removeEventListener('DOMContentLoaded', update);
+				window.removeEventListener('resize', onResize);
+				if (observer) observer.disconnect();
+			}
+
+			function update() {
+				var artboards = selectChildren('.' + nameSpace + 'artboard[data-min-width]', container),
+						width = Math.round(container.getBoundingClientRect().width);
+
+				// Set artboard visibility based on container width
+				artboards.forEach(function(el) {
+					var minwidth = el.getAttribute('data-min-width'),
+							maxwidth = el.getAttribute('data-max-width');
+					if (+minwidth <= width && (+maxwidth >= width || maxwidth === null)) {
+						if (!waiting) {
+							selectChildren('.' + nameSpace + 'aiImg', el).forEach(updateImgSrc);
+							selectChildren('video', el).forEach(updateVideoSrc);
+						}
+						el.style.display = 'block';
+					} else {
+						el.style.display = 'none';
+					}
+				});
+
+				// Initialize lazy loading on first call
+				if (waiting && !observer) {
+					if (elementInView(container)) {
+						waiting = false;
+						update();
+					} else {
+						observer = new IntersectionObserver(onIntersectionChange, {rootMargin: "800px"});
+						observer.observe(container);
+					}
+				}
+			}
+
+			function onIntersectionChange(entries) {
+				// There may be multiple entries relating to the same container
+				// (captured at different times)
+				var isIntersecting = entries.reduce(function(memo, entry) {
+					return memo || entry.isIntersecting;
+				}, false);
+				if (isIntersecting) {
+					waiting = false;
+					// update: don't remove -- we need the observer to trigger an update
+					// when a hidden map becomes visible after user interaction
+					// (e.g. when an accordion menu or tab opens)
+					// observer.disconnect();
+					// observer = null;
+					update();
+				}
+			}
+		}
+
+		function findContainers(id) {
+			// support duplicate ids on the page
+			return selectChildren('.ai2html-responsive', document).filter(function(el) {
+				if (el.getAttribute('id') != id) return false;
+				if (el.classList.contains('ai2html-resizer')) return false;
+				el.classList.add('ai2html-resizer');
+				return true;
+			});
+		}
+
+		// Replace blank placeholder image with actual image
+		function updateImgSrc(img) {
+			var src = img.getAttribute('data-src');
+			if (src && img.getAttribute('src') != src) {
+				img.setAttribute('src', src);
+			}
+		}
+
+		function updateVideoSrc(el) {
+			var src = el.getAttribute('data-src');
+			if (src && !el.hasAttribute('src')) {
+				el.setAttribute('src', src);
+			}
+		}
+
+		function elementInView(el) {
+			var bounds = el.getBoundingClientRect();
+			return bounds.top < window.innerHeight && bounds.bottom > 0;
+		}
+
+		function selectChildren(selector, parent) {
+			return parent ? Array.prototype.slice.call(parent.querySelectorAll(selector)) : [];
+		}
+
+		// based on underscore.js
+		function throttle(func, wait) {
+			var timeout = null, previous = 0;
+			function run() {
+					previous = Date.now();
+					timeout = null;
+					func();
+			}
+			return function() {
+				var remaining = wait - (Date.now() - previous);
+				if (remaining <= 0 || remaining > wait) {
+					clearTimeout(timeout);
+					run();
+				} else if (!timeout) {
+					timeout = setTimeout(run, remaining);
+				}
+			};
+		}
+	})("g-patents_4-box", {namespace: "g-", setup: window.setupInteractive || window.getComponent});
+</script>
+<!-- End ai2html - 2025-04-13 00:48 -->
+
+
+
+
+
+          </div>
+          <div class="ai2html-graphic" id="graphic-4">
+
+
+
+
+<!-- Generated by ai2html v0.121.1 - 2025-04-12 22:11 -->
+<!-- ai file: patents_5.ai -->
+<style media="screen,print">
+	#g-patents_5-box ,
+	#g-patents_5-box .g-artboard {
+		margin:0 auto;
+	}
+	#g-patents_5-box p {
+		margin:0;
+	}
+	#g-patents_5-box .g-aiAbs {
+		position:absolute;
+	}
+	#g-patents_5-box .g-aiImg {
+		position:absolute;
+		top:0;
+		display:block;
+		width:100% !important;
+	}
+	#g-patents_5-box .g-aiSymbol {
+		position: absolute;
+		box-sizing: border-box;
+	}
+	#g-patents_5-box .g-aiPointText p { white-space: nowrap; }
+	#g-patents_5-full {
+		position:relative;
+		overflow:hidden;
+	}
+	#g-patents_5-full p {
+		font-family:arial,helvetica,sans-serif;
+		line-height:17px;
+		height:auto;
+		opacity:1;
+		letter-spacing:0em;
+		font-size:14px;
+		text-align:left;
+		color:rgb(0,0,0);
+		text-transform:none;
+		padding-bottom:0;
+		padding-top:0;
+		mix-blend-mode:normal;
+		font-style:normal;
+		font-weight:regular;
+		position:static;
+	}
+	#g-patents_5-full .g-pstyle0 {
+		line-height:14px;
+		height:14px;
+		font-size:12px;
+		color:rgb(94,94,92);
+	}
+	#g-patents_5-full .g-pstyle1 {
+		font-weight:500;
+		line-height:14px;
+		height:14px;
+		font-size:12px;
+	}
+	#g-patents_5-full .g-pstyle2 {
+		line-height:14px;
+		height:14px;
+		font-size:12px;
+	}
+	#g-patents_5-full .g-pstyle3 {
+		height:17px;
+	}
+	#g-patents_5-full .g-pstyle4 {
+		height:17px;
+		color:rgb(154,154,152);
+	}
+	#g-patents_5-mobile {
+		position:relative;
+		overflow:hidden;
+	}
+	#g-patents_5-mobile p {
+		font-family:arial,helvetica,sans-serif;
+		line-height:12px;
+		height:auto;
+		opacity:1;
+		letter-spacing:0em;
+		font-size:10px;
+		text-align:left;
+		color:rgb(0,0,0);
+		text-transform:none;
+		padding-bottom:0;
+		padding-top:0;
+		mix-blend-mode:normal;
+		font-style:normal;
+		font-weight:regular;
+		position:static;
+	}
+	#g-patents_5-mobile .g-pstyle0 {
+		line-height:15px;
+		height:15px;
+		font-size:13px;
+		color:rgb(154,154,152);
+	}
+	#g-patents_5-mobile .g-pstyle1 {
+		font-weight:500;
+		height:12px;
+		color:rgb(94,94,92);
+	}
+	#g-patents_5-mobile .g-pstyle2 {
+		line-height:11px;
+		height:11px;
+		font-size:9px;
+		color:rgb(51,51,51);
+	}
+	#g-patents_5-mobile .g-pstyle3 {
+		height:12px;
+	}
+
+</style>
+
+<div id="g-patents_5-box" class="ai2html ai2html-responsive">
+
+	<!-- Artboard: full -->
+	<div id="g-patents_5-full" class="g-artboard" style="width:1140px; height:815px;" data-aspect-ratio="1.399" data-min-width="1140">
+<div style=""></div>
+		<img id="g-patents_5-full-img" class="g-patents_5-full-img g-aiImg" alt="" src="patents_5-full.png"/>
+		<div id="g-ai0-1" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:6.3923%;margin-top:-8.1px;left:63.1337%;width:49px;">
+			<p class="g-pstyle0">2021</p>
+		</div>
+		<div id="g-ai0-2" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:6.515%;margin-top:-8.1px;left:36.3771%;width:49px;">
+			<p class="g-pstyle0">2017</p>
+		</div>
+		<div id="g-ai0-3" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:6.515%;margin-top:-8.1px;left:9.7434%;width:49px;">
+			<p class="g-pstyle0">2013</p>
+		</div>
+		<div id="g-ai0-4" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:6.515%;margin-top:-8.1px;left:90.1359%;width:49px;">
+			<p class="g-pstyle0">2025</p>
+		</div>
+		<div id="g-ai0-5" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:17.242%;margin-top:-7.5px;left:46.1539%;width:47px;">
+			<p class="g-pstyle1">2019</p>
+		</div>
+		<div id="g-ai0-6" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:17.4874%;margin-top:-7.5px;left:26.4863%;width:47px;">
+			<p class="g-pstyle1">2016</p>
+		</div>
+		<div id="g-ai0-7" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:25.7788%;margin-top:-8.1px;left:41.6495%;width:29px;">
+			<p class="g-pstyle2">  </p>
+		</div>
+		<div id="g-ai0-8" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:28.292%;margin-top:-26.6px;left:30.2555%;width:193px;">
+			<p class="g-pstyle3">Chinese applications rise to</p>
+			<p class="g-pstyle3">over five times the</p>
+			<p class="g-pstyle3">number from the U.S.</p>
+		</div>
+		<div id="g-ai0-9" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:29.5436%;margin-top:-9.8px;left:8.3466%;width:98px;">
+			<p class="g-pstyle4">Applications</p>
+		</div>
+		<div id="g-ai0-10" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:76.6601%;margin-top:-9.8px;left:8.4099%;width:73px;">
+			<p class="g-pstyle4">Granted</p>
+		</div>
+	</div>
+
+	<!-- Artboard: mobile -->
+	<div id="g-patents_5-mobile" class="g-artboard" style="max-width: 375px;max-height: 546px" data-aspect-ratio="0.687" data-min-width="0" data-max-width="1139">
+<div style="padding: 0 0 145.5467% 0;"></div>
+		<img id="g-patents_5-mobile-img" class="g-patents_5-mobile-img g-aiImg" alt="" src="patents_5-mobile.png"/>
+		<div id="g-ai1-1" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:5.2218%;margin-top:-8.5px;left:40.9297%;width:91px;">
+			<p class="g-pstyle0">Applications</p>
+		</div>
+		<div id="g-ai1-2" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:5.2216%;margin-top:-8.5px;left:23.9188%;width:68px;">
+			<p class="g-pstyle0">Granted</p>
+		</div>
+		<div id="g-ai1-3" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:10.3399%;margin-top:-6.4px;left:4.9081%;width:41px;">
+			<p class="g-pstyle1">2013</p>
+		</div>
+		<div id="g-ai1-4" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:27.9083%;margin-top:-6.3px;left:64.231%;width:42px;">
+			<p class="g-pstyle2">2016</p>
+		</div>
+		<div id="g-ai1-5" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:36.9942%;margin-top:-12.9px;left:67.4849%;width:117px;">
+			<p class="g-pstyle3">Chinese applications </p>
+			<p class="g-pstyle3">far outnumber U.S.</p>
+		</div>
+		<div id="g-ai1-6" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:38.0057%;margin-top:-6.4px;left:4.6531%;width:41px;">
+			<p class="g-pstyle1">2017</p>
+		</div>
+		<div id="g-ai1-7" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:48.4286%;margin-top:-6.3px;left:64.2784%;width:42px;">
+			<p class="g-pstyle2">2019</p>
+		</div>
+		<div id="g-ai1-8" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:65.4883%;margin-top:-6.4px;left:4.7443%;width:41px;">
+			<p class="g-pstyle1">2021</p>
+		</div>
+		<div id="g-ai1-9" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:93.3373%;margin-top:-6.4px;left:4.8669%;width:41px;">
+			<p class="g-pstyle1">2025</p>
+		</div>
+	</div>
+
+</div>
+
+<script type="text/javascript">
+	(function (containerId, opts) {
+		var nameSpace = opts.namespace || '';
+		var containers = findContainers(containerId);
+		containers.forEach(resize);
+
+		function resize(container) {
+			var onResize = throttle(update, 200);
+			var waiting = !!window.IntersectionObserver;
+			var observer;
+			update();
+
+			document.addEventListener('DOMContentLoaded', update);
+			window.addEventListener('resize', onResize);
+
+			// NYT Scoop-specific code
+			if (opts.setup) {
+				opts.setup(container).on('cleanup', cleanup);
+			}
+
+			function cleanup() {
+				document.removeEventListener('DOMContentLoaded', update);
+				window.removeEventListener('resize', onResize);
+				if (observer) observer.disconnect();
+			}
+
+			function update() {
+				var artboards = selectChildren('.' + nameSpace + 'artboard[data-min-width]', container),
+						width = Math.round(container.getBoundingClientRect().width);
+
+				// Set artboard visibility based on container width
+				artboards.forEach(function(el) {
+					var minwidth = el.getAttribute('data-min-width'),
+							maxwidth = el.getAttribute('data-max-width');
+					if (+minwidth <= width && (+maxwidth >= width || maxwidth === null)) {
+						if (!waiting) {
+							selectChildren('.' + nameSpace + 'aiImg', el).forEach(updateImgSrc);
+							selectChildren('video', el).forEach(updateVideoSrc);
+						}
+						el.style.display = 'block';
+					} else {
+						el.style.display = 'none';
+					}
+				});
+
+				// Initialize lazy loading on first call
+				if (waiting && !observer) {
+					if (elementInView(container)) {
+						waiting = false;
+						update();
+					} else {
+						observer = new IntersectionObserver(onIntersectionChange, {rootMargin: "800px"});
+						observer.observe(container);
+					}
+				}
+			}
+
+			function onIntersectionChange(entries) {
+				// There may be multiple entries relating to the same container
+				// (captured at different times)
+				var isIntersecting = entries.reduce(function(memo, entry) {
+					return memo || entry.isIntersecting;
+				}, false);
+				if (isIntersecting) {
+					waiting = false;
+					// update: don't remove -- we need the observer to trigger an update
+					// when a hidden map becomes visible after user interaction
+					// (e.g. when an accordion menu or tab opens)
+					// observer.disconnect();
+					// observer = null;
+					update();
+				}
+			}
+		}
+
+		function findContainers(id) {
+			// support duplicate ids on the page
+			return selectChildren('.ai2html-responsive', document).filter(function(el) {
+				if (el.getAttribute('id') != id) return false;
+				if (el.classList.contains('ai2html-resizer')) return false;
+				el.classList.add('ai2html-resizer');
+				return true;
+			});
+		}
+
+		// Replace blank placeholder image with actual image
+		function updateImgSrc(img) {
+			var src = img.getAttribute('data-src');
+			if (src && img.getAttribute('src') != src) {
+				img.setAttribute('src', src);
+			}
+		}
+
+		function updateVideoSrc(el) {
+			var src = el.getAttribute('data-src');
+			if (src && !el.hasAttribute('src')) {
+				el.setAttribute('src', src);
+			}
+		}
+
+		function elementInView(el) {
+			var bounds = el.getBoundingClientRect();
+			return bounds.top < window.innerHeight && bounds.bottom > 0;
+		}
+
+		function selectChildren(selector, parent) {
+			return parent ? Array.prototype.slice.call(parent.querySelectorAll(selector)) : [];
+		}
+
+		// based on underscore.js
+		function throttle(func, wait) {
+			var timeout = null, previous = 0;
+			function run() {
+					previous = Date.now();
+					timeout = null;
+					func();
+			}
+			return function() {
+				var remaining = wait - (Date.now() - previous);
+				if (remaining <= 0 || remaining > wait) {
+					clearTimeout(timeout);
+					run();
+				} else if (!timeout) {
+					timeout = setTimeout(run, remaining);
+				}
+			};
+		}
+	})("g-patents_5-box", {namespace: "g-", setup: window.setupInteractive || window.getComponent});
+</script>
+<!-- End ai2html - 2025-04-12 22:11 -->
+
+
+
+
+
+
+
+
+
+          </div>
+          <div class="ai2html-graphic" id="graphic-5">
+
+
+<!-- Generated by ai2html v0.121.1 - 2025-04-12 22:38 -->
+<!-- ai file: patents_6.ai -->
+<style media="screen,print">
+	#g-patents_6-box ,
+	#g-patents_6-box .g-artboard {
+		margin:0 auto;
+	}
+	#g-patents_6-box p {
+		margin:0;
+	}
+	#g-patents_6-box .g-aiAbs {
+		position:absolute;
+	}
+	#g-patents_6-box .g-aiImg {
+		position:absolute;
+		top:0;
+		display:block;
+		width:100% !important;
+	}
+	#g-patents_6-box .g-aiSymbol {
+		position: absolute;
+		box-sizing: border-box;
+	}
+	#g-patents_6-box .g-aiPointText p { white-space: nowrap; }
+	#g-patents_6-full {
+		position:relative;
+		overflow:hidden;
+	}
+	#g-patents_6-full p {
+		font-family:arial,helvetica,sans-serif;
+		line-height:17px;
+		height:auto;
+		opacity:1;
+		letter-spacing:0em;
+		font-size:14px;
+		text-align:left;
+		color:rgb(0,0,0);
+		text-transform:none;
+		padding-bottom:0;
+		padding-top:0;
+		mix-blend-mode:normal;
+		font-style:normal;
+		font-weight:regular;
+		position:static;
+	}
+	#g-patents_6-full .g-pstyle0 {
+		line-height:14px;
+		height:14px;
+		font-size:12px;
+		color:rgb(94,94,92);
+	}
+	#g-patents_6-full .g-pstyle1 {
+		font-weight:bold;
+		height:17px;
+		color:rgb(255,186,63);
+	}
+	#g-patents_6-full .g-pstyle2 {
+		font-weight:bold;
+		height:17px;
+		color:rgb(107,142,35);
+	}
+	#g-patents_6-full .g-pstyle3 {
+		font-weight:bold;
+		height:17px;
+		color:rgb(226,194,144);
+	}
+	#g-patents_6-full .g-pstyle4 {
+		height:17px;
+		color:rgb(154,154,152);
+	}
+	#g-patents_6-full .g-pstyle5 {
+		height:17px;
+	}
+	#g-patents_6-mobile {
+		position:relative;
+		overflow:hidden;
+	}
+	#g-patents_6-mobile p {
+		font-family:arial,helvetica,sans-serif;
+		line-height:12px;
+		height:auto;
+		opacity:1;
+		letter-spacing:0em;
+		font-size:10px;
+		text-align:left;
+		color:rgb(0,0,0);
+		text-transform:none;
+		padding-bottom:0;
+		padding-top:0;
+		mix-blend-mode:normal;
+		font-style:normal;
+		font-weight:regular;
+		position:static;
+	}
+	#g-patents_6-mobile .g-pstyle0 {
+		line-height:15px;
+		height:15px;
+		font-size:13px;
+		color:rgb(154,154,152);
+	}
+	#g-patents_6-mobile .g-pstyle1 {
+		font-weight:500;
+		height:12px;
+		color:rgb(94,94,92);
+	}
+	#g-patents_6-mobile .g-pstyle2 {
+		font-weight:bold;
+		line-height:14px;
+		height:14px;
+		font-size:12px;
+		color:rgb(255,186,63);
+	}
+	#g-patents_6-mobile .g-pstyle3 {
+		font-weight:bold;
+		line-height:14px;
+		height:14px;
+		font-size:11px;
+		color:rgb(107,142,35);
+	}
+	#g-patents_6-mobile .g-pstyle4 {
+		font-weight:bold;
+		line-height:14px;
+		height:14px;
+		font-size:12px;
+		color:rgb(226,194,144);
+	}
+	#g-patents_6-mobile .g-pstyle5 {
+		height:12px;
+	}
+
+</style>
+
+<div id="g-patents_6-box" class="ai2html ai2html-responsive">
+
+	<!-- Artboard: full -->
+	<div id="g-patents_6-full" class="g-artboard" style="width:1140px; height:815px;" data-aspect-ratio="1.399" data-min-width="1140">
+<div style=""></div>
+		<img id="g-patents_6-full-img" class="g-patents_6-full-img g-aiImg" alt="" src="patents_6-full.png"/>
+		<div id="g-ai0-1" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:6.3923%;margin-top:-8.1px;left:63.1337%;width:49px;">
+			<p class="g-pstyle0">2021</p>
+		</div>
+		<div id="g-ai0-2" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:6.515%;margin-top:-8.1px;left:36.3771%;width:49px;">
+			<p class="g-pstyle0">2017</p>
+		</div>
+		<div id="g-ai0-3" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:6.515%;margin-top:-8.1px;left:9.7434%;width:49px;">
+			<p class="g-pstyle0">2013</p>
+		</div>
+		<div id="g-ai0-4" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:6.515%;margin-top:-8.1px;left:90.136%;width:49px;">
+			<p class="g-pstyle0">2025</p>
+		</div>
+		<div id="g-ai0-5" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:13.2688%;margin-top:-10.1px;left:4.5236%;width:61px;">
+			<p class="g-pstyle1">China</p>
+		</div>
+		<div id="g-ai0-6" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:15.8455%;margin-top:-10.1px;left:4.4271%;width:111px;">
+			<p class="g-pstyle2">United States</p>
+		</div>
+		<div id="g-ai0-7" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:18.1768%;margin-top:-10.1px;left:4.4271%;width:129px;">
+			<p class="g-pstyle3">Other Countries</p>
+		</div>
+		<div id="g-ai0-8" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:29.5435%;margin-top:-9.8px;left:8.3466%;width:98px;">
+			<p class="g-pstyle4">Applications</p>
+		</div>
+		<div id="g-ai0-9" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:71.4821%;margin-top:-26.6px;left:71.7364%;width:168px;">
+			<p class="g-pstyle5">The share of granted </p>
+			<p class="g-pstyle5">Chinese patents grows </p>
+			<p class="g-pstyle5">to over 40%</p>
+		</div>
+		<div id="g-ai0-10" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:76.6601%;margin-top:-9.8px;left:8.4099%;width:73px;">
+			<p class="g-pstyle4">Granted</p>
+		</div>
+	</div>
+
+	<!-- Artboard: mobile -->
+	<div id="g-patents_6-mobile" class="g-artboard" style="max-width: 375px;max-height: 546px" data-aspect-ratio="0.687" data-min-width="0" data-max-width="1139">
+<div style="padding: 0 0 145.5467% 0;"></div>
+		<img id="g-patents_6-mobile-img" class="g-patents_6-mobile-img g-aiImg" alt="" src="patents_6-mobile.png"/>
+		<div id="g-ai1-1" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:5.2218%;margin-top:-8.5px;left:40.9297%;width:91px;">
+			<p class="g-pstyle0">Applications</p>
+		</div>
+		<div id="g-ai1-2" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:5.2216%;margin-top:-8.5px;left:23.9188%;width:68px;">
+			<p class="g-pstyle0">Granted</p>
+		</div>
+		<div id="g-ai1-3" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:10.3399%;margin-top:-6.4px;left:4.9081%;width:41px;">
+			<p class="g-pstyle1">2013</p>
+		</div>
+		<div id="g-ai1-4" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:19.3122%;margin-top:-8.4px;left:70.1292%;width:56px;">
+			<p class="g-pstyle2">China</p>
+		</div>
+		<div id="g-ai1-5" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:22.2546%;margin-top:-8.5px;left:70.2458%;width:92px;">
+			<p class="g-pstyle3">United States</p>
+		</div>
+		<div id="g-ai1-6" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:25.1752%;margin-top:-8.4px;left:70.2688%;width:105px;">
+			<p class="g-pstyle4">Other Countries</p>
+		</div>
+		<div id="g-ai1-7" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:38.0057%;margin-top:-6.4px;left:4.6531%;width:41px;">
+			<p class="g-pstyle1">2017</p>
+		</div>
+		<div id="g-ai1-8" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:65.4883%;margin-top:-6.4px;left:4.7443%;width:41px;">
+			<p class="g-pstyle1">2021</p>
+		</div>
+		<div id="g-ai1-9" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:75.2866%;margin-top:-12.9px;left:9.2216%;width:117px;">
+			<p class="g-pstyle5">Over 40% of Chinese</p>
+			<p class="g-pstyle5">patents are granted</p>
+		</div>
+		<div id="g-ai1-10" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:93.3373%;margin-top:-6.4px;left:4.8669%;width:41px;">
+			<p class="g-pstyle1">2025</p>
+		</div>
+	</div>
+
+</div>
+
+<script type="text/javascript">
+	(function (containerId, opts) {
+		var nameSpace = opts.namespace || '';
+		var containers = findContainers(containerId);
+		containers.forEach(resize);
+
+		function resize(container) {
+			var onResize = throttle(update, 200);
+			var waiting = !!window.IntersectionObserver;
+			var observer;
+			update();
+
+			document.addEventListener('DOMContentLoaded', update);
+			window.addEventListener('resize', onResize);
+
+			// NYT Scoop-specific code
+			if (opts.setup) {
+				opts.setup(container).on('cleanup', cleanup);
+			}
+
+			function cleanup() {
+				document.removeEventListener('DOMContentLoaded', update);
+				window.removeEventListener('resize', onResize);
+				if (observer) observer.disconnect();
+			}
+
+			function update() {
+				var artboards = selectChildren('.' + nameSpace + 'artboard[data-min-width]', container),
+						width = Math.round(container.getBoundingClientRect().width);
+
+				// Set artboard visibility based on container width
+				artboards.forEach(function(el) {
+					var minwidth = el.getAttribute('data-min-width'),
+							maxwidth = el.getAttribute('data-max-width');
+					if (+minwidth <= width && (+maxwidth >= width || maxwidth === null)) {
+						if (!waiting) {
+							selectChildren('.' + nameSpace + 'aiImg', el).forEach(updateImgSrc);
+							selectChildren('video', el).forEach(updateVideoSrc);
+						}
+						el.style.display = 'block';
+					} else {
+						el.style.display = 'none';
+					}
+				});
+
+				// Initialize lazy loading on first call
+				if (waiting && !observer) {
+					if (elementInView(container)) {
+						waiting = false;
+						update();
+					} else {
+						observer = new IntersectionObserver(onIntersectionChange, {rootMargin: "800px"});
+						observer.observe(container);
+					}
+				}
+			}
+
+			function onIntersectionChange(entries) {
+				// There may be multiple entries relating to the same container
+				// (captured at different times)
+				var isIntersecting = entries.reduce(function(memo, entry) {
+					return memo || entry.isIntersecting;
+				}, false);
+				if (isIntersecting) {
+					waiting = false;
+					// update: don't remove -- we need the observer to trigger an update
+					// when a hidden map becomes visible after user interaction
+					// (e.g. when an accordion menu or tab opens)
+					// observer.disconnect();
+					// observer = null;
+					update();
+				}
+			}
+		}
+
+		function findContainers(id) {
+			// support duplicate ids on the page
+			return selectChildren('.ai2html-responsive', document).filter(function(el) {
+				if (el.getAttribute('id') != id) return false;
+				if (el.classList.contains('ai2html-resizer')) return false;
+				el.classList.add('ai2html-resizer');
+				return true;
+			});
+		}
+
+		// Replace blank placeholder image with actual image
+		function updateImgSrc(img) {
+			var src = img.getAttribute('data-src');
+			if (src && img.getAttribute('src') != src) {
+				img.setAttribute('src', src);
+			}
+		}
+
+		function updateVideoSrc(el) {
+			var src = el.getAttribute('data-src');
+			if (src && !el.hasAttribute('src')) {
+				el.setAttribute('src', src);
+			}
+		}
+
+		function elementInView(el) {
+			var bounds = el.getBoundingClientRect();
+			return bounds.top < window.innerHeight && bounds.bottom > 0;
+		}
+
+		function selectChildren(selector, parent) {
+			return parent ? Array.prototype.slice.call(parent.querySelectorAll(selector)) : [];
+		}
+
+		// based on underscore.js
+		function throttle(func, wait) {
+			var timeout = null, previous = 0;
+			function run() {
+					previous = Date.now();
+					timeout = null;
+					func();
+			}
+			return function() {
+				var remaining = wait - (Date.now() - previous);
+				if (remaining <= 0 || remaining > wait) {
+					clearTimeout(timeout);
+					run();
+				} else if (!timeout) {
+					timeout = setTimeout(run, remaining);
+				}
+			};
+		}
+	})("g-patents_6-box", {namespace: "g-", setup: window.setupInteractive || window.getComponent});
+</script>
+<!-- End ai2html - 2025-04-12 22:38 -->
+
+
+
+
+
+
+
+
+
+
+
+
+          </div>
+          <div class="ai2html-graphic" id="graphic-6">
+
+
+
+
+
+
+
+<!-- Generated by ai2html v0.121.1 - 2025-04-12 23:08 -->
+<!-- ai file: patents_7.ai -->
+<style media="screen,print">
+	#g-patents_7-box ,
+	#g-patents_7-box .g-artboard {
+		margin:0 auto;
+	}
+	#g-patents_7-box p {
+		margin:0;
+	}
+	#g-patents_7-box .g-aiAbs {
+		position:absolute;
+	}
+	#g-patents_7-box .g-aiImg {
+		position:absolute;
+		top:0;
+		display:block;
+		width:100% !important;
+	}
+	#g-patents_7-box .g-aiSymbol {
+		position: absolute;
+		box-sizing: border-box;
+	}
+	#g-patents_7-box .g-aiPointText p { white-space: nowrap; }
+	#g-patents_7-full {
+		position:relative;
+		overflow:hidden;
+	}
+	#g-patents_7-full p {
+		font-family:arial,helvetica,sans-serif;
+		line-height:17px;
+		height:auto;
+		opacity:1;
+		letter-spacing:0em;
+		font-size:14px;
+		text-align:left;
+		color:rgb(0,0,0);
+		text-transform:none;
+		padding-bottom:0;
+		padding-top:0;
+		mix-blend-mode:normal;
+		font-style:normal;
+		font-weight:regular;
+		position:static;
+	}
+	#g-patents_7-full .g-pstyle0 {
+		line-height:14px;
+		height:14px;
+		font-size:12px;
+		color:rgb(94,94,92);
+	}
+	#g-patents_7-full .g-pstyle1 {
+		height:17px;
+	}
+	#g-patents_7-full .g-pstyle2 {
+		height:17px;
+		color:rgb(154,154,152);
+	}
+	#g-patents_7-mobile {
+		position:relative;
+		overflow:hidden;
+	}
+	#g-patents_7-mobile p {
+		font-family:arial,helvetica,sans-serif;
+		line-height:12px;
+		height:auto;
+		opacity:1;
+		letter-spacing:0em;
+		font-size:10px;
+		text-align:left;
+		color:rgb(0,0,0);
+		text-transform:none;
+		padding-bottom:0;
+		padding-top:0;
+		mix-blend-mode:normal;
+		font-style:normal;
+		font-weight:regular;
+		position:static;
+	}
+	#g-patents_7-mobile .g-pstyle0 {
+		line-height:15px;
+		height:15px;
+		font-size:13px;
+		color:rgb(154,154,152);
+	}
+	#g-patents_7-mobile .g-pstyle1 {
+		font-weight:500;
+		height:12px;
+		color:rgb(94,94,92);
+	}
+	#g-patents_7-mobile .g-pstyle2 {
+		font-weight:bold;
+		line-height:14px;
+		height:14px;
+		font-size:12px;
+		color:rgb(255,186,63);
+	}
+	#g-patents_7-mobile .g-pstyle3 {
+		font-weight:bold;
+		line-height:14px;
+		height:14px;
+		font-size:11px;
+		color:rgb(107,142,35);
+	}
+	#g-patents_7-mobile .g-pstyle4 {
+		font-weight:bold;
+		line-height:14px;
+		height:14px;
+		font-size:12px;
+		color:rgb(226,194,144);
+	}
+	#g-patents_7-mobile .g-pstyle5 {
+		height:12px;
+	}
+
+</style>
+
+<div id="g-patents_7-box" class="ai2html ai2html-responsive">
+
+	<!-- Artboard: full -->
+	<div id="g-patents_7-full" class="g-artboard" style="width:1140px; height:815px;" data-aspect-ratio="1.399" data-min-width="1140">
+<div style=""></div>
+		<img id="g-patents_7-full-img" class="g-patents_7-full-img g-aiImg" alt="" src="patents_7-full.png"/>
+		<div id="g-ai0-1" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:6.3923%;margin-top:-8.1px;left:63.1337%;width:49px;">
+			<p class="g-pstyle0">2021</p>
+		</div>
+		<div id="g-ai0-2" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:6.515%;margin-top:-8.1px;left:36.3771%;width:49px;">
+			<p class="g-pstyle0">2017</p>
+		</div>
+		<div id="g-ai0-3" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:6.515%;margin-top:-8.1px;left:9.7434%;width:49px;">
+			<p class="g-pstyle0">2013</p>
+		</div>
+		<div id="g-ai0-4" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:6.515%;margin-top:-8.1px;left:90.1359%;width:49px;">
+			<p class="g-pstyle0">2025</p>
+		</div>
+		<div id="g-ai0-5" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:25.6172%;margin-top:-9.8px;left:78.1525%;width:161px;">
+			<p class="g-pstyle1">Russia: Improvements</p>
+		</div>
+		<div id="g-ai0-6" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:26.4761%;margin-top:-9.8px;left:32.1224%;width:189px;">
+			<p class="g-pstyle1">South Korea: Modifications</p>
+		</div>
+		<div id="g-ai0-7" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:27.703%;margin-top:-9.8px;left:78.1525%;width:164px;">
+			<p class="g-pstyle1">on potatoes and wheat</p>
+		</div>
+		<div id="g-ai0-8" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:28.5619%;margin-top:-9.8px;left:32.1224%;width:164px;">
+			<p class="g-pstyle1">of potatoes, tomatoes, </p>
+		</div>
+		<div id="g-ai0-9" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:29.5436%;margin-top:-9.8px;left:8.3466%;width:98px;">
+			<p class="g-pstyle2">Applications</p>
+		</div>
+		<div id="g-ai0-10" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:30.5252%;margin-top:-9.8px;left:32.1224%;width:115px;">
+			<p class="g-pstyle1">rice and others</p>
+		</div>
+		<div id="g-ai0-11" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:46.8442%;margin-top:-9.8px;left:14.928%;width:137px;">
+			<p class="g-pstyle1">Germany: Broader</p>
+		</div>
+		<div id="g-ai0-12" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:48.93%;margin-top:-9.8px;left:14.928%;width:152px;">
+			<p class="g-pstyle1">CRISPR methods to </p>
+		</div>
+		<div id="g-ai0-13" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:50.8932%;margin-top:-9.8px;left:14.928%;width:182px;">
+			<p class="g-pstyle1">edit genes of many plants</p>
+		</div>
+		<div id="g-ai0-14" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:76.6602%;margin-top:-9.8px;left:8.4099%;width:73px;">
+			<p class="g-pstyle2">Granted</p>
+		</div>
+	</div>
+
+	<!-- Artboard: mobile -->
+	<div id="g-patents_7-mobile" class="g-artboard" style="max-width: 375px;max-height: 546px" data-aspect-ratio="0.687" data-min-width="0" data-max-width="1139">
+<div style="padding: 0 0 145.5467% 0;"></div>
+		<img id="g-patents_7-mobile-img" class="g-patents_7-mobile-img g-aiImg" alt="" src="patents_7-mobile.png"/>
+		<div id="g-ai1-1" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:5.2218%;margin-top:-8.5px;left:40.9297%;width:91px;">
+			<p class="g-pstyle0">Applications</p>
+		</div>
+		<div id="g-ai1-2" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:5.2216%;margin-top:-8.5px;left:23.9188%;width:68px;">
+			<p class="g-pstyle0">Granted</p>
+		</div>
+		<div id="g-ai1-3" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:10.3399%;margin-top:-6.4px;left:4.9081%;width:41px;">
+			<p class="g-pstyle1">2013</p>
+		</div>
+		<div id="g-ai1-4" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:19.3122%;margin-top:-8.4px;left:70.1292%;width:56px;">
+			<p class="g-pstyle2">China</p>
+		</div>
+		<div id="g-ai1-5" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:22.2546%;margin-top:-8.5px;left:70.2458%;width:92px;">
+			<p class="g-pstyle3">United States</p>
+		</div>
+		<div id="g-ai1-6" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:25.1752%;margin-top:-8.4px;left:70.2688%;width:105px;">
+			<p class="g-pstyle4">Other Countries</p>
+		</div>
+		<div id="g-ai1-7" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:38.0057%;margin-top:-6.4px;left:4.6531%;width:41px;">
+			<p class="g-pstyle1">2017</p>
+		</div>
+		<div id="g-ai1-8" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:41.7579%;margin-top:-6.9px;left:60.6883%;width:63px;">
+			<p class="g-pstyle5">Germany</p>
+		</div>
+		<div id="g-ai1-9" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:65.5761%;margin-top:-6.9px;left:83.6349%;width:78px;">
+			<p class="g-pstyle5">South Korea</p>
+		</div>
+		<div id="g-ai1-10" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:65.4883%;margin-top:-6.4px;left:4.7443%;width:41px;">
+			<p class="g-pstyle1">2021</p>
+		</div>
+		<div id="g-ai1-11" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:72.9048%;margin-top:-6.9px;left:88.6383%;width:53px;">
+			<p class="g-pstyle5">Russia</p>
+		</div>
+		<div id="g-ai1-12" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:93.3373%;margin-top:-6.4px;left:4.8669%;width:41px;">
+			<p class="g-pstyle1">2025</p>
+		</div>
+	</div>
+
+</div>
+
+<script type="text/javascript">
+	(function (containerId, opts) {
+		var nameSpace = opts.namespace || '';
+		var containers = findContainers(containerId);
+		containers.forEach(resize);
+
+		function resize(container) {
+			var onResize = throttle(update, 200);
+			var waiting = !!window.IntersectionObserver;
+			var observer;
+			update();
+
+			document.addEventListener('DOMContentLoaded', update);
+			window.addEventListener('resize', onResize);
+
+			// NYT Scoop-specific code
+			if (opts.setup) {
+				opts.setup(container).on('cleanup', cleanup);
+			}
+
+			function cleanup() {
+				document.removeEventListener('DOMContentLoaded', update);
+				window.removeEventListener('resize', onResize);
+				if (observer) observer.disconnect();
+			}
+
+			function update() {
+				var artboards = selectChildren('.' + nameSpace + 'artboard[data-min-width]', container),
+						width = Math.round(container.getBoundingClientRect().width);
+
+				// Set artboard visibility based on container width
+				artboards.forEach(function(el) {
+					var minwidth = el.getAttribute('data-min-width'),
+							maxwidth = el.getAttribute('data-max-width');
+					if (+minwidth <= width && (+maxwidth >= width || maxwidth === null)) {
+						if (!waiting) {
+							selectChildren('.' + nameSpace + 'aiImg', el).forEach(updateImgSrc);
+							selectChildren('video', el).forEach(updateVideoSrc);
+						}
+						el.style.display = 'block';
+					} else {
+						el.style.display = 'none';
+					}
+				});
+
+				// Initialize lazy loading on first call
+				if (waiting && !observer) {
+					if (elementInView(container)) {
+						waiting = false;
+						update();
+					} else {
+						observer = new IntersectionObserver(onIntersectionChange, {rootMargin: "800px"});
+						observer.observe(container);
+					}
+				}
+			}
+
+			function onIntersectionChange(entries) {
+				// There may be multiple entries relating to the same container
+				// (captured at different times)
+				var isIntersecting = entries.reduce(function(memo, entry) {
+					return memo || entry.isIntersecting;
+				}, false);
+				if (isIntersecting) {
+					waiting = false;
+					// update: don't remove -- we need the observer to trigger an update
+					// when a hidden map becomes visible after user interaction
+					// (e.g. when an accordion menu or tab opens)
+					// observer.disconnect();
+					// observer = null;
+					update();
+				}
+			}
+		}
+
+		function findContainers(id) {
+			// support duplicate ids on the page
+			return selectChildren('.ai2html-responsive', document).filter(function(el) {
+				if (el.getAttribute('id') != id) return false;
+				if (el.classList.contains('ai2html-resizer')) return false;
+				el.classList.add('ai2html-resizer');
+				return true;
+			});
+		}
+
+		// Replace blank placeholder image with actual image
+		function updateImgSrc(img) {
+			var src = img.getAttribute('data-src');
+			if (src && img.getAttribute('src') != src) {
+				img.setAttribute('src', src);
+			}
+		}
+
+		function updateVideoSrc(el) {
+			var src = el.getAttribute('data-src');
+			if (src && !el.hasAttribute('src')) {
+				el.setAttribute('src', src);
+			}
+		}
+
+		function elementInView(el) {
+			var bounds = el.getBoundingClientRect();
+			return bounds.top < window.innerHeight && bounds.bottom > 0;
+		}
+
+		function selectChildren(selector, parent) {
+			return parent ? Array.prototype.slice.call(parent.querySelectorAll(selector)) : [];
+		}
+
+		// based on underscore.js
+		function throttle(func, wait) {
+			var timeout = null, previous = 0;
+			function run() {
+					previous = Date.now();
+					timeout = null;
+					func();
+			}
+			return function() {
+				var remaining = wait - (Date.now() - previous);
+				if (remaining <= 0 || remaining > wait) {
+					clearTimeout(timeout);
+					run();
+				} else if (!timeout) {
+					timeout = setTimeout(run, remaining);
+				}
+			};
+		}
+	})("g-patents_7-box", {namespace: "g-", setup: window.setupInteractive || window.getComponent});
+</script>
+<!-- End ai2html - 2025-04-12 23:08 -->
+
+
+
+
+
+          </div>
+          <div class="ai2html-graphic" id="graphic-7">
+
+
+
+
+<!-- Generated by ai2html v0.121.1 - 2025-04-13 00:19 -->
+<!-- ai file: patents_8.ai -->
+<style media="screen,print">
+	#g-patents_8-box ,
+	#g-patents_8-box .g-artboard {
+		margin:0 auto;
+	}
+	#g-patents_8-box p {
+		margin:0;
+	}
+	#g-patents_8-box .g-aiAbs {
+		position:absolute;
+	}
+	#g-patents_8-box .g-aiImg {
+		position:absolute;
+		top:0;
+		display:block;
+		width:100% !important;
+	}
+	#g-patents_8-box .g-aiSymbol {
+		position: absolute;
+		box-sizing: border-box;
+	}
+	#g-patents_8-box .g-aiPointText p { white-space: nowrap; }
+	#g-patents_8-full {
+		position:relative;
+		overflow:hidden;
+	}
+	#g-patents_8-full p {
+		font-family:arial,helvetica,sans-serif;
+		font-weight:regular;
+		line-height:19px;
+		height:auto;
+		opacity:1;
+		letter-spacing:0em;
+		font-size:16px;
+		text-align:left;
+		color:rgb(0,0,0);
+		text-transform:none;
+		padding-bottom:0;
+		padding-top:0;
+		mix-blend-mode:normal;
+		font-style:normal;
+		position:static;
+	}
+	#g-patents_8-full .g-pstyle0 {
+		line-height:14px;
+		height:14px;
+		font-size:12px;
+		color:rgb(94,94,92);
+	}
+	#g-patents_8-full .g-pstyle1 {
+		font-weight:bold;
+		height:19px;
+	}
+	#g-patents_8-full .g-pstyle2 {
+		font-weight:bold;
+		height:19px;
+		color:rgb(107,142,35);
+	}
+	#g-patents_8-full .g-pstyle3 {
+		line-height:14px;
+		height:14px;
+		font-size:12px;
+		color:rgb(107,142,35);
+	}
+	#g-patents_8-full .g-pstyle4 {
+		font-weight:bold;
+		height:19px;
+		color:rgb(255,186,63);
+	}
+	#g-patents_8-full .g-cstyle0 {
+		font-size:14px;
+	}
+	#g-patents_8-mobile {
+		position:relative;
+		overflow:hidden;
+	}
+	#g-patents_8-mobile p {
+		font-family:arial,helvetica,sans-serif;
+		font-weight:regular;
+		line-height:14px;
+		height:auto;
+		opacity:1;
+		letter-spacing:0em;
+		font-size:12px;
+		text-align:left;
+		color:rgb(0,0,0);
+		text-transform:none;
+		padding-bottom:0;
+		padding-top:0;
+		mix-blend-mode:normal;
+		font-style:normal;
+		position:static;
+	}
+	#g-patents_8-mobile .g-pstyle0 {
+		line-height:15px;
+		height:15px;
+		font-size:13px;
+		color:rgb(154,154,152);
+	}
+	#g-patents_8-mobile .g-pstyle1 {
+		font-weight:500;
+		line-height:12px;
+		height:12px;
+		font-size:10px;
+		color:rgb(94,94,92);
+	}
+	#g-patents_8-mobile .g-pstyle2 {
+		font-weight:bold;
+		height:14px;
+	}
+	#g-patents_8-mobile .g-pstyle3 {
+		font-weight:bold;
+		height:14px;
+		color:rgb(107,142,35);
+	}
+	#g-patents_8-mobile .g-pstyle4 {
+		font-weight:bold;
+		height:14px;
+		color:rgb(255,186,63);
+	}
+
+</style>
+
+<div id="g-patents_8-box" class="ai2html ai2html-responsive">
+
+	<!-- Artboard: full -->
+	<div id="g-patents_8-full" class="g-artboard" style="width:1140px; height:815px;" data-aspect-ratio="1.399" data-min-width="1140">
+<div style=""></div>
+		<img id="g-patents_8-full-img" class="g-patents_8-full-img g-aiImg" alt="" src="patents_8-full.png"/>
+		<div id="g-ai0-1" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:6.3923%;margin-top:-8.1px;left:63.1337%;width:49px;">
+			<p class="g-pstyle0">2021</p>
+		</div>
+		<div id="g-ai0-2" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:6.515%;margin-top:-8.1px;left:36.3771%;width:49px;">
+			<p class="g-pstyle0">2017</p>
+		</div>
+		<div id="g-ai0-3" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:6.515%;margin-top:-8.1px;left:9.7434%;width:49px;">
+			<p class="g-pstyle0">2013</p>
+		</div>
+		<div id="g-ai0-4" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:6.515%;margin-top:-8.1px;left:90.136%;width:49px;">
+			<p class="g-pstyle0">2025</p>
+		</div>
+		<div id="g-ai0-5" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:14.1567%;margin-top:-11.4px;left:10.9101%;width:273px;">
+			<p class="g-pstyle1">Non-specific crops applications  </p>
+		</div>
+		<div id="g-ai0-6" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:16.8558%;margin-top:-11.4px;left:16.5246%;width:152px;">
+			<p class="g-pstyle2">From the U.S.<span class="g-cstyle0">  </span></p>
+		</div>
+		<div id="g-ai0-7" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:18.9076%;margin-top:-8.1px;left:23.5822%;width:29px;">
+			<p class="g-pstyle3">  </p>
+		</div>
+		<div id="g-ai0-8" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:19.0303%;margin-top:-8.1px;left:28.5519%;width:29px;">
+			<p class="g-pstyle3">  </p>
+		</div>
+		<div id="g-ai0-9" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:19.6779%;margin-top:-11.4px;left:16.6142%;width:129px;">
+			<p class="g-pstyle4">From China</p>
+		</div>
+	</div>
+
+	<!-- Artboard: mobile -->
+	<div id="g-patents_8-mobile" class="g-artboard" style="max-width: 375px;max-height: 546px" data-aspect-ratio="0.687" data-min-width="0" data-max-width="1139">
+<div style="padding: 0 0 145.5467% 0;"></div>
+		<img id="g-patents_8-mobile-img" class="g-patents_8-mobile-img g-aiImg" alt="" src="patents_8-mobile.png"/>
+		<div id="g-ai1-1" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:5.2218%;margin-top:-8.5px;left:40.9297%;width:91px;">
+			<p class="g-pstyle0">Applications</p>
+		</div>
+		<div id="g-ai1-2" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:5.2216%;margin-top:-8.5px;left:23.9188%;width:68px;">
+			<p class="g-pstyle0">Granted</p>
+		</div>
+		<div id="g-ai1-3" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:10.3399%;margin-top:-6.4px;left:4.9081%;width:41px;">
+			<p class="g-pstyle1">2013</p>
+		</div>
+		<div id="g-ai1-4" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:12.7167%;margin-top:-8.4px;left:48.2557%;width:210px;">
+			<p class="g-pstyle2">Non-specific crops applications  </p>
+		</div>
+		<div id="g-ai1-5" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:16.1978%;margin-top:-8.4px;left:62.9237%;width:125px;">
+			<p class="g-pstyle3">From the U.S.  </p>
+		</div>
+		<div id="g-ai1-6" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:19.6787%;margin-top:-8.4px;left:62.9297%;width:107px;">
+			<p class="g-pstyle4">From China</p>
+		</div>
+		<div id="g-ai1-7" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:38.0057%;margin-top:-6.4px;left:4.6531%;width:41px;">
+			<p class="g-pstyle1">2017</p>
+		</div>
+		<div id="g-ai1-8" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:65.4883%;margin-top:-6.4px;left:4.7443%;width:41px;">
+			<p class="g-pstyle1">2021</p>
+		</div>
+		<div id="g-ai1-9" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:93.3373%;margin-top:-6.4px;left:4.8669%;width:41px;">
+			<p class="g-pstyle1">2025</p>
+		</div>
+	</div>
+
+</div>
+
+<script type="text/javascript">
+	(function (containerId, opts) {
+		var nameSpace = opts.namespace || '';
+		var containers = findContainers(containerId);
+		containers.forEach(resize);
+
+		function resize(container) {
+			var onResize = throttle(update, 200);
+			var waiting = !!window.IntersectionObserver;
+			var observer;
+			update();
+
+			document.addEventListener('DOMContentLoaded', update);
+			window.addEventListener('resize', onResize);
+
+			// NYT Scoop-specific code
+			if (opts.setup) {
+				opts.setup(container).on('cleanup', cleanup);
+			}
+
+			function cleanup() {
+				document.removeEventListener('DOMContentLoaded', update);
+				window.removeEventListener('resize', onResize);
+				if (observer) observer.disconnect();
+			}
+
+			function update() {
+				var artboards = selectChildren('.' + nameSpace + 'artboard[data-min-width]', container),
+						width = Math.round(container.getBoundingClientRect().width);
+
+				// Set artboard visibility based on container width
+				artboards.forEach(function(el) {
+					var minwidth = el.getAttribute('data-min-width'),
+							maxwidth = el.getAttribute('data-max-width');
+					if (+minwidth <= width && (+maxwidth >= width || maxwidth === null)) {
+						if (!waiting) {
+							selectChildren('.' + nameSpace + 'aiImg', el).forEach(updateImgSrc);
+							selectChildren('video', el).forEach(updateVideoSrc);
+						}
+						el.style.display = 'block';
+					} else {
+						el.style.display = 'none';
+					}
+				});
+
+				// Initialize lazy loading on first call
+				if (waiting && !observer) {
+					if (elementInView(container)) {
+						waiting = false;
+						update();
+					} else {
+						observer = new IntersectionObserver(onIntersectionChange, {rootMargin: "800px"});
+						observer.observe(container);
+					}
+				}
+			}
+
+			function onIntersectionChange(entries) {
+				// There may be multiple entries relating to the same container
+				// (captured at different times)
+				var isIntersecting = entries.reduce(function(memo, entry) {
+					return memo || entry.isIntersecting;
+				}, false);
+				if (isIntersecting) {
+					waiting = false;
+					// update: don't remove -- we need the observer to trigger an update
+					// when a hidden map becomes visible after user interaction
+					// (e.g. when an accordion menu or tab opens)
+					// observer.disconnect();
+					// observer = null;
+					update();
+				}
+			}
+		}
+
+		function findContainers(id) {
+			// support duplicate ids on the page
+			return selectChildren('.ai2html-responsive', document).filter(function(el) {
+				if (el.getAttribute('id') != id) return false;
+				if (el.classList.contains('ai2html-resizer')) return false;
+				el.classList.add('ai2html-resizer');
+				return true;
+			});
+		}
+
+		// Replace blank placeholder image with actual image
+		function updateImgSrc(img) {
+			var src = img.getAttribute('data-src');
+			if (src && img.getAttribute('src') != src) {
+				img.setAttribute('src', src);
+			}
+		}
+
+		function updateVideoSrc(el) {
+			var src = el.getAttribute('data-src');
+			if (src && !el.hasAttribute('src')) {
+				el.setAttribute('src', src);
+			}
+		}
+
+		function elementInView(el) {
+			var bounds = el.getBoundingClientRect();
+			return bounds.top < window.innerHeight && bounds.bottom > 0;
+		}
+
+		function selectChildren(selector, parent) {
+			return parent ? Array.prototype.slice.call(parent.querySelectorAll(selector)) : [];
+		}
+
+		// based on underscore.js
+		function throttle(func, wait) {
+			var timeout = null, previous = 0;
+			function run() {
+					previous = Date.now();
+					timeout = null;
+					func();
+			}
+			return function() {
+				var remaining = wait - (Date.now() - previous);
+				if (remaining <= 0 || remaining > wait) {
+					clearTimeout(timeout);
+					run();
+				} else if (!timeout) {
+					timeout = setTimeout(run, remaining);
+				}
+			};
+		}
+	})("g-patents_8-box", {namespace: "g-", setup: window.setupInteractive || window.getComponent});
+</script>
+<!-- End ai2html - 2025-04-13 00:19 -->
+
+
+
+
+
+
+
+          </div>
+          <div class="ai2html-graphic" id="graphic-8">
+
+
+
+<!-- Generated by ai2html v0.121.1 - 2025-04-13 00:40 -->
+<!-- ai file: patents_9 .ai -->
+<style media="screen,print">
+	#g-patents_9--box ,
+	#g-patents_9--box .g-artboard {
+		margin:0 auto;
+	}
+	#g-patents_9--box p {
+		margin:0;
+	}
+	#g-patents_9--box .g-aiAbs {
+		position:absolute;
+	}
+	#g-patents_9--box .g-aiImg {
+		position:absolute;
+		top:0;
+		display:block;
+		width:100% !important;
+	}
+	#g-patents_9--box .g-aiSymbol {
+		position: absolute;
+		box-sizing: border-box;
+	}
+	#g-patents_9--box .g-aiPointText p { white-space: nowrap; }
+	#g-patents_9--full {
+		position:relative;
+		overflow:hidden;
+	}
+	#g-patents_9--full p {
+		font-family:arial,helvetica,sans-serif;
+		font-weight:regular;
+		line-height:19px;
+		height:auto;
+		opacity:1;
+		letter-spacing:0em;
+		font-size:16px;
+		text-align:left;
+		color:rgb(0,0,0);
+		text-transform:none;
+		padding-bottom:0;
+		padding-top:0;
+		mix-blend-mode:normal;
+		font-style:normal;
+		position:static;
+	}
+	#g-patents_9--full .g-pstyle0 {
+		line-height:14px;
+		height:14px;
+		font-size:12px;
+		color:rgb(94,94,92);
+	}
+	#g-patents_9--full .g-pstyle1 {
+		font-weight:bold;
+		height:19px;
+	}
+	#g-patents_9--full .g-pstyle2 {
+		line-height:17px;
+		height:17px;
+		font-size:14px;
+	}
+	#g-patents_9--full .g-pstyle3 {
+		font-weight:bold;
+		height:19px;
+		color:rgb(107,142,35);
+	}
+	#g-patents_9--full .g-pstyle4 {
+		line-height:14px;
+		height:14px;
+		font-size:12px;
+		color:rgb(107,142,35);
+	}
+	#g-patents_9--full .g-pstyle5 {
+		font-weight:bold;
+		height:19px;
+		color:rgb(255,186,63);
+	}
+	#g-patents_9--full .g-cstyle0 {
+		font-size:14px;
+	}
+	#g-patents_9--mobile {
+		position:relative;
+		overflow:hidden;
+	}
+	#g-patents_9--mobile p {
+		font-family:arial,helvetica,sans-serif;
+		font-weight:regular;
+		line-height:14px;
+		height:auto;
+		opacity:1;
+		letter-spacing:0em;
+		font-size:12px;
+		text-align:left;
+		color:rgb(0,0,0);
+		text-transform:none;
+		padding-bottom:0;
+		padding-top:0;
+		mix-blend-mode:normal;
+		font-style:normal;
+		position:static;
+	}
+	#g-patents_9--mobile .g-pstyle0 {
+		line-height:15px;
+		height:15px;
+		font-size:13px;
+		color:rgb(154,154,152);
+	}
+	#g-patents_9--mobile .g-pstyle1 {
+		font-weight:bold;
+		height:14px;
+	}
+	#g-patents_9--mobile .g-pstyle2 {
+		font-weight:500;
+		line-height:12px;
+		height:12px;
+		font-size:10px;
+		color:rgb(94,94,92);
+	}
+	#g-patents_9--mobile .g-pstyle3 {
+		font-weight:bold;
+		height:14px;
+		color:rgb(107,142,35);
+	}
+	#g-patents_9--mobile .g-pstyle4 {
+		font-weight:bold;
+		height:14px;
+		color:rgb(255,186,63);
+	}
+
+</style>
+
+<div id="g-patents_9--box" class="ai2html ai2html-responsive">
+
+	<!-- Artboard: full -->
+	<div id="g-patents_9--full" class="g-artboard" style="width:1140px; height:815px;" data-aspect-ratio="1.399" data-min-width="1140">
+<div style=""></div>
+		<img id="g-patents_9--full-img" class="g-patents_9--full-img g-aiImg" alt="" src="patents_9--full.png"/>
+		<div id="g-ai0-1" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:6.3923%;margin-top:-8.1px;left:63.1337%;width:49px;">
+			<p class="g-pstyle0">2021</p>
+		</div>
+		<div id="g-ai0-2" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:6.515%;margin-top:-8.1px;left:36.3771%;width:49px;">
+			<p class="g-pstyle0">2017</p>
+		</div>
+		<div id="g-ai0-3" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:6.515%;margin-top:-8.1px;left:9.7434%;width:49px;">
+			<p class="g-pstyle0">2013</p>
+		</div>
+		<div id="g-ai0-4" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:6.515%;margin-top:-8.1px;left:90.136%;width:49px;">
+			<p class="g-pstyle0">2025</p>
+		</div>
+		<div id="g-ai0-5" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:14.1564%;margin-top:-11.4px;left:10.9101%;width:341px;">
+			<p class="g-pstyle1">Applications filed in foreign patent offices</p>
+		</div>
+		<div id="g-ai0-6" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:14.2061%;margin-top:-9.8px;left:29.4731%;width:30px;">
+			<p class="g-pstyle2">  </p>
+		</div>
+		<div id="g-ai0-7" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:16.8558%;margin-top:-11.4px;left:16.5246%;width:152px;">
+			<p class="g-pstyle3">From the U.S.<span class="g-cstyle0">  </span></p>
+		</div>
+		<div id="g-ai0-8" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:18.9076%;margin-top:-8.1px;left:23.5866%;width:29px;">
+			<p class="g-pstyle4">  </p>
+		</div>
+		<div id="g-ai0-9" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:19.0303%;margin-top:-8.1px;left:28.5519%;width:29px;">
+			<p class="g-pstyle4">  </p>
+		</div>
+		<div id="g-ai0-10" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:19.6779%;margin-top:-11.4px;left:16.6142%;width:129px;">
+			<p class="g-pstyle5">From China</p>
+		</div>
+	</div>
+
+	<!-- Artboard: mobile -->
+	<div id="g-patents_9--mobile" class="g-artboard" style="max-width: 375px;max-height: 546px" data-aspect-ratio="0.687" data-min-width="0" data-max-width="1139">
+<div style="padding: 0 0 145.5467% 0;"></div>
+		<img id="g-patents_9--mobile-img" class="g-patents_9--mobile-img g-aiImg" alt="" src="patents_9--mobile.png"/>
+		<div id="g-ai1-1" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:5.2218%;margin-top:-8.5px;left:40.9297%;width:91px;">
+			<p class="g-pstyle0">Applications</p>
+		</div>
+		<div id="g-ai1-2" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:5.2216%;margin-top:-8.5px;left:23.9188%;width:68px;">
+			<p class="g-pstyle0">Granted</p>
+		</div>
+		<div id="g-ai1-3" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:11.2873%;margin-top:-15.6px;left:60.7875%;width:144px;">
+			<p class="g-pstyle1">Applications filed in</p>
+			<p class="g-pstyle1">foreign patent offices</p>
+		</div>
+		<div id="g-ai1-4" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:10.3399%;margin-top:-6.4px;left:4.9081%;width:41px;">
+			<p class="g-pstyle2">2013</p>
+		</div>
+		<div id="g-ai1-5" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:16.1977%;margin-top:-8.4px;left:62.9237%;width:125px;">
+			<p class="g-pstyle3">From the U.S.  </p>
+		</div>
+		<div id="g-ai1-6" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:19.6787%;margin-top:-8.4px;left:62.9297%;width:107px;">
+			<p class="g-pstyle4">From China</p>
+		</div>
+		<div id="g-ai1-7" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:38.0057%;margin-top:-6.4px;left:4.6531%;width:41px;">
+			<p class="g-pstyle2">2017</p>
+		</div>
+		<div id="g-ai1-8" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:65.4883%;margin-top:-6.4px;left:4.7443%;width:41px;">
+			<p class="g-pstyle2">2021</p>
+		</div>
+		<div id="g-ai1-9" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:93.3373%;margin-top:-6.4px;left:4.8669%;width:41px;">
+			<p class="g-pstyle2">2025</p>
+		</div>
+	</div>
+
+</div>
+
+<script type="text/javascript">
+	(function (containerId, opts) {
+		var nameSpace = opts.namespace || '';
+		var containers = findContainers(containerId);
+		containers.forEach(resize);
+
+		function resize(container) {
+			var onResize = throttle(update, 200);
+			var waiting = !!window.IntersectionObserver;
+			var observer;
+			update();
+
+			document.addEventListener('DOMContentLoaded', update);
+			window.addEventListener('resize', onResize);
+
+			// NYT Scoop-specific code
+			if (opts.setup) {
+				opts.setup(container).on('cleanup', cleanup);
+			}
+
+			function cleanup() {
+				document.removeEventListener('DOMContentLoaded', update);
+				window.removeEventListener('resize', onResize);
+				if (observer) observer.disconnect();
+			}
+
+			function update() {
+				var artboards = selectChildren('.' + nameSpace + 'artboard[data-min-width]', container),
+						width = Math.round(container.getBoundingClientRect().width);
+
+				// Set artboard visibility based on container width
+				artboards.forEach(function(el) {
+					var minwidth = el.getAttribute('data-min-width'),
+							maxwidth = el.getAttribute('data-max-width');
+					if (+minwidth <= width && (+maxwidth >= width || maxwidth === null)) {
+						if (!waiting) {
+							selectChildren('.' + nameSpace + 'aiImg', el).forEach(updateImgSrc);
+							selectChildren('video', el).forEach(updateVideoSrc);
+						}
+						el.style.display = 'block';
+					} else {
+						el.style.display = 'none';
+					}
+				});
+
+				// Initialize lazy loading on first call
+				if (waiting && !observer) {
+					if (elementInView(container)) {
+						waiting = false;
+						update();
+					} else {
+						observer = new IntersectionObserver(onIntersectionChange, {rootMargin: "800px"});
+						observer.observe(container);
+					}
+				}
+			}
+
+			function onIntersectionChange(entries) {
+				// There may be multiple entries relating to the same container
+				// (captured at different times)
+				var isIntersecting = entries.reduce(function(memo, entry) {
+					return memo || entry.isIntersecting;
+				}, false);
+				if (isIntersecting) {
+					waiting = false;
+					// update: don't remove -- we need the observer to trigger an update
+					// when a hidden map becomes visible after user interaction
+					// (e.g. when an accordion menu or tab opens)
+					// observer.disconnect();
+					// observer = null;
+					update();
+				}
+			}
+		}
+
+		function findContainers(id) {
+			// support duplicate ids on the page
+			return selectChildren('.ai2html-responsive', document).filter(function(el) {
+				if (el.getAttribute('id') != id) return false;
+				if (el.classList.contains('ai2html-resizer')) return false;
+				el.classList.add('ai2html-resizer');
+				return true;
+			});
+		}
+
+		// Replace blank placeholder image with actual image
+		function updateImgSrc(img) {
+			var src = img.getAttribute('data-src');
+			if (src && img.getAttribute('src') != src) {
+				img.setAttribute('src', src);
+			}
+		}
+
+		function updateVideoSrc(el) {
+			var src = el.getAttribute('data-src');
+			if (src && !el.hasAttribute('src')) {
+				el.setAttribute('src', src);
+			}
+		}
+
+		function elementInView(el) {
+			var bounds = el.getBoundingClientRect();
+			return bounds.top < window.innerHeight && bounds.bottom > 0;
+		}
+
+		function selectChildren(selector, parent) {
+			return parent ? Array.prototype.slice.call(parent.querySelectorAll(selector)) : [];
+		}
+
+		// based on underscore.js
+		function throttle(func, wait) {
+			var timeout = null, previous = 0;
+			function run() {
+					previous = Date.now();
+					timeout = null;
+					func();
+			}
+			return function() {
+				var remaining = wait - (Date.now() - previous);
+				if (remaining <= 0 || remaining > wait) {
+					clearTimeout(timeout);
+					run();
+				} else if (!timeout) {
+					timeout = setTimeout(run, remaining);
+				}
+			};
+		}
+	})("g-patents_9--box", {namespace: "g-", setup: window.setupInteractive || window.getComponent});
+</script>
+<!-- End ai2html - 2025-04-13 00:40 -->
+
+
+
+
+
+
+
+          </div>
+          <div class="ai2html-graphic" id="graphic-9">
+
+
+
+
+
+<!-- Generated by ai2html v0.121.1 - 2025-04-13 00:44 -->
+<!-- ai file: patents_10.ai -->
+<style media="screen,print">
+	#g-patents_10-box ,
+	#g-patents_10-box .g-artboard {
+		margin:0 auto;
+	}
+	#g-patents_10-box p {
+		margin:0;
+	}
+	#g-patents_10-box .g-aiAbs {
+		position:absolute;
+	}
+	#g-patents_10-box .g-aiImg {
+		position:absolute;
+		top:0;
+		display:block;
+		width:100% !important;
+	}
+	#g-patents_10-box .g-aiSymbol {
+		position: absolute;
+		box-sizing: border-box;
+	}
+	#g-patents_10-box .g-aiPointText p { white-space: nowrap; }
+	#g-patents_10-full {
+		position:relative;
+		/*overflow:hidden;*/
+	}
+	#g-patents_10-full p {
+		font-family:arial,helvetica,sans-serif;
+		line-height:17px;
+		height:auto;
+		opacity:1;
+		letter-spacing:0em;
+		font-size:14px;
+		text-align:left;
+		color:rgb(0,0,0);
+		text-transform:none;
+		padding-bottom:0;
+		padding-top:0;
+		mix-blend-mode:normal;
+		font-style:normal;
+		font-weight:regular;
+		position:static;
+	}
+	#g-patents_10-full .g-pstyle0 {
+		line-height:14px;
+		height:14px;
+		font-size:12px;
+		color:rgb(94,94,92);
+	}
+	#g-patents_10-full .g-pstyle1 {
+		height:17px;
+		color:rgb(154,154,152);
+	}
+	#g-patents_10-full .g-pstyle2 {
+		height:17px;
+	}
+	#g-patents_10-mobile {
+		position:relative;
+		/*overflow:hidden;*/
+	}
+	#g-patents_10-mobile p {
+		font-family:arial,helvetica,sans-serif;
+		line-height:12px;
+		height:auto;
+		opacity:1;
+		letter-spacing:0em;
+		font-size:10px;
+		text-align:left;
+		color:rgb(0,0,0);
+		text-transform:none;
+		padding-bottom:0;
+		padding-top:0;
+		mix-blend-mode:normal;
+		font-style:normal;
+		font-weight:regular;
+		position:static;
+	}
+	#g-patents_10-mobile .g-pstyle0 {
+		line-height:15px;
+		height:15px;
+		font-size:13px;
+		color:rgb(154,154,152);
+	}
+	#g-patents_10-mobile .g-pstyle1 {
+		font-weight:500;
+		height:12px;
+		color:rgb(94,94,92);
+	}
+	#g-patents_10-mobile .g-pstyle2 {
+		height:12px;
+	}
+
+</style>
+
+<div id="g-patents_10-box" class="ai2html ai2html-responsive">
+
+	<!-- Artboard: full -->
+	<div id="g-patents_10-full" class="g-artboard" style="width:1140px; height:815px;" data-aspect-ratio="1.399" data-min-width="1140">
+<div style=""></div>
+		<img id="g-patents_10-full-img" class="g-patents_10-full-img g-aiImg" alt="" src="patents_10-full.png"/>
+		<div id="g-ai0-1" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:6.3923%;margin-top:-8.1px;left:63.1337%;width:49px;">
+			<p class="g-pstyle0">2021</p>
+		</div>
+		<div id="g-ai0-2" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:6.515%;margin-top:-8.1px;left:36.3771%;width:49px;">
+			<p class="g-pstyle0">2017</p>
+		</div>
+		<div id="g-ai0-3" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:6.515%;margin-top:-8.1px;left:9.7434%;width:49px;">
+			<p class="g-pstyle0">2013</p>
+		</div>
+		<div id="g-ai0-4" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:6.515%;margin-top:-8.1px;left:90.136%;width:49px;">
+			<p class="g-pstyle0">2025</p>
+		</div>
+		<div id="g-ai0-5" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:29.5435%;margin-top:-9.8px;left:8.3466%;width:98px;">
+			<p class="g-pstyle1">Applications</p>
+		</div>
+		<div id="g-ai0-6" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:67.8748%;margin-top:-18.2px;left:77.5033%;width:190px;">
+			<p class="g-pstyle2">Fastest granted application</p>
+			<p class="g-pstyle2">in just two months </p>
+		</div>
+		<div id="g-ai0-7" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:76.6602%;margin-top:-9.8px;left:8.4099%;width:73px;">
+			<p class="g-pstyle1">Granted</p>
+		</div>
+	</div>
+
+	<!-- Artboard: mobile -->
+	<div id="g-patents_10-mobile" class="g-artboard" style="max-width: 375px;max-height: 546px" data-aspect-ratio="0.687" data-min-width="0" data-max-width="1139">
+<div style="padding: 0 0 145.5467% 0;"></div>
+		<img id="g-patents_10-mobile-img" class="g-patents_10-mobile-img g-aiImg" alt="" src="patents_10-mobile.png"/>
+		<div id="g-ai1-1" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:5.2218%;margin-top:-8.5px;left:40.9297%;width:91px;">
+			<p class="g-pstyle0">Applications</p>
+		</div>
+		<div id="g-ai1-2" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:5.2216%;margin-top:-8.5px;left:23.9188%;width:68px;">
+			<p class="g-pstyle0">Granted</p>
+		</div>
+		<div id="g-ai1-3" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:10.3399%;margin-top:-6.4px;left:4.9081%;width:41px;">
+			<p class="g-pstyle1">2013</p>
+		</div>
+		<div id="g-ai1-4" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:38.0057%;margin-top:-6.4px;left:4.6531%;width:41px;">
+			<p class="g-pstyle1">2017</p>
+		</div>
+		<div id="g-ai1-5" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:65.4883%;margin-top:-6.4px;left:4.7443%;width:41px;">
+			<p class="g-pstyle1">2021</p>
+		</div>
+		<div id="g-ai1-6" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:81.1496%;margin-top:-12.9px;left:25.8138%;width:98px;">
+			<p class="g-pstyle2">China grants the </p>
+			<p class="g-pstyle2">first crop patent</p>
+		</div>
+		<div id="g-ai1-7" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:93.3373%;margin-top:-6.4px;left:4.8669%;width:41px;">
+			<p class="g-pstyle1">2025</p>
+		</div>
+	</div>
+
+</div>
+
+<script type="text/javascript">
+	(function (containerId, opts) {
+		var nameSpace = opts.namespace || '';
+		var containers = findContainers(containerId);
+		containers.forEach(resize);
+
+		function resize(container) {
+			var onResize = throttle(update, 200);
+			var waiting = !!window.IntersectionObserver;
+			var observer;
+			update();
+
+			document.addEventListener('DOMContentLoaded', update);
+			window.addEventListener('resize', onResize);
+
+			// NYT Scoop-specific code
+			if (opts.setup) {
+				opts.setup(container).on('cleanup', cleanup);
+			}
+
+			function cleanup() {
+				document.removeEventListener('DOMContentLoaded', update);
+				window.removeEventListener('resize', onResize);
+				if (observer) observer.disconnect();
+			}
+
+			function update() {
+				var artboards = selectChildren('.' + nameSpace + 'artboard[data-min-width]', container),
+						width = Math.round(container.getBoundingClientRect().width);
+
+				// Set artboard visibility based on container width
+				artboards.forEach(function(el) {
+					var minwidth = el.getAttribute('data-min-width'),
+							maxwidth = el.getAttribute('data-max-width');
+					if (+minwidth <= width && (+maxwidth >= width || maxwidth === null)) {
+						if (!waiting) {
+							selectChildren('.' + nameSpace + 'aiImg', el).forEach(updateImgSrc);
+							selectChildren('video', el).forEach(updateVideoSrc);
+						}
+						el.style.display = 'block';
+					} else {
+						el.style.display = 'none';
+					}
+				});
+
+				// Initialize lazy loading on first call
+				if (waiting && !observer) {
+					if (elementInView(container)) {
+						waiting = false;
+						update();
+					} else {
+						observer = new IntersectionObserver(onIntersectionChange, {rootMargin: "800px"});
+						observer.observe(container);
+					}
+				}
+			}
+
+			function onIntersectionChange(entries) {
+				// There may be multiple entries relating to the same container
+				// (captured at different times)
+				var isIntersecting = entries.reduce(function(memo, entry) {
+					return memo || entry.isIntersecting;
+				}, false);
+				if (isIntersecting) {
+					waiting = false;
+					// update: don't remove -- we need the observer to trigger an update
+					// when a hidden map becomes visible after user interaction
+					// (e.g. when an accordion menu or tab opens)
+					// observer.disconnect();
+					// observer = null;
+					update();
+				}
+			}
+		}
+
+		function findContainers(id) {
+			// support duplicate ids on the page
+			return selectChildren('.ai2html-responsive', document).filter(function(el) {
+				if (el.getAttribute('id') != id) return false;
+				if (el.classList.contains('ai2html-resizer')) return false;
+				el.classList.add('ai2html-resizer');
+				return true;
+			});
+		}
+
+		// Replace blank placeholder image with actual image
+		function updateImgSrc(img) {
+			var src = img.getAttribute('data-src');
+			if (src && img.getAttribute('src') != src) {
+				img.setAttribute('src', src);
+			}
+		}
+
+		function updateVideoSrc(el) {
+			var src = el.getAttribute('data-src');
+			if (src && !el.hasAttribute('src')) {
+				el.setAttribute('src', src);
+			}
+		}
+
+		function elementInView(el) {
+			var bounds = el.getBoundingClientRect();
+			return bounds.top < window.innerHeight && bounds.bottom > 0;
+		}
+
+		function selectChildren(selector, parent) {
+			return parent ? Array.prototype.slice.call(parent.querySelectorAll(selector)) : [];
+		}
+
+		// based on underscore.js
+		function throttle(func, wait) {
+			var timeout = null, previous = 0;
+			function run() {
+					previous = Date.now();
+					timeout = null;
+					func();
+			}
+			return function() {
+				var remaining = wait - (Date.now() - previous);
+				if (remaining <= 0 || remaining > wait) {
+					clearTimeout(timeout);
+					run();
+				} else if (!timeout) {
+					timeout = setTimeout(run, remaining);
+				}
+			};
+		}
+	})("g-patents_10-box", {namespace: "g-", setup: window.setupInteractive || window.getComponent});
+</script>
+<!-- End ai2html - 2025-04-13 00:44 -->
+
+
+
+
+
+          </div>
+        </div>
+      
+        <div class="scrolly-overlay">
+          <div class="step" data-step="1">From 2013 to April of this  year, inventors filed about 1,500 patent applications for CRISPR crops in WIPO.</div>
+          <div class="step" data-step="2">Almost 500 of those applications have been granted by major world patent offices in China, the U.S., South Korea, Russia, Canada and others.</div>
+          <div class="step" data-step="3">The U.S.-based Dow Agrosciences, now under Corteva Agriscience, applied for the first crops patent through WIPO in September 2012. But China beat the U.S. to grant the first crop patents, on methods to improve rice yields, in June 2016.</div>
+          <div class="step" data-step="4">Since then, Chinese scientists have churned out new inventions at an accelerating pace. By 2016, China overtook the U.S. in annual CRISPR crop patent applications.</div>
+          <div class="step" data-step="5">And by 2019, Chinese institutions were putting out about 100 or more applications a year- over 40% that were later granted - while the U.S. produced just 20-30 applications per year, less than 30% granted.</div>
+          <div class="step" data-step="6">Other countries also entered the fray, including Germany and South Korea. Even Russia, in the very year it started the war with Ukraine, registered seven applications. The following year saw eight countries including Australia, Canada, Israel and the Netherlands develop gene editing methods for crops.</div>
+          <div class="step" data-step="7">But the real battle has always been between the U.S. and China. While Chinese scientists have filed hundreds more patents related to specific crops like rice and tobacco, U.S. institutions own more general inventions that can be applied to edit the genes of many different crops.</div>
+          <div class="step" data-step="8">And patents are only law in the countries where they are granted. The U.S. has attempted to globalize its patent ownership, submitting four out of five applications to multiple patent offices.<br><br> Most Chinese patents, however, are law only in China: The country submits just one out of every 10 applications abroad, although it has ten times more institutions submitting applications than the U.S.</div>
+          <div class="step" data-step="9">Part of China’s numerical advantage may come from its speed. Chinese patents are granted 2.5 times faster than U.S. patents, at an average of less than two years.</div>
+		  <div class="step" data-step="10">Its fastest patent - to develop a drought resistant variety of rice - was granted in just 59 days.</div>
+        </div>
+      </section>
+      
+  
+    <div class="content">
+		<h2>CRISPR: Farmer-friendly or debt creating in Africa?</h2>
+        <p>Research institutes and agribusiness companies are quick to tout the technology’s benefits. Some institutes have engineered drought-resistant plants that can help communities adapt to climate change. Others are promoting gene-edited crops that can resist diseases, like lethal necrosis, which originated in Kenya in 2011 and devastated maize crops across East Africa.</p>
+		<p>The WIPO data shows the share of patents for improving specific crops like rice, maize, tomatoes and soybeans have increased, such as for developing disease resistance, improving yields and helping plants adapt to drought and extreme temperatures.</p>
+		<p>African markets are a major target, where economies that depend primarily on agriculture have become more volatile under climate change. Crops in the Horn of Africa, already in the midst of the worst drought in 40 years, have been simultaneously bludgeoned by pests and diseases. At least thirteen CRISPR research projects are underway for crops in Africa, including bananas, cassava, cocoa, maize, rice and sorghum.</p>
+		<figure class="stretch-outside-container">
+            <img
+                src="uganda_crops.jpeg">
+            <figcaption>Small-scale farming in Kapchorwa, eastern Uganda.
+        </figure>
+		<p>“Why these really stand out to those of us who have been researching genetic engineering for a long time is because these are crops that are are not necessarily commercial crops or are not necessarily the types of crops that you see big players like Bayer or Syngenta developing and selling seeds for,” said Joeva Rock, an anthropology researcher at Stony Brook University who studies genetically modified crops in Africa.</p>
+		<p>But some farmers’ associations are resisting the technology, accusing it of being another force of market-based neocolonialism disguised as climate-smart practices. While most news reports paint CRISPR as a “magic bullet” to end famines and help farmers across the Global South, my analysis of WIPO patents shows that major American agribusiness companies are among the top owners for CRISPR crop inventions - some of the very companies that have wreaked havoc on many farmers in the developing world through GMOs and pesticides.</p>
+		<p>This includes American giant Monsanto Technology, now owned by German company Bayer. For decades, this GMO giant has been embroiled in thousands of lawsuits around the health impacts of its herbicides that have been linked to cancer.</p>
+		<p>Another American company, Corteva Agriscience, also has its hand in many of the patented inventions through its subsidiary Pioneer Hi-Bred International or through partnerships. U.S.-based company Pairwise Plants Services, the top applicant for CRISPR crops listed in the WIPO system, is one of these recipients. Last year, Corteva made a $25 million equity investment in Pairwise through its new <a href='https://www.corteva.com/resources/media-center/corteva-launches-corteva-catalyst.html' target='blank'>Corteva Catalyst</a> program. </p>
+		<p>Corteva is a spin-off from the merger of American chemical companies DuPont and Dow, major producers of agrochemicals and genetically modified organisms.</p>
+		<p>The company is funding at least four of the thirteen crops being developed for African markets, including disease-resistant varieties of cassava, maize, millet and sorghum.</p>
+		<p>“Something that complicates these projects is that because they're being done in public private partnerships, a lot of the licensing is really complex,” Rock said. “So while for instance, this work might be being done in public institutions or while it might be being done on crops that are not commercial crops, it still has complexities around who owns what and what that might look like should these crops be commercialized.”</p>
+		<p>Some farmers with the Kenya Peasants League, a grassroots coalition, have reported becoming dependent on multinational companies for patented seeds that they previously saved and planted for free: a situation that isn’t likely to change with the adoption of gene-edited crops sold by the same companies, said Susan Owiti, one of the organization’s leaders who focuses on the rights of women farmers.</p>
+		<p>“They set up their shops in the community where farmers are… They will bring the seeds to my doorstep,” she said. “And then [farmers] will take it because it is the planting season. Some of these farmers have not even paid their previous loans. So meaning that now the farmers will continue to be in the cycle of debt and poverty.”</p>
+        </p>
+    </div>
+    <div class="footer">
+        <div class="content">
+            <p>This story was produced for the 2024-25 Data Journalism masters program at Columbia University. See the code for scraping, analyzing and visualizing the data <a href="https://github.com/annikamcginnis/crispr-crops-patents">here</a>. Photos by Annika McGinnis. Header photo shows a banana (matooke) agroforestry farm in western Uganda.</p>
+        </div>
+    </div>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+    <script>
+
+        
+
+        function hideNote() {
+            // annotation: #path-1, #text-1, #path-2, #text-2
+            d3.select("#path-1").classed('hidden', true)
+            d3.select("#text-1").classed('hidden', true)
+            d3.select("#path-2").classed('hidden', true)
+            d3.select("#text-2").classed('hidden', true)
+        }
+
+        /* Scrollytelling code goes under here */
+        hideNote()
+
+        d3.select("#step-one").on('stepout', function (e) {
+            if (e.detail.direction === 'up') {
+                // undo the changes from step one
+                hideNote()
+            }
+        })
+
+        d3.select("#step-one").on('stepin', function (e) {
+            console.log("Got to step one")
+            // undo changes from step two
+            d3.selectAll("[data-name='africa'] path").style('stroke', 'none')
+
+            // do changes for step one
+            d3.select("#path-1").classed('hidden', false)
+            d3.select("#text-1").classed('hidden', false)
+            d3.select("#path-2").classed('hidden', false)
+            d3.select("#text-2").classed('hidden', false)
+        })
+
+        d3.select("#step-two").on('stepin', function (e) {
+
+            // undo changes from step one
+            hideNote()
+
+            // do changes for step two
+            console.log("Got to step two")
+            d3.selectAll("[data-name='africa'] path").style('stroke', 'black')
+        })
+
+        d3.select("#step-three").on('stepin', function (e) {
+            // undo changes from step two
+            d3.selectAll("[data-name='africa'] path").style('stroke', 'none')
+        })
+
+
+    </script>
+
+
+
+    
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const scroller = scrollama();
+
+    scroller
+      .setup({
+        step: ".step",
+        offset: 0.5,
+        debug: false
+      })
+      .onStepEnter(response => {
+        document.querySelectorAll('.ai2html-graphic').forEach(d => d.classList.remove('active'));
+        const step = response.element.dataset.step;
+        const current = document.querySelector(`#graphic-${step}`);
+        if (current) current.classList.add('active');
+      });
+  });
+</script>
+
+
+
+    <style>
+        /* Change this to adjust the padding between steps */
+        .step {
+            margin-bottom: 80vh;
+			
+        }
+
+		.step:last-of-type {
+        margin-bottom: 30vh; /* Increased margin for the last step */
+    }
+    </style>
+
+    <script type="text/javascript">
+            (function () {
+                // only want one resizer on the page
+                if (document.documentElement.className.indexOf("g-resizer-v3-init") > -1) return;
+                document.documentElement.className += " g-resizer-v3-init";
+                // require IE9+
+                if (!("querySelector" in document)) return;
+                function resizer() {
+                    var elements = Array.prototype.slice.call(document.querySelectorAll(".g-artboard[data-min-width]")),
+                        widthById = {};
+                    elements.forEach(function (el) {
+                        var parent = el.parentNode,
+                            width = widthById[parent.id] || parent.getBoundingClientRect().width,
+                            minwidth = el.getAttribute("data-min-width"),
+                            maxwidth = el.getAttribute("data-max-width");
+                        widthById[parent.id] = width;
+
+                        if (+minwidth <= width && (+maxwidth >= width || maxwidth === null)) {
+                            el.style.display = "block";
+                        } else {
+                            el.style.display = "none";
+                        }
+                    });
+                    try {
+                        if (window.parent && window.parent.$) {
+                            window.parent.$("body").trigger("resizedcontent", [window]);
+                        }
+                        if (window.require) {
+                            require(['foundation/main'], function () {
+                                require(['shared/interactive/instances/app-communicator'], function (AppCommunicator) {
+                                    AppCommunicator.triggerResize();
+                                });
+                            });
+                        }
+                    } catch (e) { console.log(e); }
+                }
+
+                document.addEventListener('DOMContentLoaded', resizer);
+                // feel free to replace throttle with _.throttle, if available
+                window.addEventListener('resize', throttle(resizer, 200));
+
+                function throttle(func, wait) {
+                    // from underscore.js
+                    var _now = Date.now || function () { return new Date().getTime(); },
+                        context, args, result, timeout = null, previous = 0;
+                    var later = function () {
+                        previous = _now();
+                        timeout = null;
+                        result = func.apply(context, args);
+                        if (!timeout) context = args = null;
+                    };
+                    return function () {
+                        var now = _now(), remaining = wait - (now - previous);
+                        context = this;
+                        args = arguments;
+                        if (remaining <= 0 || remaining > wait) {
+                            if (timeout) {
+                                clearTimeout(timeout);
+                                timeout = null;
+                            }
+                            previous = now;
+                            result = func.apply(context, args);
+                            if (!timeout) context = args = null;
+                        } else if (!timeout && options && options.trailing !== false) {
+                            timeout = setTimeout(later, remaining);
+                        }
+                        return result;
+                    };
+                }
+
+
+            })();
+    </script>
+</body>
+
+</html>
