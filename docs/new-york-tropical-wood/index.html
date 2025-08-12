@@ -158,6 +158,8 @@
                 </p>
             </section>
             <div style="height: 30vh;"></div>
+            <!-- Trigger to hide map when this element comes into view -->
+            <div id="map-hide-trigger" style="height: 1px; opacity: 0;"></div>
             <section id="new-york-final" style="opacity: 0; pointer-events: none; height: 0; margin: 0; padding: 0;">
                 <!-- This section is invisible and non-functional -->
             </section>
@@ -640,7 +642,9 @@
 
     <div class="footer">
         <div style="width: 640px; max-width: 100%; margin: 0 auto;">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.not </p>
+            <p>This is a master's project for the Data Journalism Master's of Science at Columbia University, 2025, by Annika McGinnis.</p>
+            <p>Code and full methodology available on <a href="https://github.com/annikamcginnis/new-york-hardwood" target="_blank">Github.</a></p>
+            <p>Cameroon forest, logging and factory photos by Tim Keating. Historical photos of Rainforest Relief protests collated by Tim Keating. All other photos, videos, and graphics by Annika McGinnis. Development by Annika McGinnis.</p>
         </div>
     </div>
 
@@ -661,7 +665,7 @@
                 .setup({
                     parent: document.querySelector("#scrolly-images"),
                     step: ".step",
-                    offset: 0.1,
+                    offset: 0.3,
                     debug: false, // Set to true to see debug lines
                 })
                 .onStepEnter(function ({ element, index, direction }) {
@@ -898,17 +902,17 @@
             rootMargin: '0px 0px -50% 0px'
         });
         
-        // Additional observer to hide map when new-york-2 step reaches the top of viewport
+        // Additional observer to hide map when new-york-2 step exits the viewport
         const newYork2Observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (!entry.isIntersecting) {
-                    console.log('New York 2 step reached top of viewport - hiding map');
+                    console.log('New York 2 step exited viewport - hiding map');
                     hideMapSection();
                 }
             });
         }, {
             threshold: 0,
-            rootMargin: '0px 0px 0px 0px'
+            rootMargin: '0px 0px -10% 0px'
         });
 
         // Observe the paragraph before the map section to control visibility
@@ -932,6 +936,22 @@
         if (newYork2Section) {
             console.log('Observing new-york-2 section to hide map');
             newYork2Observer.observe(newYork2Section);
+        }
+        
+        // Observe the map hide trigger to hide map when it comes into view
+        const mapHideTrigger = document.getElementById('map-hide-trigger');
+        if (mapHideTrigger) {
+            const mapHideObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        console.log('Map hide trigger visible - hiding map');
+                        hideMapSection();
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            mapHideObserver.observe(mapHideTrigger);
         }
         
 
