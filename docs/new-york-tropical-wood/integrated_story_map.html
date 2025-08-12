@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>In New York, Commuters Ride on Rainforests</title>
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    
+    <!-- Mapbox CSS -->
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.13.0/mapbox-gl.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://use.typekit.net/pez4rrb.css">
+    
+    <!-- Scripts -->
+    <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollama/3.2.0/scrollama.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.3.0/d3.min.js"></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.13.0/mapbox-gl.js"></script>
+
+    <style>
+        /* Map-specific styles that need to be added to your existing styles.css */
+        
+        /* Map container styles */
+        .map-section {
+            width: 100vw;
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+            margin-bottom: 3em;
+            margin-top: 3em;
+        }
+
+        /* Make the map fill the entire viewport */
+        #map {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 1;
+        }
+
+        /* SVG overlay positioned over the map */
+        #svg-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        /* Features container overlays the map and takes full width */
+        #features {
+            position: relative;
+            width: 100vw;
+            z-index: 2;
+            padding: 0 0 80vh 0; /* only bottom padding for scroll-out */
+        }
+
+        #features section {
+            max-width: 600px;
+            margin: 60vh auto 40vh auto; /* top margin pushes step to bottom, bottom margin for spacing */
+            background: rgba(255,255,255,0.9);
+            border-radius: 12px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+            padding: 1.25rem 1.75rem;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            display: block;
+            opacity: 0;
+            pointer-events: none;
+            z-index: 2;
+            transition: opacity 0.4s;
+            min-height: 40px;
+        }
+
+        #features section p {
+            margin: 0;
+            padding: 0;
+        }
+
+        #features section.active {
+            opacity: 1;
+            pointer-events: auto;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+        }
+
+        #features section#new-york-final.active {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        #features section#new-york-final {
+            background: transparent;
+            box-shadow: none;
+            padding: 0;
+            margin: 60vh auto 40vh auto;
+        }
+
+        /* Hide map section initially */
+        .map-section {
+            display: none;
+        }
+
+        /* Show map section when active */
+        .map-section.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 1. Scrolly section that moves through images -->
+    <section id="scrolly-images" class="scrolly-container">
+        <div class="sticky-thing">
+            <img src="images/entering concession.jpg" alt="Entering concession">
+        </div>
+        <div class="steps-container">
+            <div class="step" id="step1">
+                <div>
+                    <p>The tallest trees are marked for the harvest.</p>
+                </div>
+            </div>
+            <div class="step" id="step2">
+                <p>Hundreds are chosen, each as tall as a ten-story building. At the top, their enormous green canopies allow in angles of light.</p>
+            </div>
+            <div class="step" id="step3">
+                <p>These ancient beings are home to a teeming diversity of plants, insects, mammals, and birds. They provide structure to the forest, enabling it to regulate the global climate.</p>
+            </div>
+            <div class="step" id="step4">
+                <p>It is time. Deep in one of the world's last rainforests, loggers set their chainsaws on a dense, rooted trunk.</p>
+            </div>
+            <div class="step" id="step5">
+                <p>The order has come from over 2,500 miles away, on an island called Manhattan.</p>
+            </div>
+            <div class="step" id="step6">
+                <p>Next year, it will come again.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Title section -->
+    <div class="content">
+        <div class="header">
+            <h1 style="font-size: 2.5em;">In New York City, Commuters Ride on Rainforests</h1>
+            <p>The city procures threatened tropical trees from the Amazon and Congo basin for the subway, ferry and Brooklyn Bridge.</p>
+        </div>
+        <div class="byline">
+            <p>By <a href="https://annikamcginnis.github.io/">Annika McGinnis</a></p>
+        </div>
+    </div>
+
+    <!-- 2. Text content -->
+    <div class="content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        
+        <div class="wide-content">
+            <figure>
+                <img src="images/taking pic on sif.jpg" alt="Taking picture on SIF" class="photo-900px">
+                <figcaption>Passengers take photos as the Staten Island Ferry departs its dock in July</figcaption>
+            </figure>
+        </div>
+        
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+
+    <!-- INTEGRATED MAP SECTION - This is where your map goes -->
+    <section class="map-section" id="map-section">
+        <div id="map"></div>
+        <div id="svg-overlay">
+            <svg width="100%" height="100%" style="position: absolute; top: 0; left: 0; pointer-events: none;">
+            </svg>
+        </div>
+        <div id="features">
+            <section id="world" class="active">
+                <p>
+                    Tropical forests harbor half of the world's biodiversity and absorb enormous amounts of carbon, 
+                    which helps slow climate change, but could disappear in the next 100 years.
+                </p>
+            </section>
+            <section id="world-prohibition">
+                <p>
+                    In 1993, the state passed a tropical hardwood procurement prohibition aimed at protecting these forests. But this law only applied to 42 of the thousands of tropical hardwood species, leaving room for agencies to import other similar types of wood, which have since become increasingly threatened.
+                </p>
+            </section>
+            <section id="world-2">
+                <p>
+                    For at least four decades, the Departments of Transportation, Sanitation and the Metropolitan 
+                    Transportation Authority (MTA) have constructed public works projects with wood from tropical 
+                    forests.
+                </p>
+            </section>
+            <section id="world-2-supply-chains">
+                <p>
+                    This wood arrives in the city through convoluted supply chains linked to degradation of 
+                    rainforests in South America and West Africa.
+                </p>
+            </section>
+            <section id="guyana-cameroon">
+                <p>
+                    So-called "greenheart" wood for the bridge and ferry comes from the Guiana Shield in Guyana, 
+                    a northern extension of the Amazon rainforest.
+                </p>
+            </section>
+            <section id="guyana-cameroon-2">
+                <p>
+                    "Ekki" wood for rail ties comes from the Congo rainforest in western Cameroon. 
+                </p>
+            </section>
+            <section id="guyana-2">
+                <p>
+                    For every tree cut, at least 10 others are cut or injured.
+                </p>
+            </section>
+            <section id="guyana-3">
+                <p>
+                    Logging roads open up vast stretches of untouched rainforest for exploitation.
+                </p>
+            </section>
+            <section id="intermediary-countries-cameroon">
+                <p>
+                    Logs are ferried through intermediary countries. Logs from Cameroon go through the Netherlands.
+                </p>
+            </section>
+            <section id="intermediary-countries-guyana">
+                <p>
+                    Logs from Guyana go through Panama, Jamaica and Trinidad.
+                </p>
+            </section>
+            <section id="contractors-locations">
+                <p>
+                    They're bought by timber or construction companies in New York and New Jersey, 
+                    which sell to city agencies or contractors.
+                </p>
+            </section>
+            <section id="new-york-2">
+                <p>
+                    Finally, they end up in the infrastructure New Yorkers use every day.
+                </p>
+            </section>
+            <section id="new-york-final">
+                <p style="opacity: 0; margin: 0; padding: 0; height: 0;">&nbsp;</p>
+            </section>
+        </div>
+    </section>
+
+    <!-- Continue with rest of story content -->
+    <div class="content">
+        <!-- Responsive trees procured per NYC system images -->
+        <div class="wide-content">
+            <figure>
+                <img src="charts/trees procured per nyc system 700.png" alt="Trees procured per NYC system" class="responsive-image" id="trees-procured-700">
+                <img src="charts/trees procured per nyc system 490.png" alt="Trees procured per NYC system" class="responsive-image" id="trees-procured-490">
+                <img src="charts/trees procured per nyc system 375.png" alt="Trees procured per NYC system" class="responsive-image" id="trees-procured-375">
+            </figure>
+        </div>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+        
+        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+        
+        <!-- All Ekki Greenheart Imports Chart -->
+        <div class="wide-content">
+            <figure>
+                <img src="charts/all_ekki_greenheart_imports_700.png" alt="All Ekki Greenheart Imports" class="responsive-image" id="all-ekki-greenheart-700">
+                <img src="charts/all_ekki_greenheart_imports_490.png" alt="All Ekki Greenheart Imports" class="responsive-image" id="all-ekki-greenheart-490">
+                <img src="charts/all_ekki_greenheart_imports_375.png" alt="All Ekki Greenheart Imports" class="responsive-image" id="all-ekki-greenheart-375">
+            </figure>
+        </div>
+    </div>
+
+    <!-- Rest of your story continues here... -->
+
+    <script>
+        // Your existing scrolly JavaScript for images
+        (() => {
+            const scroller = scrollama()
+
+            scroller
+                .setup({
+                    parent: document.querySelector("#scrolly-images"),
+                    step: ".step",
+                    offset: 0.6,
+                    debug: false,
+                })
+                .onStepEnter(function ({ element, index, direction }) {
+                    const event = new CustomEvent("stepin", { detail: { direction: direction } })
+                    element.dispatchEvent(event)
+                })
+                .onStepExit(function ({ element, index, direction }) {
+                    const event = new CustomEvent("stepout", { detail: { direction: direction } })
+                    if (direction === "up" && element.previousElementSibling) {
+                        const event = new CustomEvent("stepin", { detail: { direction: direction } })
+                        element.previousElementSibling.dispatchEvent(event)
+                    }
+                })
+
+            window.addEventListener("resize", scroller.resize)
+        })()
+
+        // Image switching for initial scrolly
+        d3.select("#step1").on('stepin', (e) => {
+            d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "images/entering concession.jpg")
+        })
+
+        d3.select("#step2").on('stepin', (e) => {
+            d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "images/canopy.jpg")
+        })
+
+        d3.select("#step3").on('stepin', (e) => {
+            d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "images/close up forest floor.jpg")
+        })
+
+        d3.select("#step4").on('stepin', (e) => {
+            d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "images/skidder 1.jpg")
+        })
+
+        d3.select("#step5").on('stepin', (e) => {
+            d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "images/trees logged in forest.jpg")
+        })
+
+        d3.select("#step6").on('stepin', (e) => {
+            d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "images/logging truck on the road.jpg")
+        })
+
+        // MAP FUNCTIONALITY - Integrated from your map.js
+        // Mapbox access token
+        mapboxgl.accessToken = 'pk.eyJ1IjoibWNnaW5uaXNhbm5pa2EiLCJhIjoiY201cjhtMWN6MDgxcjJrb25raGs4MmFjayJ9.6MGB4e-uZHWgJu4BN6hglA';
+
+        // Initialize the map
+        const map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/satellite-v9',
+            center: [-40, 15],
+            zoom: 2.7,
+            bearing: 0,
+            pitch: 0,
+            projection: 'globe'
+        });
+
+        // Disable all zooming and rotation, but allow panning
+        map.scrollZoom.disable();
+        map.boxZoom.disable();
+        map.doubleClickZoom.disable();
+        map.touchZoomRotate.disable();
+        map.keyboard.disable();
+
+        // Add navigation controls
+        map.addControl(new mapboxgl.NavigationControl());
+
+        // Variables for animations
+        let currentWijmaAnimation = null;
+        let worldRotationInterval = null;
+        let activeChapterName = '';
+        let worldRotationId = null;
+        let outlineAnimationId = null;
+        let currentOutlineAnimation = null;
+        let wijmaAnimationId = null;
+
+        // Define chapters with their map positions
+        const chapters = {
+            'world': {
+                center: [-40, 15],
+                zoom: 2.7,
+                bearing: 0,
+                pitch: 0
+            },
+            'world-prohibition': {
+                center: [-40, 15],
+                zoom: 2.7,
+                bearing: 0,
+                pitch: 0
+            },
+            'world-2': {
+                center: [-70, 25],
+                zoom: 2.7,
+                bearing: 0,
+                pitch: 0
+            },
+            'world-2-supply-chains': {
+                center: [-25, 15],
+                zoom: 2.7,
+                bearing: 0,
+                pitch: 0
+            },
+            'guyana-cameroon': {
+                center: [-65, 10],
+                zoom: 3.5,
+                bearing: 0,
+                pitch: 0
+            },
+            'guyana-cameroon-2': {
+                center: [10, 7],
+                zoom: 5.5,
+                bearing: 0,
+                pitch: 0
+            },
+            'guyana-2': {
+                center: [10.15, 2.55],
+                zoom: 12,
+                bearing: 0,
+                pitch: 0
+            },
+            'guyana-3': {
+                center: [10.15, 2.55],
+                zoom: 12,
+                bearing: 0,
+                pitch: 0
+            },
+            'intermediary-countries-guyana': {
+                center: [-62, 2],
+                zoom: 3.2,
+                bearing: 0,
+                pitch: 0
+            },
+            'intermediary-countries-cameroon': {
+                center: [2, 30],
+                zoom: 2.7,
+                bearing: 0,
+                pitch: 0
+            },
+            'contractors-locations': {
+                center: [-73.5, 39.5],
+                zoom: 6.5,
+                bearing: 0,
+                pitch: 0
+            },
+            'new-york-2': {
+                center: [-74.00, 40.70],
+                zoom: 10.5,
+                bearing: 0,
+                pitch: 0
+            },
+            'new-york-final': {
+                center: [-74.00, 40.70],
+                zoom: 10.5,
+                bearing: 0,
+                pitch: 0
+            }
+        };
+
+        // Show/hide map section based on scroll position
+        function checkMapVisibility() {
+            const mapSection = document.getElementById('map-section');
+            const rect = mapSection.getBoundingClientRect();
+            
+            // Show map when section is in view
+            if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+                mapSection.classList.add('active');
+            } else {
+                mapSection.classList.remove('active');
+            }
+        }
+
+        // Listen for scroll events to show/hide map
+        window.addEventListener('scroll', checkMapVisibility);
+        window.addEventListener('resize', checkMapVisibility);
+
+        // Your complete map functionality goes here...
+        // (I'll include the key functions but you'll need to add the rest of your map.js code)
+        
+        // Initialize scrollama for map
+        const mapScroller = scrollama();
+
+        // Initialize map scrollama
+        mapScroller
+            .setup({
+                step: '#features section',
+                offset: 0.5,
+                debug: false
+            })
+            .onStepEnter(response => {
+                document.querySelectorAll("#features section").forEach(s => s.classList.remove("active"));
+                response.element.classList.add("active");
+                const chapterName = response.element.id;
+                setActiveChapter(chapterName);
+            });
+
+        // Handle resize for map scroller
+        window.addEventListener('resize', mapScroller.resize);
+
+        // Add your setActiveChapter function and other map functions here
+        // (Include all the functions from your map.js file)
+        
+        // Placeholder for all your map functions - you'll need to copy them all here
+        function setActiveChapter(chapterName) {
+            // Your complete setActiveChapter function from map.js
+            if (chapterName === activeChapterName) return;
+            
+            map.flyTo({
+                ...chapters[chapterName],
+                duration: 1500,
+                easing: (t) => t * (2 - t)
+            });
+            
+            activeChapterName = chapterName;
+            
+            // Add all your layer visibility and animation logic here
+        }
+        
+        // Map load event with all your data sources and layers
+        map.on('load', () => {
+            console.log('Map loaded, adding data sources and layers');
+            // Add all your map sources and layers here
+            setActiveChapter('world');
+        });
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>In New York, Commuters Ride on Rainforests</title>
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://use.typekit.net/pez4rrb.css">
+    
+    <!-- Mapbox dependencies -->
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.13.0/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.13.0/mapbox-gl.js"></script>
+    
+    <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollama/3.2.0/scrollama.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.3.0/d3.min.js"></script>
+</head>
+
+<body>
+    <!-- 1. Scrolly section that moves through images -->
+    <section id="scrolly-images" class="scrolly-container">
+        <div class="sticky-thing">
+            <img src="images/entering concession.jpg" alt="Entering concession">
+            <!-- Scroll to enter box -->
+            <div id="scroll-to-enter" class="scroll-to-enter-box">
+                <p>Scroll to enter</p>
+            </div>
+        </div>
+        <div class="steps-container">
+            <div class="step" id="step1">
+                <div>
+                    <p>The tallest trees are marked for the harvest.</p>
+                </div>
+            </div>
+            <div class="step" id="step2">
+                <p>Hundreds are chosen, each as tall as a ten-story building. At the top, their enormous green canopies allow in angles of light.</p>
+            </div>
+            <div class="step" id="step3">
+                <p>These ancient beings are home to a teeming diversity of plants, insects, mammals, and birds. They provide structure to the forest, enabling it to regulate the global climate.</p>
+            </div>
+            <div class="step" id="step4">
+                <p>It is time. Deep in one of the world's last rainforests, loggers set their chainsaws on a dense, rooted trunk.</p>
+            </div>
+            <div class="step" id="step5">
+                <p>The order has come from over 2,500 miles away, on an island called Manhattan.</p>
+            </div>
+            <div class="step" id="step6">
+                <p>Next year, it will come again.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Title section -->
+    <div class="content">
+        <div class="header">
+            <h1 style="font-size: 2.5em;">In New York City, Commuters Ride on Rainforests</h1>
+            <p>The city procures threatened tropical trees from the Amazon and Congo basin for the subway, ferry and Brooklyn Bridge.</p>
+        </div>
+        <div class="byline">
+            <p>By <a href="https://annikamcginnis.github.io/">Annika McGinnis</a></p>
+        </div>
+    </div>
+
+    <!-- 2. Text content -->
+    <div class="content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        
+        <div class="wide-content">
+            <figure>
+                <img src="images/taking pic on sif.jpg" alt="Taking picture on SIF" class="photo-900px">
+                <figcaption>Passengers take photos as the Staten Island Ferry departs its dock in July</figcaption>
+            </figure>
+        </div>
+        
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        
+        <p id="map-trigger">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        
+        <!-- Moving Map Section -->
+        <div id="map"></div>
+        <div id="svg-overlay">
+            <svg width="100%" height="100%" style="position: absolute; top: 0; left: 0; pointer-events: none;">
+            </svg>
+        </div>
+        <div id="features" style="min-height: 200vh;">
+            <section id="world" class="active">
+                <p>
+                    Tropical forests harbor half of the world's biodiversity and absorb enormous amounts of carbon, 
+                    which helps slow climate change, but could disappear in the next 100 years.
+                </p>
+            </section>
+            <section id="world-prohibition">
+                <p>
+                    In 1993, the state passed a tropical hardwood procurement prohibition aimed at protecting these forests. But this law only applied to 42 of the thousands of tropical hardwood species, leaving room for agencies to import other similar types of wood, which have since become increasingly threatened.
+                </p>
+            </section>
+            <section id="world-2">
+                <p>
+                    For at least four decades, the Departments of Transportation, Sanitation and the Metropolitan 
+                    Transportation Authority (MTA) have constructed public works projects with wood from tropical 
+                    forests.
+                </p>
+            </section>
+            <section id="world-2-supply-chains">
+                <p>
+                    This wood arrives in the city through convoluted supply chains linked to degradation of 
+                    rainforests in South America and West Africa.
+                </p>
+            </section>
+            <section id="guyana-cameroon">
+                <p>
+                    So-called "greenheart" wood for the bridge and ferry comes from the Guiana Shield in Guyana, 
+                    a northern extension of the Amazon rainforest.
+                </p>
+            </section>
+            <section id="guyana-cameroon-2">
+                <p>
+                    "Ekki" wood for rail ties comes from the Congo rainforest in western Cameroon. 
+                </p>
+            </section>
+            <section id="guyana-2">
+                <p>
+                    For every tree cut, at least 10 others are cut or injured.
+                </p>
+            </section>
+            <section id="guyana-3">
+                <p>
+                    Logging roads open up vast stretches of untouched rainforest for exploitation.
+                </p>
+            </section>
+            <section id="intermediary-countries-cameroon">
+                <p>
+                    Logs are ferried through intermediary countries. Logs from Cameroon go through the Netherlands.
+                </p>
+            </section>
+            <section id="intermediary-countries-guyana">
+                <p>
+                    Logs from Guyana go through Panama, Jamaica and Trinidad.
+                </p>
+            </section>
+            <section id="contractors-locations">
+                <p>
+                    They're bought by timber or construction companies in New York and New Jersey, 
+                    which sell to city agencies or contractors.
+                </p>
+            </section>
+            <section id="new-york-2">
+                <p>
+                    Finally, they end up in the infrastructure New Yorkers use every day.
+                </p>
+            </section>
+            <div style="height: 30vh;"></div>
+            <section id="new-york-final" style="opacity: 0; pointer-events: none; height: 0; margin: 0; padding: 0;">
+                <!-- This section is invisible and non-functional -->
+            </section>
+            <!-- Add a visible spacer for the final step -->
+            <section id="map-end-spacer" style="height: 10vh; opacity: 0; pointer-events: none;">
+                <p style="text-align: center; padding-top: 5vh; color: transparent;">End of map section</p>
+            </section>
+        </div>
+
+        <!-- Space after map section -->
+        <div style="height: 50vh; margin: 3em 0;"></div>
+
+        <!-- Responsive trees procured per NYC system images -->
+        <div class="wide-content">
+            <figure>
+                <img src="charts/trees procured per nyc system 700.png" alt="Trees procured per NYC system" class="responsive-image" id="trees-procured-700">
+                <img src="charts/trees procured per nyc system 490.png" alt="Trees procured per NYC system" class="responsive-image" id="trees-procured-490">
+                <img src="charts/trees procured per nyc system 375.png" alt="Trees procured per NYC system" class="responsive-image" id="trees-procured-375">
+            </figure>
+        </div>
+
+
+        
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+        
+        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+        
+        <!-- All Ekki Greenheart Imports Chart -->
+        <div class="wide-content">
+            <figure>
+                <img src="charts/all_ekki_greenheart_imports_700.png" alt="All Ekki Greenheart Imports" class="responsive-image" id="all-ekki-greenheart-700">
+                <img src="charts/all_ekki_greenheart_imports_490.png" alt="All Ekki Greenheart Imports" class="responsive-image" id="all-ekki-greenheart-490">
+                <img src="charts/all_ekki_greenheart_imports_375.png" alt="All Ekki Greenheart Imports" class="responsive-image" id="all-ekki-greenheart-375">
+            </figure>
+        </div>
+    </div>
+
+    <!-- 3. Video header section -->
+    <div class="header with-video-bg">
+        <div class="video-background">
+            <video src="videos/SIF video coming in.mov" preload="auto" tabindex="0" playsinline autoplay loop muted></video>
+        </div>
+        <div class="content">
+            <h1 class="subhead">Wood for Staten Island Ferry docks linked to "obscure" timber companies</h1>
+        </div>
+    </div>
+
+    <!-- 4. Text content with data visualizations and photos -->
+    <div class="content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        
+        <!-- Example of a full-width image -->
+        <!-- <div class="full-width">
+            <figure>
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=600&fit=crop" alt="Data visualization example">
+                <figcaption>This is a full-width image that stretches across the entire viewport</figcaption>
+            </figure>
+        </div> -->
+        
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+        
+        <!-- SIF Images Side by Side -->
+        <div class="wide-content">
+            <div style="width: 1000px; max-width: 100%; margin: 0 auto; display: flex; gap: 2em; align-items: flex-start;">
+                <div style="flex: 1;">
+                    <figure>
+                        <img src="images/sif in its dock.jpg" alt="SIF in its dock" style="width: 100%; height: auto;">
+                        <figcaption>The Staten Island Ferry on the Manhattan side</figcaption>
+                    </figure>
+                </div>
+                <div style="flex: 1;">
+                    <figure>
+                        <img src="images/sif dock closeup.jpg" alt="SIF dock closeup" style="width: 100%; height: auto;">
+                        <figcaption>Wood damage from boat docking</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Example of a wide content section for data viz -->
+        <!-- <div class="wide-content">
+            <div class="data-viz">
+                <h3>Interactive Data Visualization</h3>
+                <p>This container is wider than the text but not full-width - perfect for charts, graphs, and data visualizations. You can embed D3.js charts, Plotly graphs, or other interactive elements here.</p>
+                <div style="height: 300px; background: linear-gradient(45deg, #667eea 0%, #764ba2 100%); border-radius: 4px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2em;">
+                    Your Data Visualization Here
+                </div>
+            </div>
+        </div> -->
+        
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..</p>
+        
+        <!-- Guyana exports tree map responsive images -->
+        <div class="wide-content">
+            <figure>
+                <img src="charts/guyana exports tree map 700.png" alt="Guyana exports tree map" class="responsive-image" id="guyana-exports-700">
+                <img src="charts/guyana exports tree map 490.png" alt="Guyana exports tree map" class="responsive-image" id="guyana-exports-490">
+                <img src="charts/guyana exports tree map 375.png" alt="Guyana exports tree map" class="responsive-image" id="guyana-exports-375">
+            </figure>
+        </div>
+        
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        
+        
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+
+    <!-- Guyana Exports Chart with Side-by-side Text -->
+            <div class="guyana-exports-container" style="width: 800px; max-width: 100%; margin: 0 auto; display: flex; gap: 2em; align-items: flex-start;">
+            <div style="flex: 0 0 55%;">
+                <figure>
+                    <img src="charts/guyana_exports 330.png" alt="Guyana Exports Chart" class="responsive-image" id="guyana-exports-330">
+                    <img src="charts/guyana_exports 490.png" alt="Guyana Exports Chart" class="responsive-image" id="guyana-exports-490">
+                    <img src="charts/guyana_exports 375.png" alt="Guyana Exports Chart" class="responsive-image" id="guyana-exports-375">
+                    <figcaption></figcaption>
+                </figure>
+            </div>
+                        <div class="text-section" style="flex: 1; margin-top: 2em;">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+    </div>
+
+    <div class="content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+    </div>
+
+    <!-- Side-by-side scrolly section for Chapter 1 -->
+    <section id="scrolly-side-by-side" class="scrolly-side-by-side">
+        <div class="steps-container">
+            <div class="step" id="side-step1">
+                <div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+            </div>
+            <div class="step" id="side-step2">
+                <div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+            </div>
+            <div class="step" id="side-step3">
+                <div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+            </div>
+            <div class="step" id="side-step4">
+                <div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+            </div>
+            <div class="step" id="side-step5">
+                <div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+            </div>
+
+        </div>
+        <div class="sticky-thing">
+            <img src="charts/companies scrolly_step 1 revised.png" alt="Companies scrolly step 1">
+        </div>
+    </section>
+
+    <!-- 5. Video header section -->
+    <div class="header with-video-bg">
+        <div class="video-background">
+            <video src="videos/staten_island_boardwalk_background_vid.mov" preload="auto" tabindex="0" playsinline autoplay loop muted></video>
+        </div>
+        <div style="width: 640px; max-width: 100%; margin: 0 auto;">
+            <h1 class="subhead">City procurements degrade forests in Guyana and Cameroon</h1>
+        </div>
+    </div>
+
+    <!-- 6. Text content -->
+    <div class="content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        
+        <!-- View on skidder of logs -->
+        <div class="wide-content">
+            <figure>
+                <img src="images/view on skidder of logs.jpg" alt="View on skidder of logs" style="width: 800px; max-width: 100%; height: auto;">
+                <figcaption>Skidder used to drag out cut trees from a forest concession in southern Cameroon, 2016</figcaption>
+            </figure>
+        </div>
+        
+        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+        
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+
+    <!-- Guyana Satellite Analysis Section -->
+    <div class="content" style="margin: 0 auto;">
+        <h2 style="font-size: 20px; margin-bottom: 1em;">Satellite imagery shows companies renting areas of Guyana's rainforest for 'reduced-impact-logging' are removing the tallest trees</h2>
+        
+        <p style="font-size: 16px; margin-bottom: 1.5em; color: #666; line-height: 1.3;">Map of Guyana with remote sensing data from UMD's GLAD laboratory, with different colors representing land use change between 2000-2020</p>
+    </div>
+        
+        <!-- Guyana Map Only -->
+        <div class="full-width">
+            <figure>
+                <img src="charts/guyana map 1600.png" alt="Guyana Map Only" class="responsive-image" id="guyana-map-1600">
+                <img src="charts/guyana map 1000.png" alt="Guyana Map Only" class="responsive-image" id="guyana-map-1000">
+                <img src="charts/guyana map 700.png" alt="Guyana Map Only" class="responsive-image" id="guyana-map-700">
+                <img src="charts/guyana map 375.png" alt="Guyana Map Only" class="responsive-image" id="guyana-map-375">
+            </figure>
+        </div>
+        
+        <!-- Guyana Satellite Analysis Chart -->
+        <div class="wide-content">
+            <figure>
+                <img src="charts/guyana satellite analysis 700.png" alt="Guyana Satellite Analysis Chart" class="responsive-image" id="guyana-satellite-analysis-700">
+                <img src="charts/guyana satellite analysis 490.png" alt="Guyana Satellite Analysis Chart" class="responsive-image" id="guyana-satellite-analysis-490">
+                <img src="charts/guyana satellite analysis 375.png" alt="Guyana Satellite Analysis Chart" class="responsive-image" id="guyana-satellite-analysis-375">
+            </figure>
+        </div>
+
+    <div class="content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+
+    <!-- Cameroon Export Chart with Side-by-side Text -->
+    <div class="cameroon-exports-container" style="width: 800px; display: flex; gap: 2em; align-items: flex-start; margin: 0 auto; margin-bottom: 2em;">
+        <div class="text-section" style="flex: 1; margin-top: 1.5em;">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+        <div style="flex: 0 0 55%;">
+            <img src="charts/cameroon_export_chart.png" alt="Cameroon Export Chart" class="responsive-image" id="cameroon-exports-700" style="width: 100%; height: auto;">
+            <img src="charts/cameroon exports 490.png" alt="Cameroon Export Chart" class="responsive-image" id="cameroon-exports-490" style="width: 100%; height: auto;">
+            <img src="charts/cameroon exports 375.png" alt="Cameroon Export Chart" class="responsive-image" id="cameroon-exports-375" style="width: 100%; height: auto;">
+        </div>
+    </div>
+    
+    <div class="content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    
+    <!-- Woodside Train Tracks Photos Side by Side -->
+    <div class="wide-content">
+        <div style="width: 1000px; max-width: 100%; margin: 0 auto; display: flex; gap: 2em; align-items: flex-start;">
+            <div style="flex: 1;">
+                <figure>
+                    <img src="images/G-Line.jpg" alt="G-Line" style="width: 100%; height: auto;">
+                    <figcaption>G line ekki train tracks in Queens in 2006</figcaption>
+                </figure>
+            </div>
+            <div style="flex: 1;">
+                <figure>
+                    <img src="images/concrete on train tracks in woodside.JPG" alt="Concrete on train tracks in woodside" style="width: 100%; height: auto;">
+                    <figcaption>7 line train tracks using a new material in July in Woodside </figcaption>
+                </figure>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Cameroon Satellite Graphic -->
+    <div class="wide-content">
+        <figure>
+            <img src="charts/cameroon satellite graphic 700.png" alt="Cameroon Satellite Graphic" class="responsive-image" id="cameroon-satellite-graphic-700">
+            <img src="charts/cameroon satellite graphic 490.png" alt="Cameroon Satellite Graphic" class="responsive-image" id="cameroon-satellite-graphic-490">
+            <img src="charts/cameroon satellite graphic 375.png" alt="Cameroon Satellite Graphic" class="responsive-image" id="cameroon-satellite-graphic-375">
+        </figure>
+    </div>
+    
+    <!-- Cameroon Satellite Analysis Chart -->
+    <div class="wide-content">
+        <figure>
+            <img src="charts/cameroon satellite analysis 700.png" alt="Cameroon Satellite Analysis Chart" class="responsive-image" id="cameroon-satellite-analysis-700">
+            <img src="charts/cameroon satellite analysis 490.png" alt="Cameroon Satellite Analysis Chart" class="responsive-image" id="cameroon-satellite-analysis-490">
+            <img src="charts/cameroon satellite analysis 375.png" alt="Cameroon Satellite Analysis Chart" class="responsive-image" id="cameroon-satellite-analysis-375">
+        </figure>
+    </div>
+    
+    <div class="content">
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+    </div>
+
+    <!-- 7. Video header section -->
+    <div class="header with-video-bg">
+        <div class="video-background">
+            <video src="videos/brooklyn bridge night video 2.mov" preload="auto" tabindex="0" playsinline autoplay loop muted></video>
+        </div>
+        <div style="width: 640px; max-width: 100%; margin: 0 auto;">
+            <h1 class="subhead">Agencies progress, slowly and with delays</h1>
+        </div>
+    </div>
+
+    <!-- 8. Text content -->
+    <div class="content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        
+        <!-- Brooklyn Bridge Couple Chilling -->
+        <div class="wide-content">
+            <figure>
+                <img src="images/brooklyn bridge couple chilling.jpg" alt="Brooklyn bridge couple chilling" style="width: 800px; max-width: 100%; height: auto;">
+                <figcaption>Pedestrians on the Brooklyn Bridge walkway in July</figcaption>
+            </figure>
+        </div>
+        
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+        
+        <!-- SIF Satellite Graphic -->
+        <div class="wide-content">
+            <figure>
+                <img src="charts/sif satellite graphic 800 real.png" alt="SIF satellite graphic" class="responsive-image" id="sif-satellite-800">
+                <img src="charts/sif satellite graphic 490 real.png" alt="SIF satellite graphic" class="responsive-image" id="sif-satellite-490">
+                <img src="charts/sif satellite graphic 375.png" alt="SIF satellite graphic" class="responsive-image" id="sif-satellite-375">
+            </figure>
+        </div>
+        
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+        
+        <!-- Factory Photos Side by Side -->
+        <div class="wide-content">
+            <div style="width: 1000px; max-width: 100%; margin: 0 auto; display: flex; gap: 2em; align-items: flex-start;">
+                <div style="flex: 1;">
+                    <figure>
+                        <img src="images/log in skidder at factory.jpg" alt="Log in skidder at factory" style="width: 100%; height: auto;">
+                        <figcaption>Caption placeholder</figcaption>
+                    </figure>
+                </div>
+                <div style="flex: 1;">
+                    <figure>
+                        <img src="images/paper making.jpg" alt="Paper making" style="width: 100%; height: auto;">
+                        <figcaption>Caption placeholder</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+        
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+        
+        <!-- Enormous Log in Factory -->
+        <div class="wide-content">
+            <figure>
+                <img src="images/enormous log in factory.jpg" alt="Enormous log in factory" style="width: 800px; max-width: 100%; height: auto;">
+                <figcaption>Caption placeholder</figcaption>
+            </figure>
+        </div>
+    </div>
+    
+
+
+
+
+
+
+    <div class="content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+
+
+
+    <!-- 11. Video header section -->
+    <div class="header with-video-bg">
+        <div class="video-background">
+            <video src="videos/coney_island_boardwalk_background_vid.mov" preload="auto" tabindex="0" playsinline autoplay loop muted></video>
+        </div>
+        <div class="content">
+            <h1 class="subhead">An environmentalist’s life mission succeeds – partly</h1>
+        </div>
+    </div>
+
+    <!-- 12. Final text content -->
+    <div class="content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        
+        <!-- Environmentalist Photos Layout -->
+        <div class="wide-content">
+            <div style="width: 1000px; max-width: 100%; margin: 0 auto; display: flex; gap: 2em; align-items: flex-start;">
+                <div style="flex: 1.5;">
+                    <figure>
+                        <img src="images/Parachute Jump stunt.jpg" alt="Parachute Jump stunt" style="width: 100%; height: auto;">
+                        <figcaption>Rainforest Relief activists hang a banner on the Parachute Jump in 1998</figcaption>
+                    </figure>
+                </div>
+                <div style="flex: 1;">
+                    <figure>
+                        <img src="images/City Hall Park protest.jpg" alt="City Hall Park protest" style="width: 100%; height: auto;">
+                        <figcaption>Tim Doody and Tim Keating hang a banner in City Hall Park, 2010</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="images/boardwalk protest.png" alt="Boardwalk protest" style="width: 100%; height: auto;">
+                        <figcaption>Rainforest Relief 2010 protest in Coney Island</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="images/NYT Clip.png" alt="NYT Clip" style="width: 100%; height: auto;">
+                        <figcaption>New York Times story on the Parachute Jump stunt</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+        
+        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
+        
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        
+        <!-- Dance Vertical Coney Island -->
+        <div class="wide-content">
+            <figure>
+                <img src="images/dance vertical coney island.jpg" alt="Dance vertical coney island" style="width: 800px; max-width: 100%; height: auto;">
+                <figcaption>A group dances salsa on a wooden section of the Coney Island boardwalk in July</figcaption>
+            </figure>
+        </div>
+        
+        <p>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.</p>
+        
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        
+        <!-- Tim Keating and Boardwalk Photos -->
+        <div class="wide-content">
+            <div style="width: 1000px; max-width: 100%; margin: 0 auto; display: flex; gap: 2em; align-items: flex-start;">
+                <div style="flex: 1.14;">
+                    <figure>
+                        <img src="images/tim keating.JPG" alt="Tim Keating" style="width: 100%; height: auto;">
+                        <figcaption>Tim Keating, who now makes and sells a hardwood substitute out of organic materials (December 2024)</figcaption>
+                    </figure>
+                </div>
+                <div style="flex: 1;">
+                    <figure>
+                        <img src="images/rpl coney island.jpg" alt="RPL coney island" style="width: 100%; height: auto;">
+                        <figcaption>Recycled plastic lumber on a portion of the Coney Island boardwalk in July</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="images/closeup old wood.jpg" alt="Closeup old wood" style="width: 100%; height: auto;">
+                        <figcaption>Old tropical hardwood on a portion of the Staten Island boardwalk in July</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+        
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        
+        <!-- Staten Island Concrete Fishing Pier -->
+        <div class="wide-content">
+            <figure>
+                <img src="images/staten island concrete fishing pier.jpg" alt="Staten Island concrete fishing pier" style="width: 800px; max-width: 100%; height: auto;">
+                <figcaption>A fishing pier, made out of concrete, attached to the old Staten Island boardwalk (July)</figcaption>
+            </figure>
+        </div>
+        
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+        
+        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+        
+        <!-- Methodology Box -->
+        <div class="wide-content">
+            <div style="width: 800px; max-width: 100%; margin: 0 auto; background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 8px; padding: 2em; font-size: 0.9em;">
+                <h3 style="margin-top: 0; margin-bottom: 1em; color: #495057;">Methodology</h3>
+                <p style="margin-bottom: 1em; color: #6c757d;">Assessing New York government agencies’ purchases of wood relied on procurement records from 2014 to 2024 that CJS obtained through public records requests to the NYC Parks Department, NYC Department of Sanitation, Metropolitan Transportation Authority, and NYC Department of Citywide Administrative Services. Records requests to other agencies were not produced by the time of publication. Additional contract records were acquired from the city comptroller’s <a href ='https://www.checkbooknyc.com/', target ='_blank'>Checkbook</a> platform. 
+                </p>
+                <p style="margin-bottom: 0; color: #6c757d;">The information that agencies provided allowed CJS to make estimates of the number of trees felled to fill their procurements. Conversions between typical lumber measurements (such as food board feet) or purchase values to logs relied on research by the International Tropical Timber Organization (ITTO), Guyana Forestry Commission, and international wood price averages. (See full calculations on Github). Pre-2014 procurements and Brooklyn Bridge calculations were estimated based on quantities provided in the city’s <a href= 'https://www.nyc.gov/html/om/pdf/tropical_hardwoods_report.pdf', target='_blank'>2008 Tropical Hardwood Reduction Plan</a> and information on estimated years of bridge wood replacements provided by Rainforest Relief. The number of trees logged to fill procurements was multiplied by 10 to estimate the additional trees harmed or cut in logging operations, based on a 2024 <a href= 'https://www.tandfonline.com/doi/full/10.1080/17583004.2024.2378740', target="_blank">study</a> in Guyana. 
+                </p>
+                <p style="margin-bottom: 0; color: #6c757d;">To put New York City agencies’ procurements in context, CJS calculated the estimated number of trees cut to fill all greenheart and ekki imports that came through U.S. ports between Nov. 1, 2006 and Dec. 31, 2024. Shipments’ weight and available information in the product descriptions were used to assess the number of trees cut to fill these shipments.</p> 
+            
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div style="width: 640px; max-width: 100%; margin: 0 auto;">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.not </p>
+        </div>
+    </div>
+
+    <script>
+        /*************
+        
+        This is the JavaScript that makes the scrolly work 
+        
+        *************/
+
+        /* 
+        This part attaches a scroll to the element with id="scrolly-images"    
+        */
+        (() => {
+            const scroller = scrollama()
+
+            scroller
+                .setup({
+                    parent: document.querySelector("#scrolly-images"),
+                    step: ".step",
+                    offset: 0.1,
+                    debug: false, // Set to true to see debug lines
+                })
+                .onStepEnter(function ({ element, index, direction }) {
+                    const event = new CustomEvent("stepin", { detail: { direction: direction } })
+                    element.dispatchEvent(event)
+                })
+                .onStepExit(function ({ element, index, direction }) {
+                    const event = new CustomEvent("stepout", { detail: { direction: direction } })
+                    if (direction === "up" && element.previousElementSibling) {
+                        const event = new CustomEvent("stepin", { detail: { direction: direction } })
+                        element.previousElementSibling.dispatchEvent(event)
+                    }
+                })
+
+            window.addEventListener("resize", scroller.resize)
+        })()
+
+        // Show the first step immediately when page loads
+        window.addEventListener('load', () => {
+            const firstStep = document.getElementById('step1');
+            if (firstStep) {
+                // Trigger the stepin event to show the first step
+                const event = new CustomEvent("stepin", { detail: { direction: "down" } });
+                firstStep.dispatchEvent(event);
+            }
+        });
+
+        // Hide scroll to enter box when user starts scrolling
+        let hasScrolled = false;
+        window.addEventListener('scroll', () => {
+            if (!hasScrolled) {
+                hasScrolled = true;
+                const scrollToEnterBox = document.getElementById('scroll-to-enter');
+                if (scrollToEnterBox) {
+                    scrollToEnterBox.classList.add('hidden');
+                }
+            }
+        });
+
+        /*
+        This part sets up your actions. In this case, it's changing the image in the scrolly container.
+        Replace these URLs with your own images.
+        */
+        d3.select("#step1").on('stepin', (e) => {
+            d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "images/entering concession.jpg")
+        })
+
+        d3.select("#step2").on('stepin', (e) => {
+            d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "images/canopy.jpg")
+        })
+
+        d3.select("#step3").on('stepin', (e) => {
+            d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "images/close up forest floor.jpg")
+        })
+
+        d3.select("#step4").on('stepin', (e) => {
+            d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "images/skidder 1.jpg")
+        })
+
+        d3.select("#step5").on('stepin', (e) => {
+            d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "images/trees logged in forest.jpg")
+        })
+
+        d3.select("#step6").on('stepin', (e) => {
+            d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "images/logging truck on the road.jpg")
+        })
+
+        /*
+        This part sets up the side-by-side scrolly actions
+        */
+        function setupSideBySideScrolly() {
+            if (typeof d3 !== 'undefined') {
+                d3.select("#side-step1").on('stepin', (e) => {
+                    d3.select(e.target.closest(".scrolly-side-by-side")).select("img").attr("src", "charts/companies scrolly_step 1 revised.png")
+                })
+
+                d3.select("#side-step2").on('stepin', (e) => {
+                    d3.select(e.target.closest(".scrolly-side-by-side")).select("img").attr("src", "charts/companies scrolly_step 2 revised.png")
+                })
+
+                d3.select("#side-step3").on('stepin', (e) => {
+                    d3.select(e.target.closest(".scrolly-side-by-side")).select("img").attr("src", "charts/companies scrolly_step 3 revised.png")
+                })
+
+                d3.select("#side-step4").on('stepin', (e) => {
+                    d3.select(e.target.closest(".scrolly-side-by-side")).select("img").attr("src", "charts/companies scrolly_step 4 revised.png")
+                })
+
+                d3.select("#side-step5").on('stepin', (e) => {
+                    d3.select(e.target.closest(".scrolly-side-by-side")).select("img").attr("src", "charts/companies scrolly_step 5 revised.png")
+                })
+            } else {
+                console.error("D3.js not loaded");
+            }
+        }
+
+        // Wait for D3 to be available
+        if (typeof d3 !== 'undefined') {
+            setupSideBySideScrolly();
+        } else {
+            // Wait for D3 to load
+            window.addEventListener('load', setupSideBySideScrolly);
+        }
+
+        // Fallback using vanilla JavaScript if D3 fails
+        function setupVanillaScrolly() {
+            const steps = ['side-step1', 'side-step2', 'side-step3', 'side-step4', 'side-step5'];
+            const images = [
+                'charts/companies scrolly_step 1 revised.png',
+                'charts/companies scrolly_step 2 revised.png',
+                'charts/companies scrolly_step 3 revised.png',
+                'charts/companies scrolly_step 4 revised.png',
+                'charts/companies scrolly_step 5 revised.png'
+            ];
+
+            steps.forEach((stepId, index) => {
+                const element = document.getElementById(stepId);
+                if (element) {
+                    element.addEventListener('stepin', (e) => {
+                        const container = e.target.closest(".scrolly-side-by-side");
+                        const img = container.querySelector("img");
+                        if (img) {
+                            img.src = images[index];
+                        }
+                    });
+                }
+            });
+        }
+
+        // Try vanilla JavaScript as fallback
+        setTimeout(setupVanillaScrolly, 100);
+
+        /*
+        Set up the side-by-side scrolly functionality
+        */
+        (() => {
+            const scroller2 = scrollama()
+
+            scroller2
+                .setup({
+                    parent: document.querySelector("#scrolly-side-by-side"),
+                    step: ".step",
+                    offset: 0.6,
+                    debug: false, // Set to true to see debug lines
+                })
+                .onStepEnter(function ({ element, index, direction }) {
+                    const event = new CustomEvent("stepin", { detail: { direction: direction } })
+                    element.dispatchEvent(event)
+                })
+                .onStepExit(function ({ element, index, direction }) {
+                    const event = new CustomEvent("stepout", { detail: { direction: direction } })
+                    if (direction === "up" && element.previousElementSibling) {
+                        const event = new CustomEvent("stepin", { detail: { direction: direction } })
+                        element.previousElementSibling.dispatchEvent(event)
+                    }
+                })
+
+            window.addEventListener("resize", scroller2.resize)
+        })()
+
+        // Map section visibility control
+        let mapSectionVisible = false;
+        let mapInitialized = false;
+
+        // Function to show map section
+        function showMapSection() {
+            if (!mapSectionVisible) {
+                console.log('Showing map section');
+                
+                // Make sure all map elements are visible
+                const mapElement = document.getElementById('map');
+                const svgElement = document.getElementById('svg-overlay');
+                const featuresElement = document.getElementById('features');
+                
+                mapElement.classList.add('active');
+                svgElement.classList.add('active');
+                featuresElement.classList.add('active');
+                
+                // Force display block to ensure visibility
+                mapElement.style.display = 'block';
+                svgElement.style.display = 'block';
+                featuresElement.style.display = 'block';
+                
+                mapSectionVisible = true;
+                
+                // Initialize map if not already done
+                if (!mapInitialized) {
+                    console.log('Initializing map...');
+                    initializeMap();
+                    mapInitialized = true;
+                }
+                
+                // Set up scrollama for map features after a short delay
+                setTimeout(() => {
+                    setupMapScrollama();
+                }, 500);
+            }
+        }
+
+        // Function to hide map section
+        function hideMapSection() {
+            if (mapSectionVisible) {
+                console.log('Hiding map section');
+                
+                const mapElement = document.getElementById('map');
+                const svgElement = document.getElementById('svg-overlay');
+                const featuresElement = document.getElementById('features');
+                
+                mapElement.classList.remove('active');
+                svgElement.classList.remove('active');
+                featuresElement.classList.remove('active');
+                
+                // Force display none to ensure hiding
+                mapElement.style.display = 'none';
+                svgElement.style.display = 'none';
+                featuresElement.style.display = 'none';
+                
+                mapSectionVisible = false;
+            }
+        }
+
+        // Intersection Observer to detect when we reach the map section
+        const mapSectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                console.log('Intersection observed:', entry.isIntersecting, entry.target.textContent);
+                if (entry.isIntersecting) {
+                    showMapSection();
+                } else {
+                    hideMapSection();
+                }
+            });
+        }, {
+            threshold: 0.5,
+            rootMargin: '0px 0px -50% 0px'
+        });
+        
+        // Additional observer to hide map when new-york-2 step reaches the top of viewport
+        const newYork2Observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    console.log('New York 2 step reached top of viewport - hiding map');
+                    hideMapSection();
+                }
+            });
+        }, {
+            threshold: 0,
+            rootMargin: '0px 0px 0px 0px'
+        });
+
+        // Observe the paragraph before the map section to control visibility
+        const mapTriggerElement = document.getElementById('map-trigger');
+        if (mapTriggerElement) {
+            console.log('Observing map trigger element:', mapTriggerElement);
+            mapSectionObserver.observe(mapTriggerElement);
+        } else {
+            console.error('Map trigger element not found!');
+        }
+
+        // Also observe the features section itself as a backup
+        const featuresSection = document.getElementById('features');
+        if (featuresSection) {
+            console.log('Also observing features section as backup');
+            mapSectionObserver.observe(featuresSection);
+        }
+        
+        // Observe the new-york-2 section to hide map when it's scrolled past
+        const newYork2Section = document.getElementById('new-york-2');
+        if (newYork2Section) {
+            console.log('Observing new-york-2 section to hide map');
+            newYork2Observer.observe(newYork2Section);
+        }
+        
+
+
+
+
+        // Initialize map function (will be called from map.js)
+        function initializeMap() {
+            // This will be called when the map section becomes visible
+            console.log('Initializing map section');
+        }
+        
+        // Set up scrollama for map features
+        function setupMapScrollama() {
+            console.log('Setting up map scrollama...');
+            
+            // Check if scrollama is available
+            if (typeof scrollama === 'undefined') {
+                console.error('Scrollama not available for map features');
+                return;
+            }
+            
+            // Create a new scrollama instance for map features
+            const mapScroller = scrollama();
+            
+            mapScroller
+                .setup({
+                    step: '#features section',
+                    offset: 0.5,
+                    debug: false
+                })
+                .onStepEnter(response => {
+                    console.log('Map step entered:', response.element.id);
+                    document.querySelectorAll("#features section").forEach(s => s.classList.remove("active"));
+                    response.element.classList.add("active");
+                    
+                    // Call the map chapter function if it exists (but not for the spacer or new-york-final)
+                    if (window.setActiveChapter && response.element.id !== 'map-end-spacer' && response.element.id !== 'new-york-final') {
+                        window.setActiveChapter(response.element.id);
+                    }
+                })
+                .onStepExit(response => {
+                    console.log('Map step exited:', response.element.id);
+                });
+
+            // Handle resize
+            window.addEventListener('resize', mapScroller.resize);
+            
+            console.log('Map scrollama setup completed');
+        }
+    </script>
+    
+    <!-- Map JavaScript -->
+    <script src="map-integrated.js"></script>
+
+</body>
+
+</html>

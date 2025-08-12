@@ -1,0 +1,1078 @@
+body {
+    margin: 0;
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-rendering: optimizeLegibility;
+}
+
+.content {
+    max-width: 640px;
+    margin: auto;
+    margin-bottom: 3em;
+}
+
+.header {
+    padding: 3em 0;
+}
+
+a {
+    color: #f05349;
+}
+
+.footer {
+    background: #f4f4f4;
+    text-align: center;
+    font-size: 0.8em;
+    margin-top: 4em;
+    padding: 4em 0;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+figure {
+    margin: 0;
+    padding-bottom: 0.5em;
+}
+
+/* Add small space between image and caption in figures */
+figure img {
+    margin-bottom: 0.3em !important;
+}
+
+figcaption {
+    font-size: 0.6em;
+    text-align: center;
+    margin-top: 0.05em;
+    margin-bottom: 0.95em;
+    color: #666;
+    font-family: 'Roboto Mono', monospace;
+}
+
+/* Reduce space between stacked photos in environmentalist section */
+.wide-content > div[style*="display: flex"] > div:last-child figure {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.wide-content > div[style*="display: flex"] > div:last-child figure:last-child {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+h1 {
+    font-family: 'Lora', Georgia, serif;
+    font-weight: bold;
+    font-size: 3em;
+    line-height: 1.1;
+}
+
+h2 {
+    line-height: 1.2;
+}
+
+.subhead {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 2em;
+}
+
+iframe,
+img,
+video {
+    max-width: 100%;
+}
+
+/* Add space above and below images */
+img {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+p {
+    line-height: 1.6;
+    margin: 0;
+    padding-bottom: 1em;
+}
+
+ul {
+    margin: 0;
+    padding-bottom: 1em;
+    line-height: 1.6;
+}
+
+iframe {
+    padding-bottom: 1.2em;
+}
+
+/* Full-width content styles */
+.full-width {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    margin-bottom: 2em;
+}
+
+.full-width figure {
+    text-align: center;
+    margin: 0;
+    padding-bottom: 1.2em;
+}
+
+.full-width img {
+    width: 100%;
+    height: auto;
+}
+
+/* Wide content - wider than text but not full screen */
+.wide-content {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    margin-bottom: 0;
+}
+
+.wide-content figure {
+    text-align: center;
+    margin: 0;
+    padding-bottom: 0.5em;
+}
+
+/* Override wide-content behavior for ai2html graphics */
+.wide-content .ai2html {
+    width: 100vw !important;
+    position: static !important;
+    left: auto !important;
+    right: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Override ai2html container queries to use viewport width */
+.wide-content .ai2html .g-artboard {
+    width: 100% !important;
+}
+
+/* Force the full-size graphic to show on large screens */
+@media (min-width: 800px) {
+    .wide-content .ai2html #g-sif-satellite-graphic-responsive-real-full {
+        display: block !important;
+    }
+    .wide-content .ai2html #g-sif-satellite-graphic-responsive-real-medium {
+        display: none !important;
+    }
+    .wide-content .ai2html #g-sif-satellite-graphic-responsive-real-mobile {
+        display: none !important;
+    }
+}
+
+/* Force the medium graphic to show on medium screens */
+@media (min-width: 490px) and (max-width: 799px) {
+    .wide-content .ai2html #g-sif-satellite-graphic-responsive-real-full {
+        display: none !important;
+    }
+    .wide-content .ai2html #g-sif-satellite-graphic-responsive-real-medium {
+        display: block !important;
+    }
+    .wide-content .ai2html #g-sif-satellite-graphic-responsive-real-mobile {
+        display: none !important;
+    }
+}
+
+/* Force the mobile graphic to show on small screens */
+@media (max-width: 489px) {
+    .wide-content .ai2html #g-sif-satellite-graphic-responsive-real-full {
+        display: none !important;
+    }
+    .wide-content .ai2html #g-sif-satellite-graphic-responsive-real-medium {
+        display: none !important;
+    }
+    .wide-content .ai2html #g-sif-satellite-graphic-responsive-real-mobile {
+        display: block !important;
+    }
+}
+
+/* Override general image margins for ai2html graphics */
+.ai2html img {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Force ai2html graphics to be visible */
+.ai2html {
+    display: block !important;
+    visibility: visible !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Data visualization container */
+.data-viz {
+    background: #f9f9f9;
+    padding: 2em;
+    border-radius: 8px;
+    margin: 2em 0;
+}
+
+.data-viz h3 {
+    font-family: 'Lora', Georgia, serif;
+    text-align: center;
+    margin-bottom: 1em;
+    color: #333;
+}
+
+/* Side-by-side scrolly styles */
+.scrolly-side-by-side {
+    position: relative;
+    display: flex;
+    min-height: 100vh;
+}
+
+.scrolly-side-by-side .sticky-thing {
+    position: -webkit-sticky;
+    position: sticky;
+    width: 50%;
+    height: 100vh;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 2em;
+    background: transparent;
+}
+
+.scrolly-side-by-side .sticky-thing img {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+    max-width: 70%;
+    max-height: 70%;
+}
+
+.scrolly-side-by-side .steps-container {
+    position: relative;
+    z-index: 1000;
+    width: 50%;
+    background: white;
+}
+
+.scrolly-side-by-side .step {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2em;
+}
+
+.scrolly-side-by-side .step > * {
+    width: 80%;
+    max-width: none;
+    background: transparent;
+    padding: 0;
+    margin-left: auto;
+    margin-right: 1em;
+}
+
+/* Debug styles for side-by-side */
+.scrolly-side-by-side.is-debug .step {
+    border: 2px solid #000;
+}
+
+code {
+    font-family: 'Courier New', monospace;
+    background: #fff880;
+}
+
+/* Video background styles */
+.with-video-bg {
+    position: relative;
+    background-size: cover;
+    margin-bottom: 2em;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+
+    /* Center everything inside */
+    min-height: 70svh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* White text with a shadow */
+    color: white;
+    text-shadow: 0px 0px 30px black,
+        0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Override content padding for video headers */
+.with-video-bg .content {
+    padding: 0;
+    margin: 0;
+}
+
+.video-background {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.video-background video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+/* Scrolly styles - matches original template */
+.scrolly-container {
+    position: relative;
+}
+
+.scrolly-container .sticky-thing {
+    position: -webkit-sticky;
+    position: sticky;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scrolly-container .sticky-thing img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.scrolly-container .steps-container {
+    position: relative;
+    z-index: 1000;
+}
+
+.scrolly-container .step {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.scrolly-container .step {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.scrolly-container .step > * {
+    width: 30rem;
+    background-color: rgba(255, 255, 240, 0.8);
+    padding: 1rem;
+    text-align: left;
+    border-radius: 8px;
+}
+
+.scrolly-container .step p {
+    padding: 1rem;
+    margin: 0;
+}
+
+/* Debug styles */
+.scrolly-container.is-debug .step {
+    border: 2px solid #000;
+}
+
+/* Show the first step by default when page loads */
+.scrolly-container .step:first-child {
+    opacity: 1;
+}
+
+/* Scroll to enter box */
+.scroll-to-enter-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: 1.2em;
+    font-weight: bold;
+    z-index: 1000;
+    transition: opacity 2s ease;
+}
+
+.scroll-to-enter-box.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.scroll-to-enter-box p {
+    margin: 0;
+    padding: 0;
+}
+
+/* margin on mobile */
+@media (max-width: 640px) {
+    body {
+        font-size: 18px;
+    }
+
+    .content {
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+    }
+
+    .wide-content {
+        width: calc(100vw - 2em);
+        padding: 0 1em;
+    }
+}
+
+/* Add padding for medium screens (640-700px) */
+@media (min-width: 641px) and (max-width: 700px) {
+    .wide-content {
+        width: calc(100vw - 2em);
+        padding: 0 1em;
+    }
+}
+
+/* Mobile layout for Cameroon exports container */
+@media (max-width: 640px) {
+    .cameroon-exports-container {
+        flex-direction: column !important;
+        width: calc(100vw - 2em) !important;
+        padding: 0 1em;
+    }
+    
+    .cameroon-exports-container .text-section {
+        order: -1;
+        margin-top: 0 !important;
+    }
+    
+    .guyana-exports-container {
+        flex-direction: column !important;
+        width: calc(100vw - 2em) !important;
+        padding: 0 1em;
+    }
+    
+    .guyana-exports-container .text-section {
+        order: -1;
+        margin-top: 0 !important;
+    }
+    
+    /* Add margins for video titles on mobile */
+    .with-video-bg .content {
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+    
+    .with-video-bg .subhead {
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+    
+    /* Override mobile padding for Guyana Satellite Analysis section */
+    .content[style*="width: 700px"] {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    
+    /* SIF side-by-side photos stack on mobile */
+    .wide-content > div[style*="display: flex"] {
+        flex-direction: column !important;
+        gap: 0.5em !important;
+    }
+    
+    .wide-content > div[style*="display: flex"] > div {
+        flex: none !important;
+        width: 100% !important;
+    }
+}
+
+    /* Photo styling */
+    .photo-900px {
+        width: 900px;
+        max-width: 100%;
+        height: auto;
+    }
+
+
+
+/* Companies scrolly section margin adjustment for medium screens */
+@media (min-width: 700px) and (max-width: 950px) {
+    .scrolly-side-by-side .sticky-thing img {
+        margin: 0.2em !important;
+        width: 95% !important;
+        max-width: 95% !important;
+    }
+    
+    .scrolly-side-by-side .step > * {
+        margin-right: 0.2em !important;
+    }
+}
+
+/* Scrolly layout for screens less than 700px */
+@media (max-width: 699px) {
+    .scrolly-side-by-side {
+        flex-direction: column;
+        position: relative;
+        min-height: 400vh;
+    }
+    
+    .scrolly-side-by-side .sticky-thing {
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        z-index: 1;
+        margin: 0;
+        padding: 0;
+        padding-top: 10vh;
+    }
+    
+    .scrolly-side-by-side .sticky-thing img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .scrolly-side-by-side .steps-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 10;
+        background: transparent;
+        pointer-events: none;
+    }
+    
+    .scrolly-side-by-side .step {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        pointer-events: auto;
+    }
+    
+    .scrolly-side-by-side .step:last-child {
+        min-height: 100vh;
+        padding-top: 0;
+    }
+    
+    .scrolly-side-by-side .step > * {
+        width: 80%;
+        max-width: 600px;
+        background-color: rgba(241, 249, 243, 0.9);
+        padding: 1rem;
+        text-align: center;
+        border-radius: 8px;
+        margin: 0 auto;
+    }
+} 
+
+/* Responsive images for trees procured per NYC system */
+.responsive-image {
+    width: 100%;
+    height: auto;
+    display: none;
+}
+
+/* Add space before and after the responsive images container */
+.responsive-image:first-of-type {
+    margin-top: 2em;
+}
+
+.responsive-image:last-of-type {
+    margin-bottom: 2em;
+}
+
+/* Add space before and after the chart container */
+figure:has(.responsive-image) {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+/* Show 700px image for screens 700px and wider */
+#trees-procured-700 {
+    display: block;
+    width: 700px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/* Show 490px image for screens 490-699px */
+@media (max-width: 699px) {
+    #trees-procured-700 {
+        display: none;
+    }
+    #trees-procured-490 {
+        display: block;
+    }
+}
+
+/* Show 375px image for screens 300-489px */
+@media (max-width: 489px) {
+    #trees-procured-490 {
+        display: none;
+    }
+    #trees-procured-375 {
+        display: block;
+    }
+}
+
+/* Guyana exports tree map responsive images */
+/* Show 700px image for screens 700px and wider */
+#guyana-exports-700 {
+    display: block;
+    width: 700px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/* Show 490px image for screens 490-699px */
+@media (max-width: 699px) {
+    #guyana-exports-700 {
+        display: none;
+    }
+    #guyana-exports-490 {
+        display: block;
+    }
+}
+
+/* Show 375px image for screens 300-489px */
+@media (max-width: 489px) {
+    #guyana-exports-490 {
+        display: none;
+    }
+    #guyana-exports-375 {
+        display: block;
+    }
+}
+
+/* SIF satellite graphic responsive images */
+/* Show 800px image for screens 800px and wider */
+#sif-satellite-800 {
+    display: block;
+    width: 700px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/* Show 490px image for screens 490-799px */
+@media (max-width: 799px) {
+    #sif-satellite-800 {
+        display: none;
+    }
+    #sif-satellite-490 {
+        display: block;
+    }
+}
+
+/* Show 375px image for screens 300-489px */
+@media (max-width: 489px) {
+    #sif-satellite-490 {
+        display: none;
+    }
+    #sif-satellite-375 {
+        display: block;
+    }
+}
+
+/* Guyana satellite analysis responsive images */
+#guyana-satellite-analysis-700 {
+    display: block;
+    width: 700px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+@media (max-width: 699px) {
+    #guyana-satellite-analysis-700 {
+        display: none;
+    }
+    #guyana-satellite-analysis-490 {
+        display: block;
+    }
+}
+
+@media (max-width: 489px) {
+    #guyana-satellite-analysis-490 {
+        display: none;
+    }
+    #guyana-satellite-analysis-375 {
+        display: block;
+    }
+}
+
+/* Cameroon satellite analysis responsive images */
+#cameroon-satellite-analysis-700 {
+    display: block;
+    width: 700px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+@media (max-width: 699px) {
+    #cameroon-satellite-analysis-700 {
+        display: none;
+    }
+    #cameroon-satellite-analysis-490 {
+        display: block;
+    }
+}
+
+@media (max-width: 489px) {
+    #cameroon-satellite-analysis-490 {
+        display: none;
+    }
+    #cameroon-satellite-analysis-375 {
+        display: block;
+    }
+}
+
+/* Cameroon satellite graphic responsive images */
+#cameroon-satellite-graphic-700 {
+    display: block;
+    width: 900px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+@media (max-width: 699px) {
+    #cameroon-satellite-graphic-700 {
+        display: none;
+    }
+    #cameroon-satellite-graphic-490 {
+        display: block;
+        width: 100vw;
+        max-width: 100vw;
+        margin: 0;
+        position: relative;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+    }
+}
+
+@media (max-width: 489px) {
+    #cameroon-satellite-graphic-490 {
+        display: none;
+    }
+    #cameroon-satellite-graphic-375 {
+        display: block;
+        width: 100vw;
+        max-width: 100vw;
+        margin: 0;
+        position: relative;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+    }
+}
+
+/* Cameroon exports responsive images */
+#cameroon-exports-700 {
+    display: block;
+}
+
+@media (max-width: 640px) {
+    #cameroon-exports-700 {
+        display: none;
+    }
+    #cameroon-exports-490 {
+        display: block;
+    }
+}
+
+@media (max-width: 489px) {
+    #cameroon-exports-490 {
+        display: none;
+    }
+    #cameroon-exports-375 {
+        display: block;
+    }
+}
+
+/* Guyana map responsive images */
+#guyana-map-1600 {
+    display: block;
+    width: 1400px;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+@media (max-width: 999px) {
+    #guyana-map-1600 {
+        display: none;
+    }
+    #guyana-map-1000 {
+        display: block;
+        width: 1000px;
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 699px) {
+    #guyana-map-1000 {
+        display: none;
+    }
+    #guyana-map-700 {
+        display: block;
+        width: 700px;
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 489px) {
+    #guyana-map-700 {
+        display: none;
+    }
+    #guyana-map-375 {
+        display: block;
+        width: 375px;
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+/* All Ekki Greenheart Imports responsive images */
+#all-ekki-greenheart-700 {
+    display: block;
+    width: 700px;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+@media (max-width: 699px) {
+    #all-ekki-greenheart-700 {
+        display: none;
+    }
+    
+    #all-ekki-greenheart-490 {
+        display: block;
+    }
+}
+
+@media (max-width: 489px) {
+    #all-ekki-greenheart-490 {
+        display: none;
+    }
+    
+    #all-ekki-greenheart-375 {
+        display: block;
+    }
+}
+
+/* Guyana exports responsive images */
+#guyana-exports-330 {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+@media (max-width: 699px) {
+    #guyana-exports-330 {
+        display: none;
+    }
+    
+    #guyana-exports-490 {
+        display: block;
+    }
+}
+
+@media (max-width: 489px) {
+    #guyana-exports-490 {
+        display: none;
+    }
+    
+    #guyana-exports-375 {
+        display: block;
+    }
+}
+
+/* Map styles for the moving map section */
+#map {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    background: black;
+}
+
+#svg-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 2;
+    pointer-events: none;
+}
+
+#features {
+    position: relative;
+    width: 100vw;
+    z-index: 2;
+    padding: 0 0 80vh 0;
+}
+
+#features section {
+    max-width: 600px;
+    margin: 60vh auto 40vh auto;
+    background: rgba(255,255,255,0.7);
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+    padding: 1.25rem 1.75rem;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    display: block;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 2;
+    transition: opacity 0.4s;
+    min-height: 40px;
+}
+
+#features section p {
+    margin: 0;
+    padding: 0;
+}
+
+#features section.active {
+    opacity: 1;
+    pointer-events: auto;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+}
+
+#features section#new-york-final.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#features section#new-york-final {
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+    margin: 60vh auto 40vh auto;
+    min-height: 100vh;
+}
+
+#features section#map-end-spacer {
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Ensure map section doesn't interfere with other content */
+#map, #svg-overlay, #features {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+}
+
+#svg-overlay {
+    z-index: 2;
+}
+
+#features {
+    z-index: 2;
+    background: transparent;
+}
+
+/* Map section visibility control */
+#map, #svg-overlay, #features {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+}
+
+#svg-overlay {
+    z-index: 1001;
+}
+
+#features {
+    z-index: 1002;
+    background: transparent;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* Show map section when it should be active */
+#map.active, #svg-overlay.active, #features.active {
+    display: block;
+}
+
+/* Ensure map section takes full viewport when active */
+#map.active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+}
+
+/* Ensure map features are properly spaced for scrolling */
+#features.active {
+    padding-bottom: 20vh;
+}
+
+#features.active section {
+    margin: 60vh auto 40vh auto;
+    max-width: 600px;
+    background: rgba(255,255,255,0.9);
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+    padding: 1.25rem 1.75rem;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+    min-height: 40px;
+}
+
+#features.active section.active {
+    opacity: 1;
+    pointer-events: auto;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+}
