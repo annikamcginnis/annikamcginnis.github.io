@@ -16,6 +16,14 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://use.typekit.net/pez4rrb.css">
     
+    <!-- Preload scrolly images for better performance -->
+    <link rel="preload" href="images/entering concession.jpg" as="image">
+    <link rel="preload" href="images/canopy.jpg" as="image">
+    <link rel="preload" href="images/close up forest floor.jpg" as="image">
+    <link rel="preload" href="images/skidder 1.jpg" as="image">
+    <link rel="preload" href="images/trees logged in forest.jpg" as="image">
+    <link rel="preload" href="images/logging truck on the road.jpg" as="image">
+    
     <!-- Mapbox dependencies -->
     <link href="https://api.mapbox.com/mapbox-gl-js/v3.13.0/mapbox-gl.css" rel="stylesheet">
     <script src="https://api.mapbox.com/mapbox-gl-js/v3.13.0/mapbox-gl.js"></script>
@@ -29,7 +37,7 @@
     <!-- 1. Scrolly section that moves through images -->
     <section id="scrolly-images" class="scrolly-container">
         <div class="sticky-thing">
-            <img src="images/entering concession min.jpg" alt="Entering concession">
+            <img src="images/entering concession.jpg" alt="Entering concession">
             <!-- Scroll to enter box -->
             <div id="scroll-to-enter" class="scroll-to-enter-box">
                 <p>Scroll to enter</p>
@@ -947,8 +955,28 @@
             window.addEventListener("resize", scroller.resize)
         })()
 
+        // Preload images for better performance
+        function preloadImages() {
+            const images = [
+                "images/entering concession.jpg",
+                "images/canopy.jpg", 
+                "images/close up forest floor.jpg",
+                "images/skidder 1.jpg",
+                "images/trees logged in forest.jpg",
+                "images/logging truck on the road.jpg"
+            ];
+            
+            images.forEach(src => {
+                const img = new Image();
+                img.src = src;
+            });
+        }
+
         // Show the first step immediately when page loads
         window.addEventListener('load', () => {
+            // Preload images first
+            preloadImages();
+            
             const firstStep = document.getElementById('step1');
             if (firstStep) {
                 // Trigger the stepin event to show the first step
@@ -974,27 +1002,27 @@
         Replace these URLs with your own images.
         */
         d3.select("#step1").on('stepin', (e) => {
-            d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "images/entering concession min.jpg")
+            d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "images/entering concession.jpg")
         })
 
         d3.select("#step2").on('stepin', (e) => {
-            d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "images/canopy min.jpg")
+            d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "images/canopy.jpg")
         })
 
         d3.select("#step3").on('stepin', (e) => {
-            d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "images/close up forest floor min.jpg")
+            d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "images/close up forest floor.jpg")
         })
 
         d3.select("#step4").on('stepin', (e) => {
-            d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "images/skidder 1 min.jpg")
+            d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "images/skidder 1.jpg")
         })
 
         d3.select("#step5").on('stepin', (e) => {
-            d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "images/trees logged in forest min.jpg")
+            d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "images/trees logged in forest.jpg")
         })
 
         d3.select("#step6").on('stepin', (e) => {
-            d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "images/logging truck on the road min.jpg")
+            d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "images/logging truck on the road.jpg")
         })
 
         /*
