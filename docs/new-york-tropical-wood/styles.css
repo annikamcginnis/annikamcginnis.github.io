@@ -473,6 +473,19 @@ code {
     align-items: center !important;
 }
 
+/* Hide content before map initially */
+#content-before-map {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease-in;
+}
+
+/* Show content after map section ends */
+#content-before-map.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
 /* Mobile layout for Cameroon exports container */
 @media (max-width: 640px) {
     .cameroon-exports-container {

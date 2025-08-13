@@ -882,7 +882,7 @@
             <div class="wide-content" style="margin-top: 3em;">
                 <div class="methodology-box">
                 <h3 class="methodology-title">Methodology</h3>
-                <p class="methodology-paragraph">Assessing New York government agencies' purchases of wood relied on procurement records from 2014 to 2024 that CJS obtained through public records requests to the NYC Parks Department, NYC Department of Sanitation, Metropolitan Transportation Authority, and NYC Department of Citywide Administrative Services. Records requests to other agencies were not produced by the time of publication. Additional contract records were acquired from the city comptroller's <a href ='https://www.checkbooknyc.com/', target ='_blank'>Checkbook</a> platform. 
+                <p class="methodology-paragraph">Assessing New York government agencies' purchases of wood relied on procurement records from 2014 to 2024 that Columbia Journalism School (CJS) obtained through public records requests to the NYC Parks Department, NYC Department of Sanitation, Metropolitan Transportation Authority, and NYC Department of Citywide Administrative Services. Records requests to other agencies were not produced by the time of publication. Additional contract records were acquired from the city comptroller's <a href ='https://www.checkbooknyc.com/', target ='_blank'>Checkbook</a> platform. 
                 </p>
                 <p class="methodology-paragraph">The information that agencies provided allowed CJS to make estimates of the number of trees felled to fill their procurements. Conversions between typical lumber measurements (such as food board feet) or purchase values to logs relied on research by the International Tropical Timber Organization (ITTO), Guyana Forestry Commission, and international wood price averages. (See full calculations on Github). Pre-2014 procurements and Brooklyn Bridge calculations were estimated based on quantities provided in the city's <a href= 'https://www.nyc.gov/html/om/pdf/tropical_hardwoods_report.pdf', target='_blank'>2008 Tropical Hardwood Reduction Plan</a> and information on estimated years of bridge wood replacements provided by Rainforest Relief. The number of trees logged to fill procurements was multiplied by 10 to estimate the additional trees harmed or cut in logging operations, based on a 2024 <a href= 'https://www.tandfonline.com/doi/full/10.1080/17583004.2024.2378740', target="_blank">study</a> in Guyana. 
                 </p>
@@ -1161,6 +1161,12 @@
                 }
                 if (captionElement) {
                     captionElement.style.opacity = '0';
+                }
+                
+                // Show the content that was hidden before the map
+                const contentBeforeMap = document.getElementById('content-before-map');
+                if (contentBeforeMap) {
+                    contentBeforeMap.classList.add('show');
                 }
                 
                 mapSectionVisible = false;
