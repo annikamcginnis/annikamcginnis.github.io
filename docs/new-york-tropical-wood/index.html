@@ -966,8 +966,35 @@
                 "images/logging truck on the road.jpg"
             ];
             
+            let loadedCount = 0;
+            const totalImages = images.length;
+            
+            // Show loading text
+            const scrollToEnterBox = document.getElementById('scroll-to-enter');
+            if (scrollToEnterBox) {
+                scrollToEnterBox.querySelector('p').textContent = 'Loading...';
+            }
+            
             images.forEach(src => {
                 const img = new Image();
+                img.onload = () => {
+                    loadedCount++;
+                    if (loadedCount === totalImages) {
+                        // All images loaded, change back to "Scroll to enter"
+                        if (scrollToEnterBox) {
+                            scrollToEnterBox.querySelector('p').textContent = 'Scroll to enter';
+                        }
+                    }
+                };
+                img.onerror = () => {
+                    loadedCount++;
+                    if (loadedCount === totalImages) {
+                        // All images processed (even if some failed), change back to "Scroll to enter"
+                        if (scrollToEnterBox) {
+                            scrollToEnterBox.querySelector('p').textContent = 'Scroll to enter';
+                        }
+                    }
+                };
                 img.src = src;
             });
         }
