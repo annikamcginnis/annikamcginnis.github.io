@@ -12,6 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap"
         rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://use.typekit.net/pez4rrb.css">
     
@@ -47,7 +48,7 @@
                 <p>These ancient beings are home to a teeming diversity of plants, insects, mammals, and birds. They provide structure to the forest, enabling it to regulate the global climate.</p>
             </div>
             <div class="step" id="step4">
-                <p>It is time. Deep in one of the world's last rainforests, loggers set their chainsaws on a dense, rooted trunk.</p>
+                <p>In some forests like these, the order has come from thousands of miles away, on an island called Manhattan.</p>
             </div>
             <div class="step" id="step5">
                 <p>The order has come from over 2,500 miles away, on an island called Manhattan.</p>
@@ -62,7 +63,7 @@
     <div class="content">
         <div class="header">
             <h1 style="font-size: 2.5em;">In New York City, Commuters Ride on Rainforests</h1>
-            <p>The city procures threatened tropical trees from the Amazon and Congo basin for the subway, ferry and Brooklyn Bridge.</p>
+            <p>The city procures threatened tropical trees from the Amazon and Congo basin forests for the subway, ferry and Brooklyn Bridge.</p>
         </div>
         <div class="byline">
             <p>By <a href="https://annikamcginnis.github.io/">Annika McGinnis</a></p>
@@ -71,8 +72,9 @@
 
     <!-- 2. Text content -->
     <div class="content">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        
+        <p class="drop-cap">To build the urban jungle that is New York, city agencies have often raided real ones: threatened tropical rainforests in South America and West Africa.</p>
+        <p>Subway lines, the Brooklyn Bridge pedestrian walk and the Staten Island Ferry docks are all built and actively maintained with such tropical wood. New Yorkers ride, walk and play on the remnants of these trees every day, most unaware that their transit systems have contributed to degrading some of the world's last remaining rainforests.</p>
+
         <div class="wide-content">
             <figure>
                 <img src="images/taking pic on sif.jpg" alt="Taking picture on SIF" class="photo-900px">
@@ -80,9 +82,7 @@
             </figure>
         </div>
         
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        
-        <p id="map-trigger">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <p id="map-trigger">New York City agencies are today among the nation's biggest consumers of certain threatened tropical hardwood products, chosen for their durability and resistance to underwater rot. The agencies' use of the increasingly at-risk trees continues despite pledges to shift to sustainable sources nearly 20 years ago and a decades-old state ban on purchasing many such species.</p>
         
         <!-- Moving Map Section -->
         <div id="map"></div>
@@ -94,19 +94,21 @@
             <section id="world" class="active">
                 <p>
                     Tropical forests harbor half of the world's biodiversity and absorb enormous amounts of carbon, 
-                    which helps slow climate change, but could disappear in the next 100 years.
+                    which helps slow climate change, but could disappear in the coming centuries.
                 </p>
             </section>
             <section id="world-prohibition">
                 <p>
-                    In 1993, the state passed a tropical hardwood procurement prohibition aimed at protecting these forests. But this law only applied to 42 of the thousands of tropical hardwood species, leaving room for agencies to import other similar types of wood, which have since become increasingly threatened.
+                    In 1993, the state passed a tropical hardwood procurement prohibition aimed at protecting these forests. 
+                    But this law only applied to 42 of the thousands of tropical hardwood species, leaving room for agencies 
+                    to import other similar types of wood, which have since become increasingly threatened.
                 </p>
             </section>
             <section id="world-2">
                 <p>
-                    For at least four decades, the Departments of Transportation, Sanitation and the Metropolitan 
-                    Transportation Authority (MTA) have constructed public works projects with wood from tropical 
-                    forests.
+                    For at least four decades, some city agencies including the Departments of Transportation, Sanitation 
+                    and the Metropolitan Transportation Authority (MTA) have constructed public works projects with wood 
+                    from tropical forests.
                 </p>
             </section>
             <section id="world-2-supply-chains">
@@ -128,7 +130,7 @@
             </section>
             <section id="guyana-2">
                 <p>
-                    For every tree cut, at least 10 others are cut or injured.
+                    For every tree cut, at least 10 others are typically cut or injured. 
                 </p>
             </section>
             <section id="guyana-3">
@@ -143,12 +145,12 @@
             </section>
             <section id="intermediary-countries-guyana">
                 <p>
-                    Logs from Guyana go through Panama, Jamaica and Trinidad.
+                    Logs from Guyana go through Panama and Trinidad and Tobago.
                 </p>
             </section>
             <section id="contractors-locations">
                 <p>
-                    They're bought by timber or construction companies in New York and New Jersey, 
+                    They're bought by timber or construction companies mainly in New York and New Jersey, 
                     which sell to city agencies or contractors.
                 </p>
             </section>
@@ -164,15 +166,36 @@
                 <!-- This section is invisible and non-functional -->
             </section>
             <!-- Add a visible spacer for the final step -->
-            <section id="map-end-spacer" style="height: 10vh; opacity: 0; pointer-events: none;">
+            <section id="map-end-spacer" style="height: 50vh; opacity: 0; pointer-events: none;">
                 <p style="text-align: center; padding-top: 5vh; color: transparent;">End of map section</p>
             </section>
         </div>
 
         <!-- Space after map section -->
-        <div style="height: 50vh; margin: 3em 0;"></div>
 
-        <!-- Responsive trees procured per NYC system images -->
+
+        <div class="content" id="content-before-map">
+
+            <p>In 2008, several city agencies <a href="https://www.nyc.gov/html/om/pdf/tropical_hardwoods_report.pdf" target="_blank">promised</a> to 
+                cut their use of tropical wood. While the Department of Parks and Recreation has since moved to other materials for new boardwalks 
+                and benches, the departments of Transportation and Sanitation have delayed to fulfill pledges to transition. A city-funded 
+                study on possible alternatives for docks recommended in 2011 that the agency continue to use tropical wood. </p>
+
+            <p>Columbia Journalism School (CJS) spent months making nearly 20 public records requests, reviewing thousands of pages of 
+                contracts, analyzing purchase and import records, scraping data on forest areas leased to companies, analyzing satellite 
+                imagery, and interviewing over 20 experts and stakeholders working in more than eight countries to report this story. 
+                This is the first investigation to quantify and track the city's recent imports of tropical wood to suppliers in origin 
+                countries and analyze these loggers' impact on forests. </p>
+
+            <p>CJS' analysis of procurement records estimates that the Departments of Transportation and Sanitation and the MTA have 
+                bought wood of at least 19,000 threatened trees from old-growth rainforests, likely harming another 190,000 trees in 
+                their wake and contributing to the degradation of at least 3,400 square miles, an area about the size of Puerto Rico.</p>
+
+
+    </div>
+
+    <!-- Responsive trees procured per NYC system images -->
+    <div class="content">
         <div class="wide-content">
             <figure>
                 <img src="charts/trees procured per nyc system 700.png" alt="Trees procured per NYC system" class="responsive-image" id="trees-procured-700">
@@ -180,14 +203,23 @@
                 <img src="charts/trees procured per nyc system 375.png" alt="Trees procured per NYC system" class="responsive-image" id="trees-procured-375">
             </figure>
         </div>
+    </div>
 
+    <div class="content">
+        <p>A majority of all U.S. greenheart and ekki shipments between Nov. 2006 and mid-2025 arrived through New York City-area ports, 
+        much of this ordered by city agencies, import records show. </p>
 
-        
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-        
-        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
-        
-        <!-- All Ekki Greenheart Imports Chart -->
+        <p>The city's annual greenheart procurements, estimated based on a limited number of city contracts, made up at least a fifth of 
+        the New York area's total greenheart imports over the last decade. This is most certainly an underestimation. Companies that 
+        the city has contracted imported close to 90 percent of total greenheart shipments that came through New York-area ports between 
+        Nov. 2006 and May 2025.</p>
+
+        <p>As other U.S. cities' ekki imports have declined, New York-area shipments have increased, import records show. At least a third 
+        of those imports went to the MTA in the last decade, and the authority bought about a quarter of nationwide ekki shipments. </p>
+    </div>
+
+    <!-- All Ekki Greenheart Imports Chart -->
+    <div class="content">
         <div class="wide-content">
             <figure>
                 <img src="charts/all_ekki_greenheart_imports_700.png" alt="All Ekki Greenheart Imports" class="responsive-image" id="all-ekki-greenheart-700">
@@ -197,19 +229,52 @@
         </div>
     </div>
 
+    <div class="content">
+
+        <p>New York has presented itself as a climate leader, committing to reduce greenhouse gas emissions 85 percent by 2050. But its 
+            emissions-tracking system excludes most products procured through global supply chains, like wood for transit infrastructure 
+            and food for schools and prisons.</p>
+
+        <p>A CJS satellite imagery analysis finds that New York's procurements have degraded rainforests in Guyana and Cameroon, where 
+            selective cutting of some of the oldest trees has reduced the forest area with the tallest canopies by over 10 percent in two 
+            decades. Ecologists warn this is a sign that the forests are storing less carbon, which hastens climate change, and are heading 
+            down a path to eventual deforestation.</p>
+
+        <p>Legislative efforts to end this trade have so far failed. The TREES Act, a bill introduced in the New York state legislature 
+            over the last three years, aimed to broaden the existing tropical hardwood ban to all species and ensure all government 
+            contractors do not source products from deforested areas. </p>
+
+        <p>But although the <a href="https://www.nysenate.gov/legislation/bills/2025/S7203" target="_blank">bill</a> passed both houses of the New York state legislature in 2023 and 2024, New York Gov. Kathy Hochul vetoed 
+            the bill both years. While she officially cited concerns over certification requirements for small businesses, her office was 
+            also lobbied by major corporations that import products from countries with tropical rainforests, lobbying records show. This 
+            year, the bill failed to make it out of Assembly committee.</p>
+
+        <p>City agencies say they are transitioning to new materials. The MTA's tropical hardwood purchase records show a decline from 2018. 
+            The Staten Island Ferry is in process to trial a new dock system within a year or two, though greenheart's unique elasticity and 
+            resistance to marine pests have made it difficult to find a suitable replacement, said John Garvey, the ferry's deputy commissioner 
+            and chief operations officer.</p>
+
+        <p>Ecological experts questioned the city's rationale to import tropical hardwood during a time of "climate crisis."</p>
+
+        <p>"We're going into the most biodiverse, carbon-dense forests and shifting these logs to New York. It's completely absurd," said Cyril 
+            Kormos, founder and director of Wild Heritage, an organization that aims to protect primary forests.</p>
+
+
+    </div>
+
     <!-- 3. Video header section -->
     <div class="header with-video-bg">
         <div class="video-background">
             <video src="videos/SIF video coming in.mov" preload="auto" tabindex="0" playsinline autoplay loop muted></video>
         </div>
         <div class="content">
-            <h1 class="subhead">Wood for Staten Island Ferry docks linked to "obscure" timber companies</h1>
+            <h1 class="subhead">Wood for the Staten Island Ferry linked to scores of small timber companies</h1>
         </div>
     </div>
 
     <!-- 4. Text content with data visualizations and photos -->
     <div class="content">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <p class="drop-cap">As the ferry approached Manhattan, crowds of tourists clamored for rail space to take a selfie with the distant Statue of Liberty.</p>
         
         <!-- Example of a full-width image -->
         <!-- <div class="full-width">
@@ -219,7 +284,13 @@
             </figure>
         </div> -->
         
-        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+        <p>Minutes later, the bright-orange boat rumbled to a stop against thousands of logs skewered into the harbor bed.</p>
+        
+        <p>"They basically crash it into the dock, and so they have these massive bumpers that are designed to absorb this impact 
+            and not damage the ship," said Justin Flagg, the communications and environmental policy director for Sen. Liz Krueger, 
+            who sponsored the TREES Act.</p>
+
+        
         
         <!-- SIF Images Side by Side -->
         <div class="wide-content">
@@ -249,8 +320,32 @@
                 </div>
             </div>
         </div> -->
-        
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..</p>
+
+        <p>Since the 1980s, the New York City Department Transportation (DOT) has built its docks with a tropical wood called greenheart, 
+            which is resistant to attacks by mollusks and crustaceans that gnaw into softer American woods like oak or pine. Greenheart 
+            is so dense it does not float, Garvey said.</p>
+
+        <p>DOT is the city's biggest greenheart importer, but requires no independent audit or international sustainability certification 
+            of its suppliers. The department has contracted companies that obtained greenheart wood from some suppliers that hold no forest 
+            parcels of their own and lack any public-facing information.  </p>
+
+        <p>Greenheart trees grow primarily in Guyana, which hosts a mostly untouched swath of the Amazon rainforest that stores massive 
+            amounts of carbon, creates rain and regulates ocean currents. But recent <a href="https://www.nature.com/articles/s41586-023-06970-0" target="_blank">science</a> 
+            has found the Amazon approaching a 'tipping point,' caused by climate change and deforestation, where up to half of the forest 
+            might degrade into a savanna-like ecosystem – leading to potentially catastrophic rates of global warming.</p>
+
+        <p>For four decades, DOT has been one of the Guyana forestry sector's most loyal buyers, contracting greenheart not only for ferry 
+            docks, but also for the Brooklyn Bridge pedestrian walkway, which is traversed by about 30,000 people daily. Greenheart dock 
+            contracts are issued in three to five-year periods, with the city procuring an average of 337 trees per year. Lumber of about 
+            126 trees are also needed per bridge walkway renovation, according to Columbia calculations.</p>
+
+        <p>In total, the department has ordered lumber worth at least 14,900 greenheart trees for both the bridge and the ferry system. 
+            Given estimates from a <a href="https://www.tandfonline.com/doi/full/10.1080/17583004.2024.2378740" target="_blank">2024 study</a> 
+            that about 11 trees per harvested tree are felled or injured during logging, this means that over 160,000 tropical trees may 
+            have been cut or damaged because of the department's procurements. </p>
+
+        <p>The city's Department of Sanitation (DSNY) has also ordered lumber worth at least 700 trees for five marine transfer stations, 
+            which receive and sort the city's waste. NYPD riot sticks also use greenheart, Garvey said.</p>
         
         <!-- Guyana exports tree map responsive images -->
         <div class="wide-content">
@@ -261,90 +356,147 @@
             </figure>
         </div>
         
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <p>New York rationalizes its use of the wood under the assumption that Guyana – with a low deforestation rate – is an exception to the 
+            vast illegalities and degradation taking place in much of the Amazon. </p>
         
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <p>A 2016 letter from engineering firm Greeley and Hansen to DSNY stated that wood from Guyana met exceptions to the state's tropical 
+            hardwood ban because "the country is dedicated to the sustainability of their natural resources."</p>
         
         
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <p>Guyana's rules for export-designated tropical timber, where timber is supposed to be cut in regulated cycles to allow for regrowth, 
+            minimize the impact of logging, said Eric Stoll, a University of Guyana entomologist.</p>
+
+        <p>But research over decades by Guyana forestry researchers Janette Bulkan and John Palmer, based at the University of British Columbia, 
+            found there is little independent monitoring of state forests, which are controlled by the government-run Guyana Forestry Commission 
+            (GFC). Although Norway has funded a satellite-based forest monitoring system since 2009, the GFC still has not published the country's 
+            latest national forest inventory results, which began field data collection in 2019.</p>
+
+        <p>The International Union for Conservation of Nature (IUCN), which classifies species by their vulnerability status, has listed greenheart 
+            as "data deficient" since GFC contested its previous "vulnerable" status. However, IUCN estimated that in the 1900s, greenheart had 
+            declined by about 20 percent overall and 80 percent in a central region that hosts many logging sites. </p>
+
+        <p>Colonization and structural adjustment led to a top-down system that has frequently neglected Indigenous land rights and opened the doors 
+            for mostly Asian logging companies to profit through "State patronage and cronyism," Bulkan's <a href="https://www.researchgate.net/publication/262575844_Forest_Grabbing_Through_Forest_Concession_Practices_The_Case_of_Guyana" target="_blank">research</a> 
+            found. Palmer said a Chinese logging company pressured the government to reduce the minimum cutting distance between stumps, which increased 
+            logging's collateral damage. </p>
+
     </div>
 
     <!-- Guyana Exports Chart with Side-by-side Text -->
-            <div class="guyana-exports-container" style="width: 800px; max-width: 100%; margin: 0 auto; display: flex; gap: 2em; align-items: flex-start;">
+            <div class="guyana-exports-container" style="display: flex; gap: 2em; align-items: flex-start; justify-content: center;">
             <div style="flex: 0 0 55%;">
-                <figure>
-                    <img src="charts/guyana_exports 330.png" alt="Guyana Exports Chart" class="responsive-image" id="guyana-exports-330">
-                    <img src="charts/guyana_exports 490.png" alt="Guyana Exports Chart" class="responsive-image" id="guyana-exports-490">
-                    <img src="charts/guyana_exports 375.png" alt="Guyana Exports Chart" class="responsive-image" id="guyana-exports-375">
-                    <figcaption></figcaption>
-                </figure>
+                <img src="charts/guyana_exports 330.png" alt="Guyana Exports Chart" class="responsive-image" id="guyana-exports-330" style="width: 100%; height: auto;">
+                <img src="charts/guyana_exports 490.png" alt="Guyana Exports Chart" class="responsive-image" id="guyana-exports-490" style="width: 100%; height: auto;">
+                <img src="charts/guyana_exports 375.png" alt="Guyana Exports Chart" class="responsive-image" id="guyana-exports-375" style="width: 100%; height: auto;">
             </div>
-                        <div class="text-section" style="flex: 1; margin-top: 2em;">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            </div>
-    </div>
+                        <div class="text-section" style="flex: 1; margin-top: 2em; display: flex; flex-direction: column; justify-content: center;">
+            <p>Guyana's timber exports have declined in recent years, though the U.S. remains a consistent buyer.</p>
+            <p> "Exhaustion" of high-value species could 
+            be a factor in reduced exports, said James Hewitt, a global timber trade expert. A 2023 Guyana government <a href="https://petroleum.gov.gy/sites/default/files/2023-08/Canopy%20Magazine%202023-compressed.pdf" target="_blank">report</a> 
+            admitted concern about the species dwindling and encouraged loggers to choose alternatives.</p>
 
-    <div class="content">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        
-        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+            </div>
+        </div>
     </div>
 
     <!-- Side-by-side scrolly section for Chapter 1 -->
+    <div class="wide-content">
     <section id="scrolly-side-by-side" class="scrolly-side-by-side">
         <div class="steps-container">
             <div class="step" id="side-step1">
                 <div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <p>The U.S. Lacey Act prohibits imports of illegally harvested plants, including trees.</p>
+                    <p>But through a convoluted supply chain, New York has procured greenheart from contractors supplied by at least 17 local companies or individuals in the last 15 years, import records show – several with no or minimal public presence, some of which have been linked to crimes. </p>
                 </div>
             </div>
             <div class="step" id="side-step2">
                 <div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <p>Of these 17 suppliers, less than half have <a href="https://cadasta.maps.arcgis.com/apps/webappviewer/index.html?id=e543e1d1d8f04bc29e16b448cd0beb76" target="_blank">current</a> forest concessions. Although others may have had previous concessions, this trend also points to city contractors buying from some timber traders, who purchase wood from large and small-scale loggers, Palmer said. </p>
+                    <p>Bulkan said her research found a substantial black market trade of log tags, which makes it difficult to track the origin or legality of all logs exported.</p>
                 </div>
             </div>
             <div class="step" id="side-step3">
                 <div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <p>City contracts don't specify whether the Guyana-based timber companies that supply city contractors must submit to any city review of their legality, ethics or sustainability efforts.</p>
+                    <p>Only two New York-issued contracts from 2016 and 2022 listed specific Guyana-based suppliers: Nazir Tropical Timbers and Prestige Timbers, neither of which have a website or public social media.</p>
                 </div>
             </div>
             <div class="step" id="side-step4">
                 <div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <p>Several suppliers are under the same ownership.</p>
+                    <p>Rafeek Khan, a current Guyana Forestry Commission director, exported greenheart under his own name and his companies Durable Wood Products and Woods Direct International. Khan's brother was imprisoned in the U.S. for drug trafficking, news articles show.</p>
                 </div>
             </div>
             <div class="step" id="side-step5">
                 <div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <p>Some companies' owners have been charged with crimes, according to Guyana news articles.</p>
+                    <p>These include the Emerald Forest Company owner, who was <a href="https://guyanachronicle.com/2014/12/18/el-presidente-accused-of-fraudulent-conversion/" target="_blank">charged</a> with fraud in 2014 and was being <a href="https://www.kaieteurnewsonline.com/2025/03/18/man-wanted-for-fraudulent-conversion/" target="_blank">hunted</a> by police this year for similar crimes. In 2013, the Trade-Linc owner was <a href="https://www.kaieteurnewsonline.com/2013/04/27/businessman-granted-bail-on-attempted-murder-charge/" target="_blank">charged</a> with attempted murder and was <a href="https://www.stabroeknews.com/2025/07/21/news/guyana/turkeyen-timber-dealer-held-over-gun-police/" target="_blank">arrested</a> this year with a gun, Kaieteur News and Stabroek News reported. </p>
                 </div>
             </div>
-
         </div>
         <div class="sticky-thing">
             <img src="charts/companies scrolly_step 1 revised.png" alt="Companies scrolly step 1">
         </div>
     </section>
 
+            <div class="content">
+
+                <p>The departments of Transportation and Sanitation did not respond to Columbia's questions about their greenheart suppliers, and only one 
+                    of the companies – one of the few with a large forest concession and a detailed website – responded to requests for comment. Rommel 
+                    Niamatali, the director of Variety Woods & Greenheart, said he follows "strict" GFC rules to cut only about six trees per hectare in 
+                    40-year cycles, which he said ensures his forests regenerate. On-site rangers monitor harvests, logs are tagged, and GFC instills 
+                    "heavy" fines for non-compliance, Niamatali said.</p>
+
+                <p>Niamatali said his company had passed the pre-audit for an international sustainability certification by PEFC (Programme for the 
+                    Endorsement of Forest Certification).</p>
+
+                <p>DOT's contract specifications for greenheart – the latest seen from 2022 – require only a Guyana government certification that the 
+                    wood is of the specified export grade and free from live borer infestation. Conversely, the Parks Department had decades earlier 
+                    included clauses requiring replanting trees or certification by the independent Forest Stewardship Council (FSC).</p>
+
+                <p>The city and some of its suppliers appear to lack a standard understanding around the city's sustainability requirements. Richard 
+                    Robinson, the vice president of Reicon Group, a two-decade city greenheart supplier, said he thought the city had a policy to 
+                    encourage FSC-certified vendors and timber, but didn't see any explicit requirement in his company's contracts.</p>
+
+                <p>Richard Zimmerman, the sales manager of Evergreen Forest Products – one of Reicon Group's main suppliers, said the Guyana government 
+                    certification ensured imports' sustainability because of the country's good forestry practices.</p>
+
+                <p>Tim Keating, a former New York resident who investigated the city's use of tropical hardwood for decades through his nonprofit Rainforest 
+                    Relief, said the companies' different understandings showed a "completely disjointed hodgepodge of not only suppliers, but what each 
+                    supplier thinks the state requires."</p>
+
+                <p>Keating added that GFC certification was no measure of sustainability.</p>
+
+                <p>"The whole point of certification is that it's meaningless unless the certification body is independent," he said.</p>
+
+                         </div>
+ 
+         </div>
+     </section>
+    </div>
+
     <!-- 5. Video header section -->
     <div class="header with-video-bg">
         <div class="video-background">
             <video src="videos/staten_island_boardwalk_background_vid.mov" preload="auto" tabindex="0" playsinline autoplay loop muted></video>
         </div>
-        <div style="width: 640px; max-width: 100%; margin: 0 auto;">
+        <div class="content">
             <h1 class="subhead">City procurements degrade forests in Guyana and Cameroon</h1>
         </div>
     </div>
 
     <!-- 6. Text content -->
-    <div class="content">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <div class="content" style="margin-top: 2em;">
+        <p class="drop-cap">The world's rainforests are starting to collapse, and New York may be complicit.</p>
+        <p>Once, it was almost "impossible" for a fire to start in wet, humid rainforests, said forest ecologist Cyril Kormos. 
+            But in 2024, the tropics lost a <a href="https://gfr.wri.org/latest-analysis-deforestation-trends?utm_medium=media&utm_source=partner&utm_campaign=tcl2024" target="_blank">record</a> 
+            amount of forest, nearly half from fire—a sign that the ancient ecosystems are breaking down under climate change, deforestation and logging.</p>
+
+        <p>While forests may look green from above, satellite data shows areas with the tallest trees have declined in logging areas leased to companies 
+            that have supplied city contractors. Such decline is one of the first signs that the hundreds-year-old hardwood trees, which form the forest's 
+            backbone, are being removed unsustainably.</p>
+
+        
         
         <!-- View on skidder of logs -->
         <div class="wide-content">
@@ -354,62 +506,92 @@
             </figure>
         </div>
         
-        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
-        
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <p>CJS' analysis of <a href="https://glad.umd.edu/dataset/GLCLUC2020" target="_blank">satellite imagery</a> from the University of Maryland's GLAD laboratory shows that areas of current Guyanese timber concessions with 
+            trees at least 30 meters tall declined by 13 percent between 2000 and 2020, while areas with no or shorter trees have increased.</p>
+
+        <p>Last year, these areas also lost over four times more primary forest than the annual average lost over the past decade, with record tree 
+            loss from fires, according to Global Forest Watch data.</p>
+
+        <p>Commercial "sustainable" certifications have failed, Kormos said, since logging cycles are too short for slow-growing hardwoods like greenheart 
+            or ekki to recover. He said this often drives companies to log illegally, and once the high-value species are depleted, clear the forest for farming.</p>
+
     </div>
 
     <!-- Guyana Satellite Analysis Section -->
-    <div class="content" style="margin: 0 auto;">
+    <div class="content">
         <h2 style="font-size: 20px; margin-bottom: 1em;">Satellite imagery shows companies renting areas of Guyana's rainforest for 'reduced-impact-logging' are removing the tallest trees</h2>
         
         <p style="font-size: 16px; margin-bottom: 1.5em; color: #666; line-height: 1.3;">Map of Guyana with remote sensing data from UMD's GLAD laboratory, with different colors representing land use change between 2000-2020</p>
     </div>
         
         <!-- Guyana Map Only -->
-        <div class="full-width">
-            <figure>
-                <img src="charts/guyana map 1600.png" alt="Guyana Map Only" class="responsive-image" id="guyana-map-1600">
-                <img src="charts/guyana map 1000.png" alt="Guyana Map Only" class="responsive-image" id="guyana-map-1000">
-                <img src="charts/guyana map 700.png" alt="Guyana Map Only" class="responsive-image" id="guyana-map-700">
-                <img src="charts/guyana map 375.png" alt="Guyana Map Only" class="responsive-image" id="guyana-map-375">
-            </figure>
+        <div class="content">
+            <div class="full-width">
+                <figure>
+                    <img src="charts/guyana map 1600.png" alt="Guyana Map Only" class="responsive-image" id="guyana-map-1600">
+                    <img src="charts/guyana map 1000.png" alt="Guyana Map Only" class="responsive-image" id="guyana-map-1000">
+                    <img src="charts/guyana map 700.png" alt="Guyana Map Only" class="responsive-image" id="guyana-map-700">
+                    <img src="charts/guyana map 375.png" alt="Guyana Map Only" class="responsive-image" id="guyana-map-375">
+                </figure>
+            </div>
         </div>
         
         <!-- Guyana Satellite Analysis Chart -->
-        <div class="wide-content">
-            <figure>
-                <img src="charts/guyana satellite analysis 700.png" alt="Guyana Satellite Analysis Chart" class="responsive-image" id="guyana-satellite-analysis-700">
-                <img src="charts/guyana satellite analysis 490.png" alt="Guyana Satellite Analysis Chart" class="responsive-image" id="guyana-satellite-analysis-490">
-                <img src="charts/guyana satellite analysis 375.png" alt="Guyana Satellite Analysis Chart" class="responsive-image" id="guyana-satellite-analysis-375">
-            </figure>
+        <div class="content">
+            <div class="wide-content">
+                <figure>
+                    <img src="charts/guyana satellite analysis 700.png" alt="Guyana Satellite Analysis Chart" class="responsive-image" id="guyana-satellite-analysis-700">
+                    <img src="charts/guyana satellite analysis 490.png" alt="Guyana Satellite Analysis Chart" class="responsive-image" id="guyana-satellite-analysis-490">
+                    <img src="charts/guyana satellite analysis 375.png" alt="Guyana Satellite Analysis Chart" class="responsive-image" id="guyana-satellite-analysis-375">
+                </figure>
+            </div>
         </div>
 
     <div class="content">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <p>New York has degraded forest not only in the Amazon, but also in the vast Congo basin. 
+            For years, the MTA has bought old-growth "ekki/azobé" lumber, which the IUCN <a href="https://www.iucnredlist.org/species/33056/9745747" target="_blank">classifies</a> 
+            as vulnerable, from West Africa for the New York City subway.</p>
+            
+        <p>Data CJS acquired through a public records request shows that between 2014-2024, the authority made 142 purchases of tropical hardwood for 
+            rail blocks and ties, costing a total of $14.7 million.</p>
+
+        <p>In <a href="https://citylimits.org/2002/06/03/knocking-on-wood/" target="_blank">2002</a>, an MTA ekki purchase under the NYC Transit Authority was linked to illegal arms trafficking in Liberia, according to City Limits. 
+            In recent years, the authority has attempted to buy wood from more ethical sources. In the last decade, the authority's main contractors – 
+            William G. Moore & Son, Inc. and Boro Sawmill & Timber Co. – primarily imported wood from Dutch company Hupkes Wijma and its precursors, MTA 
+            and ImportGenius records show. </p>
+
+        <p>Wijma managed a group of subsidiaries that had international Forest Stewardship Council (FSC) <a href="https://fscglobal.my.salesforce-sites.com/servlet/servlet.FileDownload?file=00Pf300000qbh72EAA" target="_blank">certification</a> 
+            to manage six forest parcels, called concessions, in Cameroon, the first acquired in 2005. But the company <a href="https://swedwatch.org/wp-content/uploads/2019/02/Tropiskt-timmer_190221_93.pdf" target="_blank">sold</a> all of its 
+            concessions in 2017 to a Hong Kong-based company, according to Swedwatch – part of a wave of departures of European companies with sustainability certifications 
+            that struggled to break even, said Justin Kamga, the Cameroon coordinator of Forêt et Développement Rural (FODER), a forest monitoring NGO.</p>
+
     </div>
 
     <!-- Cameroon Export Chart with Side-by-side Text -->
-    <div class="cameroon-exports-container" style="width: 800px; display: flex; gap: 2em; align-items: flex-start; margin: 0 auto; margin-bottom: 2em;">
-        <div class="text-section" style="flex: 1; margin-top: 1.5em;">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <div class="cameroon-exports-container" style="width: 800px; display: flex; gap: 2em; align-items: center; margin: 0 auto; margin-bottom: 2em;">
+        <div class="text-section" style="flex: 1; margin-top: 1.5em; display: flex; flex-direction: column; justify-content: center;">
+            <p>Today, Wijma is still the MTA's biggest supplier.</p>
+            <p>But Wijma <a href="https://search.fsc.org/en/?search=wijma&page=1" target="_blank">no longer</a> holds any active FSC forest management certificates, 
+                and export reports from Cameroon's forestry ministry through 2021 (excluding 2019) show that Wijma's subsidiaries stopped exporting after 2018.</p>
+            <p>The company now only has active FSC "chain of custody" certificates, which means it has the capacity to identify and resell FSC-certified timber, but does not manage forests itself. </p>
         </div>
         <div style="flex: 0 0 55%;">
             <img src="charts/cameroon_export_chart.png" alt="Cameroon Export Chart" class="responsive-image" id="cameroon-exports-700" style="width: 100%; height: auto;">
             <img src="charts/cameroon exports 490.png" alt="Cameroon Export Chart" class="responsive-image" id="cameroon-exports-490" style="width: 100%; height: auto;">
             <img src="charts/cameroon exports 375.png" alt="Cameroon Export Chart" class="responsive-image" id="cameroon-exports-375" style="width: 100%; height: auto;">
         </div>
+        </div>
     </div>
     
     <div class="content">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    
+        
+        <p>This system can mislead importers who assume all companies with FSC logos log sustainably, said Rick Jacobsen, a commodities policy manager at the Environmental Investigation Agency.</p>
+        <p>There is no public information on where Wijma currently acquires its ekki. Some of the company's public-facing information still incorrectly <a href="http://www.wijma.co.uk/about-wijma-uk/" target="_blank">list</a> the company's Cameroon concessions. 
+            A 2020 <a href="https://www.preciouswoods.com/en/sustainability/sustainability/hardwood-sawmill" target="_blank">press release</a> from Swiss timber company Precious Woods connected at least some of Wijma's imports to this FSC-certified company in Gabon.</p>
+    </div>
     <!-- Woodside Train Tracks Photos Side by Side -->
-    <div class="wide-content">
+    <div class="content">
+        <div class="wide-content">
         <div style="width: 1000px; max-width: 100%; margin: 0 auto; display: flex; gap: 2em; align-items: flex-start;">
             <div style="flex: 1;">
                 <figure>
@@ -424,6 +606,28 @@
                 </figure>
             </div>
         </div>
+        </div>
+    </div>
+
+    <div class="content">
+
+        <p>Before Wijma left Cameroon, various Greenpeace investigations tied the company to illegal logging and negative community impacts.</p>
+        <p>In 2002, this environmental NGO <a href="https://www.greenpeace.org/static/planet4-netherlands-stateless/2018/06/wijma-logging-illegally-in-ca.pdf" target="_blank">found</a> 
+            that Wijma logged outside its boundaries and destroyed local communities' crops. In 2015, it <a href="https://www.greenpeace.org/static/planet4-africa-stateless/2018/10/65f329b9-65f329b9-greenpeace-nederland-2015-cct-timber-trade-from-cameroon-to-europe.pdf" target="_blank">reported</a> 
+            that a Cameroonian supplier of Hupkes Houthandel Dieren B.V. – one of the companies that merged to become Hupkes Wijma – was trading illegal timber harvested 
+            from rapidly deforested "cut and run" forest parcels. In 2018, it <a href="https://www.greenpeace.org/africa/en/press/1929/greenpeace-africa-expresses-shock-over-wijma-activities-in-cameroon/" target="_blank">countered</a> Wijma's history of operating in a conflict zone.</p>
+        <p>Wijma's departure also created other problems. A 2023 Pulitzer Center investigation found that when Wijma subsidiary CFK sold one of its forest concessions, 
+            land titles were established on indigenous land.</p>
+        <p>When Wijma left another of its concessions, it <a href="https://pulitzercenter.org/stories/opaque-agro-industry-razes-cameroons-forests-impunity" target="_blank">sold</a> its forestry activities to shareholders that deforested parts bordering Campo Ma'an National Park 
+            to grow palm oil. According to Kamga, this plantation has destroyed elephant habitats and resulted in some elephants entering villages and ravaging 
+            local farms. </p>
+        <p>The 2019 Swedwatch <a href="https://swedwatch.org/wp-content/uploads/2019/02/Tropiskt-timmer_190221_93.pdf" target="_blank">report</a> revealed that 
+            logging operations by Wijma and another European company, Rougier, "had led to a significant decrease in forest foods and non-timber forest products" 
+            for local communities.</p>
+        <p>Kamga said the forest is like a "supermarket" for local people who collect wood, food, and other resources – so logging is like "bombing the supermarket."</p>
+        <p>Selective logging of ekki and other hardwoods has also degraded forests where Wijma operated. Columbia's analysis of satellite data shows that areas 
+            with the tallest trees declined 15 percent between 2000 and 2020 in these six concessions. </p>
+
     </div>
     
     <!-- Cameroon Satellite Graphic -->
@@ -445,7 +649,11 @@
     </div>
     
     <div class="content">
-        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+        <p>Hupkes Wijma did not respond to multiple interview requests over two months, and the MTA declined requests.</p>
+        <p>For decades, the MTA has been in the process of moving away from tropical wood. The authority <a href="https://www.nysenate.gov/legislation/bills/2009/a10503?" target="_blank">began</a> 
+            researching alternative tie materials in 2009. After Hurricane Sandy flooded the Staten Island Railway, the MTA <a href="https://www.silive.com/news/2016/04/mta_spiffs_up_staten_island_ra.html" target="_blank">reconstructed</a> 
+            parts of the railroad with ties made out of recycled plastic. Other tracks are constructed out of concrete.</p>
+        <p>But ekki procurements persist, and the city's famous subway continues to roll atop the remains of tropical trees.</p>
     </div>
 
     <!-- 7. Video header section -->
@@ -460,9 +668,14 @@
 
     <!-- 8. Text content -->
     <div class="content">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p class="drop-cap">Plans by city agencies since at least 2008 have not yet led to their phase-out of tropical timber.</p>
+        <p>At the 2007 U.N. climate conference, former city Mayor Michael Bloomberg committed to develop a plan to reduce tropical hardwood. That <a href="https://www.nyc.gov/html/om/pdf/tropical_hardwoods_report.pdf" target="_blank">document</a>, 
+            released in February 2008, estimated the city was spending about $1 million annually on such wood and laid out short and long-term plans for each agency to cut their use. </p>
+        <p>Seventeen years later, the Departments of Transportation and Sanitation have delayed to reach many of those goals.</p>
+        <p>In the plan, the DOT pledged to rebuild the Brooklyn Bridge Promenade with an alternative material by 2017. But the latest replacement in 2023 still used greenheart, according to Rainforest Relief. A 2016 DOT <a href="https://www.nyc.gov/html/dot/downloads/pdf/brooklyn-bridge-promenade.pdf" target="_blank">presentation</a> 
+            described a concept to rebuild the bridge's wooden walkway, but did not mention the material.</p>
+        <p>The department did not respond to questions about the bridge. But Flagg, the TREES Act sponsor's staff, said DOT was concerned about ensuring 
+            any possible restructure would withstand the weight of thousands of pedestrians.</p>
         
         <!-- Brooklyn Bridge Couple Chilling -->
         <div class="wide-content">
@@ -472,9 +685,17 @@
             </figure>
         </div>
         
-        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+        <p>The 2008 plan also mandated the department to conduct a study on possible alternatives for the Staten Island Ferry docks. But the million-dollar study by infrastructure consulting firm AECOM ended up recommending that greenheart be maintained.</p>
+        <p>DOT once trialed recycled plastic lumber on a small section, but all boards were damaged when the ship docked, said John Garvey, the ferry's deputy commissioner. He said that plastic lacks greenheart's elasticity and flexibility, which helps absorb the boat's energy to land gently.</p>
+        <p>Garvey said the department is currently working with the Mayor's Office of Management and Budget to design a new piling system composed of steel, pads and concrete, which will start construction on one dock for a trial run within "a year or so."</p>
+        <p>But he said this new dock was extremely expensive – costing $40 million, compared to just $2-3 million that he estimated the department spends annually for greenheart.</p>
+        <p>Garvey also said it didn't make sense to rebuild the Manhattan-side docks before the ferry terminal moves to its new location, which is planned under 
+            a huge climate resilience project to raise the lower Manhattan waterfront. But the city is looking for federal dollars, so major reconstructions in 
+            this project are most likely on hold under the Trump administration, he said.</p>
+        <p>For now, greenheart shipments continue. In July at the ferry's Manhattan terminal, four new logs and a stack of lumber were floating on a dock underneath a large crane, ready to replace older wood. </p>
+        <p>"Environmentally, I think it makes sense for us to try and find [an alternative material]. Fiscally, I don't know that it does," Garvey, who has worked at the ferry for almost 20 years, said. </p>
+        <p>"From our perspective, we're going to try and transition to electric ferries, because we're constantly putting out emissions, whereas putting these pilings in the ground, there's no continued emission or effect on the environment if they are truly harvesting these in a good way, " he said. "Then, fiscally, it would make sense to continue to use it. But if they're not, then I understand why we should [transition]."</p>
+
         
         <!-- SIF Satellite Graphic -->
         <div class="wide-content">
@@ -485,9 +706,17 @@
             </figure>
         </div>
         
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p>By the time the 2008 Bloomberg plan was released, the Department of Sanitation had not yet constructed its five marine transfer stations that integrated greenheart.</p>
         
-        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+        <p>But the plan approved the department to proceed because of the cost and time to change design – a decision that set it on a path to hardwood dependence.</p>
+        <p>The plan also initially noted that the transfer stations' greenheart procurements would be a "one time" cost and that Sanitation would seek to identify "reasonable alternatives" for rehabilitation.</p>
+        <p>However, there is evidence that this wood has already been replaced – by more greenheart. In 2016, the department ordered greenheart for the transfer stations that was worth about 390 trees, a shipping document shows. This was slightly more than the department's initial greenheart purchases less than a decade earlier.</p>
+        <p>In response to questions sent by CJS, press secretary Vincent Gragnani said the department had been reducing or avoiding the use of tropical hardwoods since 2008. </p>
+        <p>The department's contract records show an effort to use other types of wood. Sanitation bought pressure-treated southern yellow pine, a domestic wood, from American producers in 2012, 2015 and 2017. </p>
+        <p>Gragnani also wrote that in a recent design workshop for marine transfer station repairs, the department "emphasized the need for construction to comply with Article 71- Prohibition of Tropical Hardwoods."</p>
+        <p>This article refers to the 1993 state hardwood ban, which didn't prohibit greenheart. </p>
+
+
         
         <!-- Factory Photos Side by Side -->
         <div class="wide-content">
@@ -495,42 +724,52 @@
                 <div style="flex: 1;">
                     <figure>
                         <img src="images/log in skidder at factory.jpg" alt="Log in skidder at factory" style="width: 100%; height: auto;">
-                        <figcaption>Caption placeholder</figcaption>
+                        <figcaption>Logs at a sawmill near Yaounde, Cameroon</figcaption>
                     </figure>
                 </div>
                 <div style="flex: 1;">
                     <figure>
                         <img src="images/paper making.jpg" alt="Paper making" style="width: 100%; height: auto;">
-                        <figcaption>Caption placeholder</figcaption>
+                        <figcaption>Veneer production from tropical hardwood in Cameroon</figcaption>
                     </figure>
                 </div>
             </div>
         </div>
         
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        
-        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+        <p>Legislative efforts to close this law's loopholes have been further stymied by corporate lobby groups that import other products from tropical forests for state contracts.</p>
+        <p>Between 1997 and 2002, city legislators introduced but failed to pass <a href="https://www.fao.org/4/ae017e/ae017e14.htm" target="_blank">council bills</a> to require or encourage independent sustainability certification for all tropical hardwood. </p>
+        <p>Two decades later, a new <a href="https://www.nysenate.gov/legislation/bills/2025/S7203" target="_blank">bill</a> – the Tropical Rainforest Economic & Environmental Sustainability Act, called the TREES Act – has also failed in the last three legislative sessions. It was vetoed in 2023 and 2024, and stalled in committee this year in the Assembly.</p>
+        <p>Beyond prohibiting tropical wood, this bill also included other products linked to rainforest deforestation, such as beef, paper, coffee and palm oil, which are often produced on industrial farms that clear rainforest. The bill would have required companies that supply state contracts to track their supply chains to ensure their products don't come from deforested areas.</p>
+        <p>Some of the main concerns are big food purchases by public universities and prisons that are supplied by companies like Sysco and Aramark, according to Sen. Krueger's office.</p>
+        <p>Last year, paper company Sylvamo, the American Forest & Paper Association (AF&PA), and the Northeastern Retail Lumber Association lobbied against the bill, according to records on the New York State Commission on Ethics and Lobbying in Government.</p>
+
         
         <!-- Enormous Log in Factory -->
         <div class="wide-content">
             <figure>
                 <img src="images/enormous log in factory.jpg" alt="Enormous log in factory" style="width: 800px; max-width: 100%; height: auto;">
-                <figcaption>Caption placeholder</figcaption>
+                <figcaption>An ayous log being processed at a factory in Cameroon</figcaption>
             </figure>
         </div>
     </div>
-    
-
-
-
-
-
 
     <div class="content">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    
+    <p>In May, the Empire State Forest Products Association (ESFPA), a New York group of wood product manufacturers, sent a memo opposing the bill's definitions 
+        of terms like "deforestation," "forest degradation," "tree plantation" and "at-risk commodity." The Association worried that these definitions could be 
+        replicated in future laws on non-tropical wood, such as the lumber ESFPA members produce from New York forests, said John Bartow, the association's 
+        executive director. The memo urged "serious scientific review" of these definitions.</p>
+
+    <p>The governor's veto memos also expressed concerns about the "significant burdens" the certification requirements might place on small businesses to verify 
+        the geographic origin of their products. </p>
+
+    <p>But according to members of the bill's coalition, which consulted at least 37 supply chain experts, many affordable traceability systems already exist 
+        that would take the burden off businesses to develop their own.</p>
+
+    <p>The bill's sponsors had already agreed to carve out over a decade for the DOT and MTA to transition. While the bill would have required most companies to comply 
+        in 2028, the MTA would have had until 2031 and the DOT until 2034 to fully adhere, with possible additional extensions up to 2036 and 2039.</p>
     </div>
-
-
+</div>
 
     <!-- 11. Video header section -->
     <div class="header with-video-bg">
@@ -538,13 +777,18 @@
             <video src="videos/coney_island_boardwalk_background_vid.mov" preload="auto" tabindex="0" playsinline autoplay loop muted></video>
         </div>
         <div class="content">
-            <h1 class="subhead">An environmentalist’s life mission succeeds – partly</h1>
+            <h1 class="subhead">An environmentalist's life mission succeeds – partly</h1>
         </div>
     </div>
 
     <!-- 12. Final text content -->
     <div class="content">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <p class="drop-cap">Tim Keating was tired of empty promises.</p>
+        <p>For years, the environmentalist and former New Yorker had written letters, made reports, and met with 
+            Parks Department staff to protest its use of rainforest timber. But nothing had changed.</p>
+        <p>So Keating and four other activists scaled the 262-foot Parachute Jump, a derelict World's Fair ride in Coney Island.</p>
+        <p>Hanging onto the metallic structure, at the height of a 26-story building, the group unfurled a huge banner imploring Parks 
+            to "stop killing rainforests for boardwalks and benches." </p>
         
         <!-- Environmentalist Photos Layout -->
         <div class="wide-content">
@@ -561,7 +805,7 @@
                         <figcaption>Tim Doody and Tim Keating hang a banner in City Hall Park, 2010</figcaption>
                     </figure>
                     <figure>
-                        <img src="images/boardwalk protest.jpg" alt="Boardwalk protest" style="width: 100%; height: auto;">
+                        <img src="images/boardwalk protest.jpeg" alt="Boardwalk protest" style="width: 100%; height: auto;">
                         <figcaption>Rainforest Relief 2010 protest in Coney Island</figcaption>
                     </figure>
                     <figure>
@@ -572,9 +816,12 @@
             </div>
         </div>
         
-        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
+        <p>They were later charged with endangerment and trespassing – but the feat worked. Finally, Parks accepted the group to meet with the commissioner.</p>
         
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p>This 1998 stunt was the turning point for Keating, who led a small group called Rainforest Relief over more than two decades that protested the city's use of tropical hardwood. </p>
+        <p>"Up until that point, Parks had met with me but not done anything," he said.</p>
+        <p>Years earlier, when visiting Coney Island, Keating noticed a "broad, expansive", "cinnamon-colored" wood.</p>
+        <p>The wood, called ipê, originated from the Brazilian Amazon. From the 1980s-90s, Parks converted all 12 miles of beach boardwalk from Douglas fir, grown in the American west, to ipê. </p>
         
         <!-- Dance Vertical Coney Island -->
         <div class="wide-content">
@@ -584,9 +831,11 @@
             </figure>
         </div>
         
-        <p>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.</p>
+        <p>According to Rainforest Relief, the move inspired a nationwide trend of boardwalks built with tropical wood, including ones in New York's Long Beach, New Jersey and California. Parks also built tens of thousands of park benches with the durable wood.</p>
         
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p>Parks continued to renovate its boardwalks with tropical lumber, ordering 'cumaru' wood from Brazilian company Precious Woods in 2006. Another supplier, Peruvian company Maderera Bozovich, was <a href="https://eia.org/report/the-laundering-machine/" target="_blank">linked</a> to widespread illegal logging.</p>
+        <p>But Keating's activism led Parks to eventually transition to other materials, including concrete, asphalt, and recycled plastic lumber. Parks <a href="https://www.nycgovparks.org/news/daily-plant?id=22118" target="_blank">started</a> reconstructing boardwalks 
+            with other materials in 2010, and purchase records show the last benches were installed with tropical wood in 2013.</p>
         
         <!-- Tim Keating and Boardwalk Photos -->
         <div class="wide-content">
@@ -594,7 +843,7 @@
                 <div style="flex: 1.14;">
                     <figure>
                         <img src="images/tim keating.JPG" alt="Tim Keating" style="width: 100%; height: auto;">
-                        <figcaption>Tim Keating, who now makes and sells a hardwood substitute out of organic materials (December 2024)</figcaption>
+                        <figcaption>Tim Keating, who now makes and sells a wood substitute out of organic materials (December 2024)</figcaption>
                     </figure>
                 </div>
                 <div style="flex: 1;">
@@ -610,7 +859,9 @@
             </div>
         </div>
         
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p>Last year, ipê and cumaru were added to CITES Appendix II, a list of species at risk of extinction that require special trade controls.</p>
+        <p>After Hurricane Sandy destroyed the Long Beach boardwalk in 2012, FEMA paid this city over $40 million to replace its 2.2-mile boardwalk using ipê, which Rainforest Relief estimated to have logged nine square miles of Amazon forests.</p>
+        <p>For years, Parks still imported small amounts of tropical wood for single-board replacements. Between 2018 and 2021, Parks spent over $200,000 on ipê contracts, city comptroller records show. But Parks now repurposes old tropical hardwood boards or uses domestic hardwoods ash or oak for these repairs.</p>
         
         <!-- Staten Island Concrete Fishing Pier -->
         <div class="wide-content">
@@ -620,31 +871,44 @@
             </figure>
         </div>
         
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p>Today, the only remaining wooden boardwalk runs alongside portions of the Staten Island beach and Coney Island. The boards are weathered, many screws undone. On a warm July evening on Staten Island, beach-goers and bikers traverse the old wooden walkway. An elderly man steps on a broken plank that has become a tripping hazard, a loud thud heard from meters away.</p>
         
-        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+        <p>For Keating, the city's story is a "microcosm for the whole country": a pattern of "prolonging the destruction" by exploiting one high-value species after another, until none can regenerate. </p>
         
-        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+        <p>"When Europeans came here, they targeted timber species unless they reached the last," he said. "So that's why we've turned to the tropics. And we've run through five or six species. We gobbled them up until they became commercially extinct, and then we moved to the next one. " </p>
         
         <!-- Methodology Box -->
-        <div class="wide-content">
-            <div style="width: 800px; max-width: 100%; margin: 0 auto; background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 8px; padding: 2em; font-size: 0.9em;">
-                <h3 style="margin-top: 0; margin-bottom: 1em; color: #495057;">Methodology</h3>
-                <p style="margin-bottom: 1em; color: #6c757d;">Assessing New York government agencies’ purchases of wood relied on procurement records from 2014 to 2024 that CJS obtained through public records requests to the NYC Parks Department, NYC Department of Sanitation, Metropolitan Transportation Authority, and NYC Department of Citywide Administrative Services. Records requests to other agencies were not produced by the time of publication. Additional contract records were acquired from the city comptroller’s <a href ='https://www.checkbooknyc.com/', target ='_blank'>Checkbook</a> platform. 
+        <div class="content">
+            <div class="wide-content" style="margin-top: 3em;">
+                <div class="methodology-box">
+                <h3 class="methodology-title">Methodology</h3>
+                <p class="methodology-paragraph">Assessing New York government agencies' purchases of wood relied on procurement records from 2014 to 2024 that CJS obtained through public records requests to the NYC Parks Department, NYC Department of Sanitation, Metropolitan Transportation Authority, and NYC Department of Citywide Administrative Services. Records requests to other agencies were not produced by the time of publication. Additional contract records were acquired from the city comptroller's <a href ='https://www.checkbooknyc.com/', target ='_blank'>Checkbook</a> platform. 
                 </p>
-                <p style="margin-bottom: 0; color: #6c757d;">The information that agencies provided allowed CJS to make estimates of the number of trees felled to fill their procurements. Conversions between typical lumber measurements (such as food board feet) or purchase values to logs relied on research by the International Tropical Timber Organization (ITTO), Guyana Forestry Commission, and international wood price averages. (See full calculations on Github). Pre-2014 procurements and Brooklyn Bridge calculations were estimated based on quantities provided in the city’s <a href= 'https://www.nyc.gov/html/om/pdf/tropical_hardwoods_report.pdf', target='_blank'>2008 Tropical Hardwood Reduction Plan</a> and information on estimated years of bridge wood replacements provided by Rainforest Relief. The number of trees logged to fill procurements was multiplied by 10 to estimate the additional trees harmed or cut in logging operations, based on a 2024 <a href= 'https://www.tandfonline.com/doi/full/10.1080/17583004.2024.2378740', target="_blank">study</a> in Guyana. 
+                <p class="methodology-paragraph">The information that agencies provided allowed CJS to make estimates of the number of trees felled to fill their procurements. Conversions between typical lumber measurements (such as food board feet) or purchase values to logs relied on research by the International Tropical Timber Organization (ITTO), Guyana Forestry Commission, and international wood price averages. (See full calculations on Github). Pre-2014 procurements and Brooklyn Bridge calculations were estimated based on quantities provided in the city's <a href= 'https://www.nyc.gov/html/om/pdf/tropical_hardwoods_report.pdf', target='_blank'>2008 Tropical Hardwood Reduction Plan</a> and information on estimated years of bridge wood replacements provided by Rainforest Relief. The number of trees logged to fill procurements was multiplied by 10 to estimate the additional trees harmed or cut in logging operations, based on a 2024 <a href= 'https://www.tandfonline.com/doi/full/10.1080/17583004.2024.2378740', target="_blank">study</a> in Guyana. 
                 </p>
-                <p style="margin-bottom: 0; color: #6c757d;">To put New York City agencies’ procurements in context, CJS calculated the estimated number of trees cut to fill all greenheart and ekki imports that came through U.S. ports between Nov. 1, 2006 and Dec. 31, 2024. Shipments’ weight and available information in the product descriptions were used to assess the number of trees cut to fill these shipments.</p> 
+                <p class="methodology-paragraph">To put New York City agencies' procurements in context, CJS calculated the estimated number of trees cut to fill all greenheart and ekki imports that came through U.S. ports between Nov. 1, 2006 and Dec. 31, 2024. Shipments' weight and available information in the product descriptions were used to assess the number of trees cut to fill these shipments.</p> 
+                
+                <p class="methodology-paragraph">To track New York's tropical hardwood contractors and their suppliers, CJS identified the names of city contractors through agency procurement records and import records from the trade data platform ImportGenius. CJS also downloaded U.S. imports data for each identified greenheart supplier and analyzed other species these companies' exported by their vulnerability status, as defined by the International Union for Conservation of Nature (IUCN)'s current conservation status as of June 2025. For city contractors' ekki suppliers, CJS was not able to download their exports because exports were listed as originating from the Netherlands, a country not included on ImportGenius. However, international trade analyst James Hewitt sent CJS annual Cameroon export reports between 2009 and 2021 (excluding 2019) compiled by Cameroon's Ministry of Forestry and Wildlife.</p>
+                
+                <p class="methodology-paragraph">To identify the areas of forest where suppliers procured their wood, CJS scraped the <a href="https://cadasta.maps.arcgis.com/apps/webappviewer/index.html?id=e543e1d1d8f04bc29e16b448cd0beb76" target="_blank">Guyana Forestry Commission Allocation map</a> and downloaded shapefiles on forest concessions from the <a href="https://data-minfof.opendata.arcgis.com/search?groupIds=c710d96159e14e79934236191bc61121" target="_blank">Cameroon Forest Atlas</a>.</p>
+                
+                <p class="methodology-paragraph">To estimate the area degraded by city suppliers, CJS used the area of forest concessions rented to companies that supplied city contractors. In Guyana, where many suppliers did not have their own concessions, CJS used the entire area of the country's logging concessions. This was based on guidance from forest ecology expert Cyril Kormos.</p>
+                
+                <p class="methodology-paragraph">To analyze forest loss and fires, CJS analyzed suppliers' concession areas on the Global Forest Watch platform. To estimate forest degradation in these areas, CJS analyzed satellite imagery (raster) <a href="https://glad.umd.edu/dataset/GLCLUC2020" target="_blank">data</a> in QGIS and Python on tree height within the identified forest concession areas in 2000 and 2010.</p>
+                
+                <p class="methodology-paragraph">Other data CJS used included Guyana and Cameroon timber trade data from UN Comtrade, collated by James Hewitt; timber trade data downloaded from the International Tropical Timber Organization, information on the Guyana Forestry Commission's current allowable cut provided by the ITTO, and lobbying records on the TREES Act from the New York State Commission on Ethics and Lobbying in Government.</p>
             
+                </div>
             </div>
         </div>
     </div>
 
     <div class="footer">
-        <div style="width: 640px; max-width: 100%; margin: 0 auto;">
+        <div class="content">
             <p>This is a master's project for the Data Journalism Master's of Science at Columbia University, 2025, by Annika McGinnis.</p>
+            
+            <p>Ekki train tracks photo and Cameroon forest, logging and factory photos by Tim Keating. Historical photos of Rainforest Relief protests collated by Tim Keating. All other photos, videos, and graphics by Annika McGinnis. Development by Annika McGinnis.</p>
             <p>Code and full methodology available on <a href="https://github.com/annikamcginnis/new-york-hardwood" target="_blank">Github.</a></p>
-            <p>Cameroon forest, logging and factory photos by Tim Keating. Historical photos of Rainforest Relief protests collated by Tim Keating. All other photos, videos, and graphics by Annika McGinnis. Development by Annika McGinnis.</p>
         </div>
     </div>
 
@@ -882,6 +1146,22 @@
                 mapElement.style.display = 'none';
                 svgElement.style.display = 'none';
                 featuresElement.style.display = 'none';
+                
+                // Set opacity of the map trigger paragraph to 0
+                const mapTriggerParagraph = document.getElementById('map-trigger');
+                if (mapTriggerParagraph) {
+                    mapTriggerParagraph.style.opacity = '0';
+                }
+                
+                // Set opacity of the photo and caption to 0
+                const photoElement = document.querySelector('.wide-content figure img');
+                const captionElement = document.querySelector('.wide-content figure figcaption');
+                if (photoElement) {
+                    photoElement.style.opacity = '0';
+                }
+                if (captionElement) {
+                    captionElement.style.opacity = '0';
+                }
                 
                 mapSectionVisible = false;
             }
