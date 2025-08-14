@@ -1123,6 +1123,16 @@
         Set up the side-by-side scrolly functionality
         */
         (() => {
+            // Flag to prevent scrolly from activating until user has scrolled
+            let userHasScrolled = false;
+            
+            // Track if user has scrolled
+            window.addEventListener('scroll', () => {
+                if (!userHasScrolled) {
+                    userHasScrolled = true;
+                }
+            }, { passive: true });
+            
             const scroller2 = scrollama()
 
             scroller2
@@ -1133,14 +1143,20 @@
                     debug: false, // Set to true to see debug lines
                 })
                 .onStepEnter(function ({ element, index, direction }) {
-                    const event = new CustomEvent("stepin", { detail: { direction: direction } })
-                    element.dispatchEvent(event)
+                    // Only trigger if user has scrolled
+                    if (userHasScrolled) {
+                        const event = new CustomEvent("stepin", { detail: { direction: direction } })
+                        element.dispatchEvent(event)
+                    }
                 })
                 .onStepExit(function ({ element, index, direction }) {
-                    const event = new CustomEvent("stepout", { detail: { direction: direction } })
-                    if (direction === "up" && element.previousElementSibling) {
-                        const event = new CustomEvent("stepin", { detail: { direction: direction } })
-                        element.previousElementSibling.dispatchEvent(event)
+                    // Only trigger if user has scrolled
+                    if (userHasScrolled) {
+                        const event = new CustomEvent("stepout", { detail: { direction: direction } })
+                        if (direction === "up" && element.previousElementSibling) {
+                            const event = new CustomEvent("stepin", { detail: { direction: direction } })
+                            element.previousElementSibling.dispatchEvent(event)
+                        }
                     }
                 })
 
