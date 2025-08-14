@@ -1233,11 +1233,21 @@
             }
         }
 
+        // Flag to prevent map from showing on initial page load
+        let userHasScrolled = false;
+        
+        // Track if user has scrolled
+        window.addEventListener('scroll', () => {
+            if (!userHasScrolled) {
+                userHasScrolled = true;
+            }
+        }, { passive: true });
+        
         // Intersection Observer to detect when we reach the map section
         const mapSectionObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 console.log('Intersection observed:', entry.isIntersecting, entry.target.textContent);
-                if (entry.isIntersecting) {
+                if (entry.isIntersecting && userHasScrolled) {
                     showMapSection();
                 } else {
                     hideMapSection();
