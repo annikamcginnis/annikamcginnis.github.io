@@ -1110,7 +1110,12 @@ figure:has(.responsive-image) {
 /* Mobile spacing for specific paragraph */
 @media (max-width: 640px) {
     .mobile-top-spacing {
-        margin-top: 2em;
+        margin-top: 4em;
+    }
+    
+    /* Make map scrolly text size match top scrolly section on mobile */
+    #features section {
+        font-size: 1rem;
     }
 }
 
