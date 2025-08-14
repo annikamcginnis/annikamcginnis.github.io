@@ -1201,7 +1201,9 @@ function setActiveChapter(chapterName) {
             }
         }
         
-        map.once('moveend', drawContractorLines);
+        map.once('moveend', () => {
+            setTimeout(drawContractorLines, 50);
+        });
         
         map.on('move', function() {
             if (lines.length > 0 && activeChapterName === 'intermediary-countries-guyana') {
