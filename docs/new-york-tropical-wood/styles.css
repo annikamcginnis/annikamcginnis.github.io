@@ -979,6 +979,7 @@ figure:has(.responsive-image) {
     height: 100vh;
     z-index: 1;
     background: black;
+    display: none;
 }
 
 #svg-overlay {
@@ -989,6 +990,7 @@ figure:has(.responsive-image) {
     height: 100vh;
     z-index: 2;
     pointer-events: none;
+    display: none;
 }
 
 #features {
@@ -996,6 +998,7 @@ figure:has(.responsive-image) {
     width: 100vw;
     z-index: 2;
     padding: 0 0 80vh 0;
+    display: none;
 }
 
 #features section {
