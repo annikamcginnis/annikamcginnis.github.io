@@ -580,7 +580,7 @@ code {
         z-index: 1;
         margin: 0;
         padding: 0;
-        padding-top: 10vh;
+        padding-top: 5vh;
     }
     
     .scrolly-side-by-side .sticky-thing img {
@@ -613,7 +613,7 @@ code {
     }
     
     .scrolly-side-by-side .step:last-child {
-        min-height: 50vh;
+        min-height: 80vh;
         padding-top: 0;
     }
     
@@ -1105,6 +1105,13 @@ figure:has(.responsive-image) {
     width: 100vw;
     height: 100vh;
     z-index: 1000;
+}
+
+/* Mobile spacing for specific paragraph */
+@media (max-width: 640px) {
+    .mobile-top-spacing {
+        margin-top: 2em;
+    }
 }
 
 /* Mobile-specific map styles to ensure full screen */
