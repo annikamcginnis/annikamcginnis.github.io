@@ -1178,16 +1178,14 @@
                     mapInitialized = true;
                 }
                 
-                // Set up scrollama for map features after a short delay
-                setTimeout(() => {
-                    setupMapScrollama();
-                    
-                    // Force map resize on mobile after a short delay
-                    if (window.innerWidth <= 640 && window.map) {
-                        console.log('Forcing map resize on mobile');
-                        window.map.resize();
-                    }
-                }, 500);
+                // Set up scrollama immediately for better responsiveness
+                setupMapScrollama();
+                
+                // Force map resize on mobile immediately
+                if (window.innerWidth <= 640 && window.map) {
+                    console.log('Forcing map resize on mobile');
+                    window.map.resize();
+                }
             }
         }
 
@@ -1324,6 +1322,8 @@
             
             // Create a new scrollama instance for map features
             const mapScroller = scrollama();
+            
+
             
 
             
