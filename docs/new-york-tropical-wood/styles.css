@@ -626,6 +626,10 @@ code {
         border-radius: 8px;
         margin: 0 auto;
     }
+    
+    .scrolly-side-by-side .step:last-child > * {
+        padding-bottom: 0.5rem;
+    }
 } 
 
 /* Responsive images for trees procured per NYC system */
@@ -1116,6 +1120,13 @@ figure:has(.responsive-image) {
     /* Make map scrolly text size match top scrolly section on mobile */
     #features section {
         font-size: 1rem;
+    }
+    
+    /* Remove padding for Guyana satellite analysis on mobile to make it full width */
+    .content:has(#guyana-satellite-analysis-490),
+    .content:has(#guyana-satellite-analysis-375) {
+        padding-left: 0;
+        padding-right: 0;
     }
 }
 
