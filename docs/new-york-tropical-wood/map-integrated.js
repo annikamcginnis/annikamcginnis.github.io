@@ -1,5 +1,5 @@
 // Mapbox access token
-mapboxgl.accessToken = 'pk.eyJ1IjoibWNnaW5uaXNhbm5pa2EiLCJhIjoiY201cjhtMWN6MDgxcjJrb25raGs4MmFjayJ9.6MGB4e-uZHWgJu4BN6hglA';
+mapboxgl.accessToken = process.env.MAPBOX_TOKEN;
 
 // Global variables
 let map = null;
