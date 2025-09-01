@@ -13,7 +13,7 @@ let wijmaAnimationId = null;
  
 // Initialize the map
 function initializeMap() {
-    if (map) return; // Already initialized
+    if (map) return; // Already initialized 
     
     console.log('Initializing map...');
     
