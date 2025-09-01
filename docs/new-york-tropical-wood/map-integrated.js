@@ -11,7 +11,7 @@ let outlineAnimationId = null;
 let currentOutlineAnimation = null;
 let wijmaAnimationId = null;
  
-// Initialize the map
+// Initialize the map 
 function initializeMap() {
     if (map) return; // Already initialized
     
