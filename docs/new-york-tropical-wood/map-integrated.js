@@ -1,5 +1,5 @@
 // Mapbox access token
-mapboxgl.accessToken = process.env.MAPBOX_TOKEN;
+mapboxgl.accessToken = "__MAPBOX_TOKEN__";
 
 // Global variables
 let map = null;
