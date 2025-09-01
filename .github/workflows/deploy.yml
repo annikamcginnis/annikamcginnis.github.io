@@ -1,4 +1,4 @@
-name: Deploy New York Tropical Wood
+name: Prepare Mapbox Token
 
 on:
   push:
@@ -8,25 +8,22 @@ on:
       - 'docs/new-york-tropical-wood/**'
 
 jobs:
-  build-and-deploy:
+  replace-token:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout repo
-      - name: Checkout repository
+      # Step 1: Checkout the repository
+      - name: Checkout code
         uses: actions/checkout@v3
 
-      # Step 2: Replace Mapbox token
+      # Step 2: Replace Mapbox token placeholder
       - name: Replace MAPBOX token in index.html
         run: |
           sed -i "s|__MAPBOX_TOKEN__|${{ secrets.MAPBOX_TOKEN }}|g" docs/new-york-tropical-wood/index.html
 
-      # Step 3: Deploy to GitHub Pages
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: main        # use main for user Pages
-          publish_dir: docs/new-york-tropical-wood
+      # Step 3: Show the first few lines to verify
+      - name: Verify replacement
+        run: |
+          head -n 10 docs/new-york-tropical-wood/index.html
 
 

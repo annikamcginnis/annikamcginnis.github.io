@@ -1,7 +1,6 @@
 // Mapbox access token
 mapboxgl.accessToken = "__MAPBOX_TOKEN__";
 
-
 // Global variables
 let map = null;
 let currentWijmaAnimation = null;
