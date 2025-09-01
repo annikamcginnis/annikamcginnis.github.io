@@ -17,13 +17,11 @@ jobs:
         uses: actions/checkout@v3
 
       # Step 2: Replace Mapbox token placeholder
-      - name: Replace MAPBOX token in index.html
+      - name: Replace MAPBOX token in map-integrated.js
         run: |
-          sed -i "s|__MAPBOX_TOKEN__|${{ secrets.MAPBOX_TOKEN }}|g" docs/new-york-tropical-wood/index.html
+          sed -i "s|__MAPBOX_TOKEN__|${{ secrets.MAPBOX_TOKEN }}|g" docs/new-york-tropical-wood/map-integrated.js
 
-      # Step 3: Show the first few lines to verify
+      # Step 3: Verify replacement
       - name: Verify replacement
         run: |
-          head -n 10 docs/new-york-tropical-wood/index.html
-
-
+          head -n 10 docs/new-york-tropical-wood/map-integrated.js
