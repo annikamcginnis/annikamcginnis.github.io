@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+    paths:
+      - 'new-york-tropical-wood/**'
 
 jobs:
   build:
@@ -15,10 +17,10 @@ jobs:
 
       - name: Replace MAPBOX token in index.html
         run: |
-          sed -i "s|__MAPBOX_TOKEN__|${{ secrets.MAPBOX_TOKEN }}|g" index.html
+          sed -i "s|__MAPBOX_TOKEN__|${{ secrets.MAPBOX_TOKEN }}|g" new-york-tropical-wood/index.html
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}   # auto provided by GitHub
-          publish_dir: .   # or ./dist if you build
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: new-york-tropical-wood   # <-- deploy this folder only
