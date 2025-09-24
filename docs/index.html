@@ -50,6 +50,8 @@
             flex-wrap: wrap;
             justify-content: space-between;
             margin-bottom: 5px; /* Add space underneath each line of 3 cards */
+            width: 100%;
+            box-sizing: border-box;
         }
         .tags {
             display: flex;
@@ -101,8 +103,158 @@
             }
         }
         @media (max-width: 768px) {
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            .content-wrapper {
+                padding: 0;
+                margin: 0;
+                max-width: none;
+            }
+            .columns {
+                margin: 0 calc(-50vw + 50%);
+                width: 100vw;
+                max-width: 100vw;
+                box-sizing: border-box;
+                padding: 0;
+            }
             .column {
                 max-width: 100%; /* 1 column on small screens */
+                padding: 0;
+                margin: 0;
+                flex: none;
+            }
+            .card {
+                margin: 10px 0;
+            }
+            .hero {
+                margin: 0 calc(-50vw + 50%);
+                width: 100vw;
+                max-width: 100vw;
+                box-sizing: border-box;
+                padding: 20px;
+            }
+            section {
+                margin: 0 calc(-50vw + 50%);
+                width: 100vw;
+                max-width: 100vw;
+                box-sizing: border-box;
+                padding: 20px;
+            }
+            .title {
+                padding: 0 5px;
+                font-size: 1.7em;
+            }
+            p {
+                font-size: 1em !important;
+            }
+            .about-me-text {
+                font-size: 0.95em !important;
+            }
+            .card-description {
+                font-size: 0.7em !important;
+            }
+            ul {
+                padding-left: 0;
+                margin-left: 0;
+            }
+            li {
+                padding-left: 0;
+                margin-left: 0;
+                font-size: 0.85em;
+            }
+            footer p {
+                font-size: 0.8em !important;
+            }
+            footer {
+                margin-top: 20px !important;
+            }
+            blockquote {
+                display: none;
+            }
+            #training {
+                margin-top: 0 !important;
+            }
+            #awards {
+                margin-top: 0 !important;
+            }
+            #articles-about-me {
+                margin-top: 0 !important;
+            }
+            #projects {
+                margin-top: 0 !important;
+            }
+            #projects h2.title {
+                margin-top: 0 !important;
+                padding-top: 0 !important;
+            }
+            #about-me .hero {
+                margin: 0 calc(-50vw + 50%) !important;
+                width: 100vw !important;
+                max-width: 100vw !important;
+                box-sizing: border-box;
+                padding: 20px !important;
+                margin-top: 0 !important;
+                margin-bottom: 0 !important;
+            }
+            #about-me {
+                margin-top: 0 !important;
+                padding-top: 0 !important;
+                margin-bottom: 0 !important;
+            }
+            #about-me .hero {
+                margin-top: 0 !important;
+                padding-top: 0 !important;
+            }
+            #about-me h1.title {
+                margin-top: 0 !important;
+                padding-top: 0 !important;
+                margin-bottom: 0 !important;
+            }
+            .hero {
+                margin-top: 0 !important;
+                padding-top: 0 !important;
+                margin-bottom: 0 !important;
+            }
+            .navbar {
+                justify-content: space-between !important;
+                align-items: center !important;
+                padding: 10px 20px;
+                position: relative;
+            }
+            .navbar .brand {
+                position: static !important;
+                transform: none !important;
+                margin: 0 0 0 5px !important;
+                text-align: left !important;
+                font-size: 18px !important;
+                left: auto !important;
+                padding-left: 0 !important;
+            }
+            .navbar a {
+                display: none;
+            }
+            .hamburger {
+                display: block !important;
+                cursor: pointer;
+                font-size: 24px;
+                color: white;
+                background: none;
+                border: none;
+                padding: 5px;
+                z-index: 1000;
+                margin-left: auto;
+            }
+            .navbar.active a {
+                display: block;
+                margin: 10px 0;
+                text-align: center;
+                width: 100%;
+            }
+            .navbar.active {
+                flex-direction: column;
+                align-items: center;
             }
         }
         .content-wrapper {
@@ -115,7 +267,13 @@
             align-items: center;
             justify-content: center;
             background-color: #7586ff; /* Same color as buttons "map" and "code" */
-            padding: 10px; /* Original vertical width */
+            padding: 10px 0; /* Only vertical padding, no horizontal */
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            margin: 0;
+            width: 100%;
+            box-sizing: border-box;
         }
         .navbar a {
             color: white;
@@ -128,8 +286,11 @@
             font-size: 24px;
             color: white;
             position: absolute;
-            left: 10px;
+            left: 15px;
             padding-left: 10px; /* Add space before the text */
+        }
+        .hamburger {
+            display: none;
         }
         .project-info {
             display: flex;
@@ -169,6 +330,9 @@
         }
         body {
             background-color: #f8f8f8; /* Set background to off-white */
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
         }
         .highlight {
             color: #7586ff; /* Set highlight color */
@@ -204,11 +368,102 @@
             font-family: 'Inter', sans-serif;
             font-size: 1.2em; /* Make the quotation marks big */
         }
+        #training {
+            margin-top: 80px;
+        }
+        #awards {
+            margin-top: 80px;
+        }
+        #articles-about-me {
+            margin-top: 80px;
+        }
+        .training-photos {
+            margin: 30px calc(-50vw + 50%);
+            width: 100vw;
+            max-width: 100vw;
+            box-sizing: border-box;
+            padding: 0 5px;
+        }
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 5px;
+            margin: 0 0 5px 0;
+            width: 100%;
+        }
+        .photo-item {
+            height: 200px;
+            border-radius: 0;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .photo-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        .photo-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        @media (max-width: 1024px) {
+            .photo-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 3px;
+                margin: 0;
+            }
+            .photo-item {
+                height: 200px;
+            }
+            .photo-item:nth-child(5),
+            .photo-item:nth-child(8) {
+                display: none;
+            }
+        }
+        @media (max-width: 768px) {
+            .training-photos {
+                margin: 30px calc(-50vw + 50%);
+                width: 100vw;
+                max-width: 100vw;
+                box-sizing: border-box;
+            }
+            .photo-grid {
+                gap: 3px;
+                margin: 0;
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .photo-item {
+                height: 180px;
+            }
+            .photo-item:nth-child(5),
+            .photo-item:nth-child(8) {
+                display: none;
+            }
+        }
+        @media (max-width: 480px) {
+            .training-photos {
+                margin: 30px calc(-50vw + 50%);
+                width: 100vw;
+                max-width: 100vw;
+                box-sizing: border-box;
+            }
+            .photo-grid {
+                gap: 2px;
+                margin: 0;
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .photo-item {
+                height: 160px;
+            }
+        }
     </style>
 </head>
 <body>
     <nav class="navbar">
         <div class="brand">ANNIKA MCGINNIS</div>
+        <button class="hamburger" onclick="toggleMenu()">≡</button>
         <a href="#about-me">About Me</a>
         <a href="#projects">Coding Projects</a>
         <a href="#stories">Stories</a>
@@ -858,6 +1113,46 @@
         <section id="training">
             <h2 class="title">Training</h2>
             <!-- Add your content here -->
+            <p class="about-me-text">I conduct training on data journalism, data visualization, geojournalism and mapping for journalists, communicators and organizations.</p> 
+            <p class="about-me-text">I have led trainings with InfoNile, the Media Challenge Initiative, the African Institute for Investigative Journalism, the Nile Basin Initiative, the African Investigative Journalism Conference, Earth Journalism Network, and other organizations in Uganda, Kenya, South Sudan, Rwanda, the Democratic Republic of the Congo (DRC) and South Africa.</p>
+
+            <div class="training-photos">
+                <div class="photo-grid">
+                    <div class="photo-item">
+                        <img src="training_photo_1.jpg" alt="Training session photo 1" />
+                    </div>
+                    <div class="photo-item">
+                        <img src="training_photo_2.jpg" alt="Training session photo 2" />
+                    </div>
+                    <div class="photo-item">
+                        <img src="training_photo_3.jpg" alt="Training session photo 3" />
+                    </div>
+                    <div class="photo-item">
+                        <img src="training_photo_4.jpg" alt="Training session photo 4" />
+                    </div>
+                    <div class="photo-item">
+                        <img src="training_photo_5.jpg" alt="Training session photo 5" />
+                    </div>
+                </div>
+                <div class="photo-grid">
+                    <div class="photo-item">
+                        <img src="training_photo_6.jpg" alt="Training session photo 6" />
+                    </div>
+                    <div class="photo-item">
+                        <img src="training_photo_7.jpg" alt="Training session photo 7" />
+                    </div>
+                    <div class="photo-item">
+                        <img src="training_photo_8.jpg" alt="Training session photo 8" />
+                    </div>
+                    <div class="photo-item">
+                        <img src="training_photo_9.jpg" alt="Training session photo 9" />
+                    </div>
+                    <div class="photo-item">
+                        <img src="training_photo_10.jpg" alt="Training session photo 10" />
+                    </div>
+                </div>
+            </div>
+
         </section>
         <section id="awards">
             <h2 class="title">Awards</h2>
@@ -905,8 +1200,40 @@
         </section>
         <section id="articles-about-me">
             <h2 class="title">Articles About My Work</h2>
-            <!-- Add your content here -->
+            <ul>
+                <li class="award-item">
+                    <a href="https://gijn.org/stories/africa-focus-cross-border-collaboration/" class="award-link">"Secrets, Leaks, Rivers: How Cross-Border Investigative Journalism Is Covering Africa," Global Investigative Journalism Network, 2024</a>
+                </li>
+                <li class="award-item">
+                    <a href="https://reutersinstitute.politics.ox.ac.uk/news/inside-cross-border-network-exposing-environmental-crisis-facing-africas-longest-river" class="award-link">"Inside the Cross-Border Network Exposing the Environmental Crisis Facing Africa’s Longest River," The Reuters Institute, 2025</a>
+                </li>
+                <li class="award-item">
+                    <a href="https://www.voanews.com/a/network-helps-connect-african-journalists-on-climate-issues/7029301.html" class="award-link">"Network Helps Connect African Journalists on Climate Issues," Voice of America, 2023</a>
+                </li>
+                <li class="award-item">
+                    <a href="https://podcasts.apple.com/us/podcast/how-infonile-and-water-journalists-africa/id1612145195?i=1000633947731" class="award-link">"How InfoNile and Water Journalists Africa revolutionizing climate change storytelling in Africa," Last Drop Africa podcast, 2023</a>
+                </li>
+                <li class="award-item">
+                    <a href="https://jamlab.africa/nilewell-bridging-the-gap-between-scientists-and-journalists/" class="award-link">"NileWell: bridging the gap between scientists and journalists," JamLab Africa, 2022</a>
+                </li>
+                <li class="award-item">
+                    <a href="https://pulitzercenter.org/stories/story-sucked-dry-cross-border-data-journalism-investigation-exposing-how-foreign-investors" class="award-link">"The Story of Sucked Dry: A Cross-Border Data Journalism Investigation Exposing How Foreign Investors Are Quietly Staking Their Claim to Large Swaths of Land in Africa’s Nile River Basin," Pulitzer Center, 2020</a>
+                </li>
+                <li class="award-item">
+                    <a href="https://www.independent.co.ug/story-on-destroyed-kampala-wetlands-wins-top-journalism-award/" class="award-link">"Story on degraded Kampala wetlands wins top media award," The Independent, 2018</a>
+                </li>
+                <li class="award-item">
+                    <a href="https://ijnet.org/en/story/new-geojournalism-platform-changing-how-reporters-cover-africa%E2%80%99s-longest-river" class="award-link">"New geojournalism platform is changing how reporters cover Africa’s longest river," International Journalists' Network, 2018</a>
         </section>
     </main>
+    <footer style="text-align: center; padding: 40px 20px; background-color: #131846; border-top: 1px solid #ddd; margin-top: 80px;">
+        <p style="margin: 0; font-family: 'Inter', sans-serif; font-size: 0.9em; color: white;">Designed and built by Annika McGinnis, 2025.</p>
+    </footer>
+    <script>
+        function toggleMenu() {
+            const navbar = document.querySelector('.navbar');
+            navbar.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
